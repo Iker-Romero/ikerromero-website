@@ -1,0 +1,16 @@
+{
+  "arrowParens": "avoid",
+  "bracketSpacing": true,
+  "bracketSameLine": false,
+  "embeddedLanguageFormatting": "off",
+  "jsxSingleQuote": false,
+  "printWidth": 100,
+  "semi": false,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "none",
+  "useTabs": false,
+  "importOrder": ["^components/(.*)$", "^[./]"],
+  "importOrderSeparation": true,
+  "importOrderSortSpecifiers": true
+}
