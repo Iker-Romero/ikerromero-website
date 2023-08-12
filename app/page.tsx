@@ -1,7 +1,14 @@
+import Contact from './components/Contact/Contact'
+import Experience from './components/Experience/Experience'
+import Hero from './components/Hero/Hero'
+import s from './page.module.css'
+
 export default function Home() {
   return (
-    <main>
-      <h1>Hi! I&apos;m Iker Romero</h1>
+    <main className={s.main}>
+      <Hero />
+      <Experience />
+      <Contact />
     </main>
   )
 }
