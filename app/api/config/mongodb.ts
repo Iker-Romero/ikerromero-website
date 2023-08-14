@@ -1,6 +1,7 @@
 import mongoose from 'mongoose'
+import 'server-only'
 
-export const connectMongoDB = () => {
+const connectMongoDB = async () => {
   const URI = process.env.MONGODB_URI
 
   if (!URI) {
@@ -19,3 +20,5 @@ export const connectMongoDB = () => {
     process.exit(1)
   }
 }
+
+export default connectMongoDB

@@ -1,26 +1,44 @@
 'use client'
+
+import axios from 'axios'
 import { useForm } from 'react-hook-form'
-import s from './Contact.module.scss'
+
 import Button from '../Button/Button'
 import Form from '../Form/Form'
 import Input from '../Input/Input'
 import Textarea from '../Textarea/Textarea'
+import s from './Contact.module.scss'
+
+type FormValues = {
+  name: string
+  email: string
+  phone?: string
+  message: string
+}
 
 const Contact = () => {
-  const methods = useForm({
+  const methods = useForm<FormValues>({
     mode: 'onChange',
     shouldUseNativeValidation: false,
-    defaultValues: {}
+    defaultValues: {
+      name: '',
+      email: '',
+      phone: '',
+      message: ''
+    }
   })
 
-  const handleSubmit = (fields: {}) => {
-    console.log('fields', fields)
+  const handleSubmit = (data: FormValues) => {
+    axios.post('/api/contacts', data).then(res => {
+      // TO-DO: Add a toast to notify the user that the message was sent
+      console.log('res', res)
+    })
   }
 
   return (
-    <section>
+    <section className={s['contact-form']}>
       <h2>Contact</h2>
-      <Form {...{ methods }} onSubmit={handleSubmit}>
+      <Form<FormValues> {...{ methods }} onSubmit={handleSubmit}>
         <Input name="name" placeholder="Name" validation="name" required />
         <Input type="email" name="email" placeholder="Email" required />
         <Input type="tel" name="phone" placeholder="Phone" />

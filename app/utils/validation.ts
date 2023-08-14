@@ -32,8 +32,8 @@ const validations = {
   tel: {
     required: 'Phone number is required',
     pattern: {
-      value: /^[0-9]{10}$/,
-      message: 'Invalid phone number'
+      value: /^[0-9]{4,15}$/,
+      message: 'Phone number must be between 4 and 15 digits'
     }
   },
   textarea: {
@@ -59,7 +59,7 @@ export const getValidation = ({
   validation,
   required
 }: getValidationParams) => {
-  let registerOptions: RegisterOptions = {}
+  const registerOptions: RegisterOptions = {}
 
   const validationType = validations[type]
 

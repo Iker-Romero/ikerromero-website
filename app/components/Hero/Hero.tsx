@@ -1,10 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
+
 import s from './Hero.module.scss'
 
 const Hero = () => {
-  const handleCallToAction = () => {}
-
   return (
     <header className={s['hero']}>
       <div className={s['text-container']}>
@@ -14,6 +13,7 @@ const Hero = () => {
       </div>
       <div>
         <Image
+          priority
           className={s.image}
           width={500}
           height={375}

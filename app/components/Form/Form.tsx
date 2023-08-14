@@ -1,13 +1,22 @@
 import { ReactNode } from 'react'
-import { FormProvider, UseFormReturn } from 'react-hook-form'
+import {
+  FieldValues,
+  FormProvider,
+  SubmitHandler,
+  UseFormReturn
+} from 'react-hook-form'
 
-type Props = {
+type Props<TFieldValues extends FieldValues> = {
   children: ReactNode
-  methods: UseFormReturn
-  onSubmit: (fields: {}) => void
+  methods: UseFormReturn<TFieldValues>
+  onSubmit: SubmitHandler<TFieldValues>
 }
 
-const Form = ({ children, methods, onSubmit }: Props) => {
+const Form = <TFieldValues extends FieldValues>({
+  children,
+  methods,
+  onSubmit
+}: Props<TFieldValues>) => {
   return (
     <FormProvider {...methods}>
       <form onSubmit={methods.handleSubmit(onSubmit)}>{children}</form>
