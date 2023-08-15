@@ -1,8 +1,17 @@
 {
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
-  "[json]": {
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
   "github.copilot.enable": {
@@ -12,9 +21,6 @@
     "scminput": false
   },
   "editor.formatOnSave": true,
-  "[typescriptreact]": {
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
-  },
   "workbench.colorTheme": "One Monokai",
   "window.zoomLevel": 1,
   "[jsonc]": {
@@ -24,5 +30,6 @@
   "editor.rulers": [80],
   "editor.wordWrap": "on",
   "editor.tabSize": 2,
-  "editor.insertSpaces": true
+  "editor.insertSpaces": true,
+  "editor.linkedEditing": true
 }

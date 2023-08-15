@@ -1,1 +1,1 @@
-export const navbarLinks = [{ text: 'Experience', link: '#experience' }]
+export const navbarLinks = [{ text: 'Experience', link: '/#experience'  }]

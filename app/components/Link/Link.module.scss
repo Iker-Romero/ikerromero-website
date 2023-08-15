@@ -1,0 +1,17 @@
+$variants: 'callToAction', 'callToActionSecondary';
+
+.link {
+  width: fit-content;
+}
+
+@each $variant in $variants {
+  .variant-#{$variant} {
+    @if $variant == 'callToAction' {
+      background: yellow;
+    }
+
+    @if $variant == 'callToActionSecondary' {
+      border: 0.25rem solid yellow;
+    }
+  }
+}

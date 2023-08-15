@@ -5,3 +5,8 @@ body {
   flex-direction: column;
   min-height: 100vh;
 }
+
+main {
+  border: 1px solid green;
+  flex: 1 0 auto;
+}

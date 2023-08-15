@@ -2,7 +2,7 @@ $variants: 'callToAction';
 
 .button {
   @each $variant in $variants {
-    .button-variant-#{$variant} {
+    .variant-#{$variant} {
       @if $variant == 'callToAction' {
       }
     }

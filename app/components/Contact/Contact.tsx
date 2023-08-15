@@ -30,14 +30,19 @@ const Contact = () => {
 
   const handleSubmit = (data: FormValues) => {
     axios.post('/api/contacts', data).then(res => {
-      // TO-DO: Add a toast to notify the user that the message was sent
       console.log('res', res)
+      // TO-DO: Add a toast to notify the user that the message was sent
+
+      // TO-DO: Clear the form
+
+      // TO-DO: Send an email to my professional email
     })
   }
 
   return (
     <section className={s['contact-form']}>
       <h2>Contact</h2>
+      {/* TO-DO: directly provide my contact information (email, phone, location) */}
       <Form<FormValues> {...{ methods }} onSubmit={handleSubmit}>
         <Input name="name" placeholder="Name" validation="name" required />
         <Input type="email" name="email" placeholder="Email" required />

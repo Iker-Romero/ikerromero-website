@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import Link from 'next/link'
-import { socialMedia } from './data'
+
+import Link from '../Link/Link'
 import s from './Footer.module.scss'
+import { socialMedia } from './data'
 
 const Footer = () => {
   return (

@@ -1,15 +1,19 @@
 import { MouseEvent, ReactNode } from 'react'
+
 import s from './Button.module.scss'
 
 type Props = {
   children: ReactNode
-  variant: 'callToAction'
+  variant?: 'callToAction'
   onClick?: (e?: MouseEvent<HTMLButtonElement>) => void
 }
 
 const Button = ({ children, variant, onClick }: Props) => {
   return (
-    <button className={`${s.button} variant-${s[variant]}`} {...{ onClick }}>
+    <button
+      className={`${s.button}${variant ? ` variant-${s[variant]}` : ''}`}
+      {...{ onClick }}
+    >
       {children}
     </button>
   )
