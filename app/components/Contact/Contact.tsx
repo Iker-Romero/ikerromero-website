@@ -34,8 +34,6 @@ const Contact = () => {
       // TO-DO: Add a toast to notify the user that the message was sent
 
       // TO-DO: Clear the form
-
-      // TO-DO: Send an email to my professional email
     })
   }
 
