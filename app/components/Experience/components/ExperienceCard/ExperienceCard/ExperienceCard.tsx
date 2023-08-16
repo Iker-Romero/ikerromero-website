@@ -1,6 +1,8 @@
+import { TechnologiesType } from '@/components/Experience/data'
 import ConditionalWrapper from 'utils/ConditionalWrapper'
 
 import s from './ExperienceCard.module.scss'
+import Technologies from './components/Technologies/Technologies'
 import WrapperLink from './components/WrapperLink/WrapperLink'
 
 type Props = {
@@ -9,6 +11,7 @@ type Props = {
   company: string
   link?: string
   description: string
+  technologies: TechnologiesType
 }
 
 const ExperienceCard = ({
@@ -16,7 +19,8 @@ const ExperienceCard = ({
   role,
   company,
   link,
-  description
+  description,
+  technologies
 }: Props) => {
   return (
     <div className={s['cards-container']}>
@@ -31,6 +35,7 @@ const ExperienceCard = ({
           </ConditionalWrapper>
         </h3>
         <p className={s.description}>{description}</p>
+        <Technologies {...{ technologies }} />
       </div>
     </div>
   )

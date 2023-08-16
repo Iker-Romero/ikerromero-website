@@ -1,0 +1,9 @@
+.technologies {
+  display: flex;
+  gap: 0.5rem;
+
+  .technology {
+    padding: 0.5rem;
+    border: 1px solid black;
+  }
+}
