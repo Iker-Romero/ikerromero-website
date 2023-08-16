@@ -1,6 +1,8 @@
 'use client'
-import { RegisterOptions, useFormContext } from 'react-hook-form'
-import { getValidation } from '@/app/utils/validation'
+
+import { useFormContext } from 'react-hook-form'
+import { getValidation } from 'utils/validation'
+
 import s from './Textarea.module.scss'
 
 type Props = {

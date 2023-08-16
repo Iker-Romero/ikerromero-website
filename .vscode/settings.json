@@ -2,6 +2,9 @@
   "[json]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
   "[javascriptreact]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },
@@ -31,5 +34,6 @@
   "editor.wordWrap": "on",
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
-  "editor.linkedEditing": true
+  "editor.linkedEditing": true,
+  "github.copilot.advanced": {}
 }

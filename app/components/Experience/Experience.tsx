@@ -1,24 +1,14 @@
-import { faUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
-import Link from '../Link/Link'
 import s from './Experience.module.scss'
+import ExperienceCard from './components/ExperienceCard/ExperienceCard/ExperienceCard'
+import { experience } from './data'
 
 const Experience = () => {
   return (
     <section className={s['experience-section']}>
       <h2>Professional Experience</h2>
-      <div className={s['cards-container']}>
-        <div className={s['experience-card']}>
-          <span className={s['date-range']}></span>
-          <h3 className={s.title}>
-            <Link href="https://triskellsoftware.com/" target="_blank">
-              Front-end Web Developer | Triskell Software{' '}
-              <FontAwesomeIcon icon={faUpRightFromSquare} />
-            </Link>
-          </h3>
-        </div>
-      </div>
+      {experience.map((jobInfo, i) => (
+        <ExperienceCard key={i} {...jobInfo} />
+      ))}
     </section>
   )
 }

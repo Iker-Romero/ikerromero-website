@@ -8,7 +8,11 @@ const Hero = () => {
     <header className={s['hero']}>
       <div className={s['text-container']}>
         <h1>Iker Romero</h1>
-        <p>I help business in building a profesional landing page</p>
+        <p>
+          Transforming Ideas into Digital Realities. Whether you need a stunning
+          landing page or a complex web application, I create solutions that fit
+          your vision. Let&apos;s build something extraordinary together.
+        </p>
         <Link href="/contact" variant="callToAction">
           Let&apos;s Talk
         </Link>

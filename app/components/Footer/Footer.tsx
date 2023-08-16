@@ -12,7 +12,8 @@ const Footer = () => {
         {socialMedia.map(({ name, icon, link }) => (
           <li key={name}>
             <Link href={link}>
-              {name} <FontAwesomeIcon {...{ icon }} />
+              {name}
+              <FontAwesomeIcon {...{ icon }} />
             </Link>
           </li>
         ))}
