@@ -5,11 +5,12 @@ import s from './Link.module.scss'
 
 interface Props extends LinkProps {
   children: ReactNode
-  variant?: 'callToAction' | 'callToActionSecondary'
+  variant?: 'callToAction' | 'callToActionSecondary' | 'header'
   target?: '_blank' | '_self' | '_parent' | '_top' | string
 }
 
 const Link = ({ children, href, variant, target }: Props) => {
+  console.log('s', s)
   return (
     <NextLink
       className={`${s.link} ${variant ? s[`variant-${variant}`] : ''}`}

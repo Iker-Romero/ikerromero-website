@@ -10,7 +10,7 @@ type Props = {
 const WrapperLink = ({ children, link }: Props) => {
   return (
     link && (
-      <Link href={link} target="_blank">
+      <Link href={link} target="_blank" variant="header">
         {children}
         <FontAwesomeIcon icon={faUpRightFromSquare} />
       </Link>
