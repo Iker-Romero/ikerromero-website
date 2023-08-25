@@ -5,7 +5,7 @@ import { navbarLinks } from './data'
 const Navbar = () => {
   return (
     <nav className={s.navbar}>
-      <Link href="/">Iker Romero</Link>
+      <Link href="/">{'< Iker />'}</Link>
       <div className={s['sections-links']}>
         <ul className={s['home-page']}>
           {navbarLinks.map(({ text, link }) => (

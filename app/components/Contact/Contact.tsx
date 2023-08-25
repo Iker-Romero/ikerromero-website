@@ -44,7 +44,7 @@ const Contact = () => {
       <Form<FormValues> {...{ methods }} onSubmit={handleSubmit}>
         <Input name="name" placeholder="Name" validation="name" required />
         <Input type="email" name="email" placeholder="Email" required />
-        <Input type="tel" name="phone" placeholder="Phone" />
+        <Input type="tel" name="phone" placeholder="Phone (optional)" />
         <Textarea
           name="message"
           placeholder="Message"

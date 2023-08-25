@@ -1,5 +1,7 @@
 @import './css/reset.css';
 
+@import './css/base.css';
+
 @import './css/layout.css';
 
 @import './css/color-palette.css';

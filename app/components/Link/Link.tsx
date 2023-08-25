@@ -10,7 +10,6 @@ interface Props extends LinkProps {
 }
 
 const Link = ({ children, href, variant, target }: Props) => {
-  console.log('s', s)
   return (
     <NextLink
       className={`${s.link} ${variant ? s[`variant-${variant}`] : ''}`}

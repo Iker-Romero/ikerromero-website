@@ -2,9 +2,13 @@ body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  background: var(--primary-medium);
 }
 
 main {
   flex: 1 0 auto;
-  background: var(--primary-medium);
+  max-width: 900px;
+  width: 100%;
+  padding: 1rem;
+  align-self: center;
 }
