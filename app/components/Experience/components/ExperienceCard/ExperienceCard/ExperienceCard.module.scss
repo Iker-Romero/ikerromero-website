@@ -1,6 +1,13 @@
 .experience-card {
   .date-range {
-    .title {
-    }
+  }
+
+  .title {
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
   }
 }

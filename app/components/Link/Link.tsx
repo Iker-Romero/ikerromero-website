@@ -7,12 +7,15 @@ interface Props extends LinkProps {
   children: ReactNode
   variant?: 'callToAction' | 'callToActionSecondary' | 'header'
   target?: '_blank' | '_self' | '_parent' | '_top' | string
+  className?: string
 }
 
-const Link = ({ children, href, variant, target }: Props) => {
+const Link = ({ children, href, variant, target, className }: Props) => {
   return (
     <NextLink
-      className={`${s.link} ${variant ? s[`variant-${variant}`] : ''}`}
+      className={`${s.link} ${
+        variant ? s[`variant-${variant}`] : ''
+      } ${className}`}
       {...{ href, target }}
     >
       {children}

@@ -6,9 +6,11 @@ const Experience = () => {
   return (
     <section className={s['experience-section']}>
       <h2>Professional Experience</h2>
-      {experience.map((jobInfo, i) => (
-        <ExperienceCard key={i} {...jobInfo} />
-      ))}
+      <div className={s['cards-container']}>
+        {experience.map((jobInfo, i) => (
+          <ExperienceCard key={i} {...jobInfo} />
+        ))}
+      </div>
     </section>
   )
 }

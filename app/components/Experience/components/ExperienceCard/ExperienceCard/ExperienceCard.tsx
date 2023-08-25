@@ -34,8 +34,10 @@ const ExperienceCard = ({
             {role} | {company}
           </ConditionalWrapper>
         </h3>
-        <p className={s.description}>{description}</p>
-        <Technologies {...{ technologies }} />
+        <div className={s.content}>
+          <p className={s.description}>{description}</p>
+          <Technologies {...{ technologies }} />
+        </div>
       </div>
     </div>
   )

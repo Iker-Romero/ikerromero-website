@@ -1,7 +1,3 @@
-* {
-  color: var(--light-text);
-}
-
 h1,
 h2,
 h3,
@@ -14,30 +10,56 @@ h6 {
 h1 {
   font-size: 2.5rem;
   font-weight: 700; /* bold */
+  /* margin: 2.5rem 0 1.25rem 0; */
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h2 {
   font-size: 2rem;
+  margin: 1.875rem 0 0.9375rem 0;
   font-weight: 600; /* semi-bold */
 }
 
 h3 {
   font-size: 1.75rem;
+  /* margin: 1.5625rem 0 0.78125rem 0; */
   font-weight: 500; /* medium */
 }
 
 h4 {
   font-size: 1.5rem;
+  /* margin: 1.25rem 0 0.625rem 0; */
   font-weight: 400; /* regular */
 }
 
 h5 {
   font-size: 1.25rem;
+  /* margin: 0.9375rem 0 0.46875rem 0; */
   font-weight: 300; /* light */
 }
 
 h6 {
   font-size: 1rem;
+  /* margin: 0.625rem 0 0.3125rem 0; */
   font-weight: 200; /* extra-light */
+}
+
+p,
+a,
+span,
+li,
+blockquote,
+cite,
+code,
+pre,
+em,
+strong,
+small,
+sub,
+sup,
+label,
+input[type='text'],
+textarea,
+button {
+  color: var(--light-text);
 }

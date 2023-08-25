@@ -13,6 +13,7 @@ $CTAs: 'callToAction', 'callToActionSecondary';
 
 .link {
   width: fit-content;
+  text-decoration: none;
 
   @each $variant in $variants {
     &.variant-#{$variant} {
