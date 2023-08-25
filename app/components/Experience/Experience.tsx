@@ -5,7 +5,7 @@ import { experience } from './data'
 const Experience = () => {
   return (
     <section className={s['experience-section']}>
-      <h2>Professional Experience</h2>
+      <h2 id="experience">Professional Experience</h2>
       <div className={s['cards-container']}>
         {experience.map((jobInfo, i) => (
           <ExperienceCard key={i} {...jobInfo} />
