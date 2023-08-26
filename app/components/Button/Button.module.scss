@@ -1,6 +1,17 @@
 $variants: 'callToAction';
 
 .button {
+  background-color: var(--accent-orange);
+  color: var(--primary-dark);
+  padding: 0.5rem 1rem;
+  width: fit-content;
+  border: none;
+  border-radius: 0.375rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+
   @each $variant in $variants {
     .variant-#{$variant} {
       @if $variant == 'callToAction' {

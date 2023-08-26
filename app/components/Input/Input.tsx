@@ -37,6 +37,7 @@ const Input = ({
         {...(name && register
           ? register(name, getValidation({ validation, type, required }))
           : {})}
+        className={s.input}
       />
       <ErrorMessage {...{ name }} />
     </div>

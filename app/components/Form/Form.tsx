@@ -10,16 +10,20 @@ type Props<TFieldValues extends FieldValues> = {
   children: ReactNode
   methods: UseFormReturn<TFieldValues>
   onSubmit: SubmitHandler<TFieldValues>
+  className?: string
 }
 
 const Form = <TFieldValues extends FieldValues>({
   children,
   methods,
-  onSubmit
+  onSubmit,
+  className
 }: Props<TFieldValues>) => {
   return (
     <FormProvider {...methods}>
-      <form onSubmit={methods.handleSubmit(onSubmit)}>{children}</form>
+      <form onSubmit={methods.handleSubmit(onSubmit)} {...{ className }}>
+        {children}
+      </form>
     </FormProvider>
   )
 }

@@ -37,6 +37,7 @@ const Textarea = ({
               getValidation({ validation, type: 'textarea', required })
             )
           : {})}
+        className={s.textarea}
       />
     </>
   )

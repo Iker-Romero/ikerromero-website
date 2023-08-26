@@ -18,7 +18,7 @@ type FormValues = {
 
 const Contact = () => {
   const methods = useForm<FormValues>({
-    mode: 'onChange',
+    mode: 'onBlur',
     shouldUseNativeValidation: false,
     defaultValues: {
       name: '',
@@ -38,10 +38,13 @@ const Contact = () => {
   }
 
   return (
-    <section className={s['contact-form']}>
-      <h2>Contact</h2>
-      {/* TO-DO: directly provide my contact information (email, phone, location) */}
-      <Form<FormValues> {...{ methods }} onSubmit={handleSubmit}>
+    <section className={s['contact']}>
+      <h2 className={s.header}>Contact</h2>
+      <Form<FormValues>
+        {...{ methods }}
+        onSubmit={handleSubmit}
+        className={s['contact-form']}
+      >
         <Input name="name" placeholder="Name" validation="name" required />
         <Input type="email" name="email" placeholder="Email" required />
         <Input type="tel" name="phone" placeholder="Phone (optional)" />

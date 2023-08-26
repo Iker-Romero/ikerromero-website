@@ -8,7 +8,7 @@ type Props = {
   onClick?: (e?: MouseEvent<HTMLButtonElement>) => void
 }
 
-const Button = ({ children, variant, onClick }: Props) => {
+const Button = ({ children, variant = 'callToAction', onClick }: Props) => {
   return (
     <button
       className={`${s.button}${variant ? ` variant-${s[variant]}` : ''}`}
