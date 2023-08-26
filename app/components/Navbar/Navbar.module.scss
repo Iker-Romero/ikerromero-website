@@ -1,23 +1,10 @@
 .navbar {
-  position: sticky;
-  top: 0;
   width: 100%;
   display: flex;
   gap: 2rem;
   justify-content: space-between;
+  align-items: center;
   background: var(--primary-light);
   min-height: 4rem;
-
-  .sections-links {
-    display: flex;
-    gap: 2rem;
-
-    .home-page {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .dedicated-page {
-    }
-  }
+  padding: 0.5rem;
 }

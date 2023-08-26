@@ -5,7 +5,7 @@ import s from './Hero.module.scss'
 
 const Hero = () => {
   return (
-    <header className={s['hero']}>
+    <section className={s['hero']}>
       <div className={s['text-container']}>
         <h1>Iker Romero</h1>
         <div className={s.content}>
@@ -30,7 +30,7 @@ const Hero = () => {
           alt="Hero image of a miniature representing robots building a website design in a big screen"
         />
       </div>
-    </header>
+    </section>
   )
 }
 

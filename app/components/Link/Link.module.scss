@@ -1,4 +1,4 @@
-$variants: 'callToAction', 'callToActionSecondary', 'header';
+$variants: 'callToAction', 'callToActionSecondary', 'header', 'logo';
 $CTAs: 'callToAction', 'callToActionSecondary';
 
 @mixin CTAs {
@@ -32,6 +32,12 @@ $CTAs: 'callToAction', 'callToActionSecondary';
 
       @if $variant == 'header' {
         color: var(--accent-gold);
+      }
+
+      @if $variant == 'logo' {
+        color: var(--accent-gold);
+        font-size: 2rem;
+        font-weight: 700;
       }
     }
   }

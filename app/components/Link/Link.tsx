@@ -5,7 +5,7 @@ import s from './Link.module.scss'
 
 interface Props extends LinkProps {
   children: ReactNode
-  variant?: 'callToAction' | 'callToActionSecondary' | 'header'
+  variant?: 'callToAction' | 'callToActionSecondary' | 'header' | 'logo'
   target?: '_blank' | '_self' | '_parent' | '_top' | string
   className?: string
 }
