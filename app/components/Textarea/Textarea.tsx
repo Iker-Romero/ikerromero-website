@@ -3,6 +3,7 @@
 import { useFormContext } from 'react-hook-form'
 import { getValidation } from 'utils/validation'
 
+import ErrorMessage from '../ErrorMessage/ErrorMessage'
 import s from './Textarea.module.scss'
 
 type Props = {
@@ -27,7 +28,7 @@ const Textarea = ({
   const id = idProp || name
 
   return (
-    <>
+    <div className={s['textarea-container']}>
       {label && <label htmlFor={id}>{label}</label>}
       <textarea
         {...{ id, placeholder }}
@@ -39,7 +40,8 @@ const Textarea = ({
           : {})}
         className={s.textarea}
       />
-    </>
+      <ErrorMessage {...{ name }} />
+    </div>
   )
 }
 

@@ -30,7 +30,7 @@ const Input = ({
   const id = idProp || name
 
   return (
-    <div className={s[`field-container`]}>
+    <div className={s[`input-container`]}>
       {label && <label htmlFor={id}>{label}</label>}
       <input
         {...{ type, id, placeholder }}

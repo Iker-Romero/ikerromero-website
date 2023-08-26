@@ -1,6 +1,7 @@
 'use client'
 
 import axios from 'axios'
+import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import Button from '../Button/Button'
@@ -28,13 +29,21 @@ const Contact = () => {
     }
   })
 
-  const handleSubmit = (data: FormValues) => {
-    axios.post('/api/contacts', data).then(res => {
-      console.log('res', res)
-      // TO-DO: Add a toast to notify the user that the message was sent
+  const [submitDisabled, setSubmitDisabled] = useState(false)
 
-      // TO-DO: Clear the form
-    })
+  const handleSubmit = (data: FormValues) => {
+    setSubmitDisabled(true)
+
+    axios
+      .post('/api/contacts', data)
+      .then(res => {
+        console.log('res', res)
+        // TO-DO: Add a toast to notify the user that the message was sent
+
+        // TO-DO: Clear the form
+      })
+      .catch(error => console.error(error))
+      .finally(() => setSubmitDisabled(false))
   }
 
   return (
@@ -54,7 +63,9 @@ const Contact = () => {
           validation="message"
           required
         />
-        <Button variant="callToAction">Send</Button>
+        <Button variant="callToAction" disabled={submitDisabled}>
+          Send
+        </Button>
       </Form>
     </section>
   )
