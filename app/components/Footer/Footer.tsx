@@ -1,23 +1,23 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
 import Link from '../Link/Link'
 import s from './Footer.module.scss'
-import { socialMedia } from './data'
+import LinksContainer from './components/LinksContainer/LinksContainer'
+import { aboutMeLinks, legalLinks } from './data'
 
 const Footer = () => {
   return (
-    <footer className={s.footer}>
-      <h3>ikersoftdev@gmail.com</h3>
-      <ul>
-        {socialMedia.map(({ name, icon, link }) => (
-          <li key={name}>
-            <Link href={link}>
-              {name}
-              <FontAwesomeIcon {...{ icon }} />
-            </Link>
-          </li>
-        ))}
-      </ul>
+    <footer>
+      <div className={s['footer-content']}>
+        <div className={s.links}>
+          <Link href="/" variant="logoSmall">
+            {'< Iker />'}
+          </Link>
+          <LinksContainer title="About Me" links={aboutMeLinks} />
+          <LinksContainer title="Legal" links={legalLinks} />
+        </div>
+        <p className={s.copyright}>
+          © 2023-present Iker Romero. All Rights Reserved.
+        </p>
+      </div>
     </footer>
   )
 }

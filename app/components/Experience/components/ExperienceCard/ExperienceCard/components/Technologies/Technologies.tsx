@@ -8,13 +8,13 @@ type Props = {
 
 const Technologies = ({ technologies }: Props) => {
   return (
-    <ul className={s.technologies}>
+    <div className={s.technologies}>
       {technologies.map(techName => (
-        <li key={techName} className={s.technology}>
+        <span key={techName} className={s.technology}>
           {techName}
-        </li>
+        </span>
       ))}
-    </ul>
+    </div>
   )
 }
 

@@ -1,6 +1,6 @@
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
 
-export const socialMedia = [
+export const aboutMeLinks = [
   {
     name: 'LinkedIn',
     icon: faLinkedin,
@@ -10,5 +10,14 @@ export const socialMedia = [
     name: 'GitHub',
     icon: faGithub,
     link: 'https://github.com/Iker-Romero'
+  },
+  {
+    name: 'ikersoftdev@gmail.com',
+    link: 'mailto:ikersoftdev@gmail.com'
   }
+]
+
+export const legalLinks = [
+  { name: 'Legal Information', link: '/terms' },
+  { name: 'Privacy Policy', link: '/privacy-policy' }
 ]

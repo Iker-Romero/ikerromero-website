@@ -1,9 +1,6 @@
 h1,
 h2,
-h3,
-h4,
-h5,
-h6 {
+h3 {
   color: var(--accent-gold);
 }
 
@@ -25,18 +22,10 @@ h3 {
 }
 
 h4 {
-  font-size: 1.5rem;
-  font-weight: 400; /* regular */
-}
-
-h5 {
-  font-size: 1.25rem;
-  font-weight: 300; /* light */
-}
-
-h6 {
-  font-size: 1rem;
-  font-weight: 200; /* extra-light */
+  font-size: 0.875rem;
+  font-weight: 500; /* medium */
+  color: var(--light-text);
+  margin: 0.75rem 0;
 }
 
 p,
@@ -85,8 +74,6 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-header {
-  position: sticky;
-  top: 0;
-  z-index: 10;
+li {
+  list-style: disc inside;
 }

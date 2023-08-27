@@ -5,7 +5,13 @@ import s from './Link.module.scss'
 
 interface Props extends LinkProps {
   children: ReactNode
-  variant?: 'callToAction' | 'callToActionSecondary' | 'header' | 'logo'
+  variant?:
+    | 'callToAction'
+    | 'callToActionSecondary'
+    | 'header'
+    | 'logo'
+    | 'logoSmall'
+    | 'small'
   target?: '_blank' | '_self' | '_parent' | '_top' | string
   className?: string
 }
@@ -13,9 +19,9 @@ interface Props extends LinkProps {
 const Link = ({ children, href, variant, target, className }: Props) => {
   return (
     <NextLink
-      className={`${s.link} ${
-        variant ? s[`variant-${variant}`] : ''
-      } ${className}`}
+      className={`${s.link} ${variant ? s[`variant-${variant}`] : ''} ${
+        className || ''
+      }`}
       {...{ href, target }}
     >
       {children}
