@@ -77,3 +77,8 @@ select:-webkit-autofill:focus {
 li {
   list-style: disc inside;
 }
+
+a {
+  text-decoration: none;
+  width: fit-content;
+}
