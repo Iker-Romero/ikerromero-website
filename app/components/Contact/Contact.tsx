@@ -17,7 +17,11 @@ type FormValues = {
   message: string
 }
 
-const Contact = () => {
+type Props = {
+  variant: 'page' | 'component'
+}
+
+const Contact = ({ variant = 'component' }: Props) => {
   const methods = useForm<FormValues>({
     mode: 'onBlur',
     shouldUseNativeValidation: false,
@@ -46,9 +50,11 @@ const Contact = () => {
       .finally(() => setSubmitDisabled(false))
   }
 
+  const Heading = variant === 'page' ? 'h1' : 'h2'
+
   return (
     <section className={s['contact']}>
-      <h2 className={s.header}>Contact</h2>
+      <Heading className={s.header}>Contact</Heading>
       <Form<FormValues>
         {...{ methods }}
         onSubmit={handleSubmit}

@@ -1,21 +1,22 @@
-import Link from '@/components/Link/Link'
+import ObjectList from '@/components/ObjectList/ObjectList'
+import ownerInfo from 'utils/ownerInfo'
 
 const Terms = () => {
+  const { name, nationalID, address, email } = ownerInfo
+
+  const ownership = [
+    { key: 'Owner', value: name },
+    { key: 'National ID', value: nationalID },
+    { key: 'Address', value: address },
+    { key: 'Email', value: email, type: 'email' }
+  ]
+
   return (
     <>
       <h1>Legal Notice</h1>
       <h2>Website Ownership</h2>
-      <ul>
-        <li>Owner: Iker Romero Carames</li>
-        <li>National ID: 49667948T</li>
-        <li>Address: Madrid, Spain</li>
-        <li>
-          Email:{' '}
-          <Link href="mailto:ikersoftdev@gmail.com" variant="underlined">
-            ikersoftdev@gmail.com
-          </Link>
-        </li>
-      </ul>
+      <ObjectList objects={ownership} />
+
       <h2>Purpose of the Website</h2>
       <p>
         The purpose of this website is to present to potential clients the

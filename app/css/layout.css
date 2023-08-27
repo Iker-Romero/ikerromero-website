@@ -15,7 +15,7 @@ main {
   flex: 1 0 auto;
   max-width: 900px;
   width: 100%;
-  padding: 1rem 1rem 6rem;
+  padding: 2rem 1rem 6rem;
   align-self: center;
 }
 
