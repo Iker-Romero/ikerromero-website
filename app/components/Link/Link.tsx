@@ -21,7 +21,7 @@ interface Props extends LinkProps {
 const Link = ({ children, href, variant, target, className }: Props) => {
   return (
     <NextLink
-      className={`${s.link} ${variant ? s[`variant-${variant}`] : ''} ${
+      className={`${s.link} ${variant ? s[`${variant}-variant`] : ''} ${
         className || ''
       }`}
       {...{ href, target }}

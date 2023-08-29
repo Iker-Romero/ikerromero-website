@@ -1,0 +1,10 @@
+$variants: 'footer';
+
+@each $variant in $variants {
+  .h2-#{$variant}-variant {
+    font-size: 0.875rem;
+    font-weight: 500; /* medium */
+    color: var(--light-text);
+    margin: 0.75rem 0;
+  }
+}

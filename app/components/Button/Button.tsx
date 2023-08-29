@@ -17,7 +17,7 @@ const Button = ({
 }: Props) => {
   return (
     <button
-      className={`${s.button}${variant ? ` variant-${s[variant]}` : ''}`}
+      className={`${s.button} ${variant ? s[`${variant}-variant`] : ''}`}
       {...{ onClick, disabled }}
     >
       {children}

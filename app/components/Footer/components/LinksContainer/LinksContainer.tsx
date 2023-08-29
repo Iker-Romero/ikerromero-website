@@ -1,3 +1,4 @@
+import H2 from '@/components/H2/H2'
 import Link from '@/components/Link/Link'
 import { IconDefinition } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -16,7 +17,7 @@ type Props = {
 const LinksContainer = ({ title, links }: Props) => {
   return (
     <div className={s.container}>
-      <h4>{title}</h4>
+      <H2 variant="footer">{title}</H2>
       {links.map(({ name, icon, link }) => {
         const isExternal = link.includes('http')
 
@@ -28,13 +29,7 @@ const LinksContainer = ({ title, links }: Props) => {
             variant="small"
           >
             {name}
-            {icon && (
-              <FontAwesomeIcon
-                {...{ icon }}
-                // className={'fa-lg'}
-                className={s.icon}
-              />
-            )}
+            {icon && <FontAwesomeIcon {...{ icon }} className={s.icon} />}
           </Link>
         )
       })}

@@ -19,7 +19,7 @@ $CTAs: 'callToAction', 'callToActionSecondary';
 
 .link {
   @each $variant in $variants {
-    &.variant-#{$variant} {
+    &.#{$variant}-variant {
       @if $variant == 'callToAction' {
         @include CTAs;
 
