@@ -5,18 +5,19 @@
   justify-content: center;
   align-items: center;
 
-  .text-container {
+  .content {
     display: flex;
     flex-direction: column;
     min-width: 20rem;
     max-width: 40rem;
     flex: 3 1 60%;
     padding: 1rem;
+    gap: 2rem;
 
-    .content {
+    .text-container {
       display: flex;
       flex-direction: column;
-      gap: 2rem;
+      gap: 1rem;
     }
   }
 
