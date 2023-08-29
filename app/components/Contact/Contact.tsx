@@ -5,8 +5,10 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 
 import Button from '../Button/Button'
+import Checkbox from '../Checkbox/Checkbox'
 import Form from '../Form/Form'
 import Input from '../Input/Input'
+import Link from '../Link/Link'
 import Textarea from '../Textarea/Textarea'
 import s from './Contact.module.scss'
 
@@ -52,6 +54,12 @@ const Contact = ({ variant = 'component' }: Props) => {
 
   const Heading = variant === 'page' ? 'h1' : 'h2'
 
+  const privacyPolicyLink = (
+    <Link href="/privacy-policy" target="_blank" variant="solid">
+      privacy policy
+    </Link>
+  )
+
   return (
     <section className={s['contact']}>
       <Heading className={s.header}>Contact</Heading>
@@ -68,6 +76,12 @@ const Contact = ({ variant = 'component' }: Props) => {
           placeholder="Message"
           validation="message"
           required
+        />
+        <Checkbox
+          label={<span>I accept the {privacyPolicyLink}</span>}
+          name="privacyPolicyAccepted"
+          required
+          validation="privacyPolicy"
         />
         <Button variant="callToAction" disabled={submitDisabled}>
           Send

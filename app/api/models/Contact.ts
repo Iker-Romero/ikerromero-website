@@ -17,6 +17,10 @@ const contactSchema = new Schema(
     message: {
       type: String,
       required: true
+    },
+    privacyPolicyAccepted: {
+      type: Boolean,
+      required: true
     }
   },
   { timestamps: true }

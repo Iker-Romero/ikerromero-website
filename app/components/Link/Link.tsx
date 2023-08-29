@@ -13,6 +13,7 @@ interface Props extends LinkProps {
     | 'logoSmall'
     | 'small'
     | 'underlined'
+    | 'solid'
   target?: '_blank' | '_self' | '_parent' | '_top' | string
   className?: string
 }

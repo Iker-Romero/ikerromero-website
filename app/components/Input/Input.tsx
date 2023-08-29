@@ -33,7 +33,7 @@ const Input = ({
     <div className={s[`input-container`]}>
       {label && <label htmlFor={id}>{label}</label>}
       <input
-        {...{ type, id, placeholder }}
+        {...{ id, type, placeholder }}
         {...(name && register
           ? register(name, getValidation({ validation, type, required }))
           : {})}

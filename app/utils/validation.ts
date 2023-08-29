@@ -18,7 +18,18 @@ const validations = {
       }
     },
     message: {
-      required: 'Message is required'
+      required: 'Message is required',
+      minLength: {
+        value: 10,
+        message: 'Message must be at least 10 characters'
+      },
+      maxLength: {
+        value: 500,
+        message: 'Message must not exceed 500 characters'
+      }
+    },
+    privacyPolicy: {
+      required: 'You must accept the privacy policy to proceed'
     }
   },
   text: { required: 'This field is required' },
@@ -39,18 +50,19 @@ const validations = {
   textarea: {
     minLength: {
       value: 10,
-      message: 'Message must be at least 10 characters'
+      message: 'Text must be at least 10 characters'
     },
     maxLength: {
       value: 500,
-      message: 'Message must not exceed 500 characters'
+      message: 'Text must not exceed 500 characters'
     }
-  }
+  },
+  checkbox: { required: 'Checkbox is required' }
 }
 
 type getValidationParams = {
-  type: 'text' | 'email' | 'tel' | 'textarea'
-  validation?: 'name' | 'message'
+  type: 'text' | 'email' | 'tel' | 'textarea' | 'checkbox'
+  validation?: 'name' | 'message' | 'privacyPolicy'
   required?: boolean
 }
 

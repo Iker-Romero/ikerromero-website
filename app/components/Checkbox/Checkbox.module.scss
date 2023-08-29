@@ -1,0 +1,41 @@
+.error-container {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  .label-container {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+
+    .checkbox {
+      border-radius: 0.375rem;
+      background: var(--light-text);
+      transition: background ease-in-out 200ms;
+      cursor: pointer;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      &::before {
+        display: inline-block;
+        text-rendering: auto;
+        -webkit-font-smoothing: antialiased;
+        font: var(--fa-font-solid);
+        content: '\f00c';
+        color: var(--accent-gold);
+        transform: scale(0);
+        transition: transform ease-in-out 200ms;
+        cursor: pointer;
+      }
+
+      &:checked {
+        background: var(--primary-dark);
+
+        &::before {
+          transform: scale(1);
+        }
+      }
+    }
+  }
+}

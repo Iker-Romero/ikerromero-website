@@ -48,7 +48,7 @@ button {
   color: var(--light-text);
 }
 
-input,
+input:not([type='checkbox']),
 textarea,
 select {
   padding: 0.5rem 1rem;
@@ -58,6 +58,17 @@ select {
   border-radius: 0.375rem;
   outline-color: transparent;
   outline-offset: 2px;
+
+  &::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--medium-text);
+    opacity: 1; /* Firefox */
+  }
+
+  &:-ms-input-placeholder {
+    /* Microsoft Edge, Internet Explorer 10-11 */
+    color: var(--medium-text);
+  }
 }
 
 input:-webkit-autofill,
@@ -81,4 +92,12 @@ li {
 a {
   text-decoration: none;
   width: fit-content;
+}
+
+input[type='checkbox'] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 1.25rem;
+  height: 1.25rem;
 }

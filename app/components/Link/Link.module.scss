@@ -1,5 +1,5 @@
 $variants: 'callToAction', 'callToActionSecondary', 'header', 'logo',
-  'logoSmall', 'small', 'underlined';
+  'logoSmall', 'small', 'underlined', 'solid';
 $CTAs: 'callToAction', 'callToActionSecondary';
 
 @mixin CTAs {
@@ -59,12 +59,16 @@ $CTAs: 'callToAction', 'callToActionSecondary';
         display: flex;
         gap: 0.875rem;
         align-items: center;
-        opacity: 0.6;
+        color: var(--medium-text);
       }
 
       @if $variant == 'underlined' {
         text-underline-offset: 0.25rem;
         text-decoration: underline var(--light-text) solid 0.125rem;
+      }
+
+      @if $variant == 'solid' {
+        color: var(--medium-text);
       }
     }
   }
