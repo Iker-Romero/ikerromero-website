@@ -13,10 +13,12 @@
     gap: 2rem;
     width: 100%;
     justify-content: space-between;
+    flex-wrap: wrap;
   }
 
   .copyright {
     font-size: 0.875rem;
     color: var(--medium-text);
+    text-align: center;
   }
 }
