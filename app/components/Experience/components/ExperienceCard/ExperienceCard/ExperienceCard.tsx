@@ -1,9 +1,8 @@
 import { TechnologiesType } from '@/components/Experience/data'
-import ConditionalWrapper from 'utils/ConditionalWrapper'
+import Link from '@/components/Link/Link'
 
 import s from './ExperienceCard.module.scss'
 import Technologies from './components/Technologies/Technologies'
-import WrapperLink from './components/WrapperLink/WrapperLink'
 
 type Props = {
   datesRange: string
@@ -23,21 +22,23 @@ const ExperienceCard = ({
   technologies
 }: Props) => {
   return (
-    <div className={s['cards-container']}>
-      <div className={s['experience-card']}>
-        <span className={s['date-range']}>{datesRange}</span>
-        <h3 className={s.title}>
-          <ConditionalWrapper
-            condition={!!link}
-            wrapper={children => <WrapperLink {...{ link, children }} />}
+    <div className={s['experience-card']}>
+      <span>{datesRange}</span>
+      <h3 className={s.title}>
+        {link && (
+          <Link
+            href={link}
+            target="_blank"
+            variant="header"
+            className={s['external-link-icon']}
           >
             {role} | {company}
-          </ConditionalWrapper>
-        </h3>
-        <div className={s.content}>
-          <p className={s.description}>{description}</p>
-          <Technologies {...{ technologies }} />
-        </div>
+          </Link>
+        )}
+      </h3>
+      <div className={s.content}>
+        <p>{description}</p>
+        <Technologies {...{ technologies }} />
       </div>
     </div>
   )
