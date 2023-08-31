@@ -15,9 +15,12 @@ $CTAs: 'callToAction', 'callToActionSecondary';
 @mixin logos {
   color: var(--accent-gold);
   font-weight: 700;
+  white-space: nowrap;
 }
 
 .link {
+  text-align: center;
+
   @each $variant in $variants {
     &.#{$variant}-variant {
       @if $variant == 'callToAction' {
