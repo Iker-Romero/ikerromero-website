@@ -3,7 +3,7 @@ import { ReactNode } from 'react'
 import s from './H2.module.scss'
 
 type Props = {
-  variant?: 'footer'
+  variant?: 'footer' | 'toast' | 'toast-error'
   children: ReactNode
 }
 

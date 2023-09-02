@@ -8,6 +8,7 @@ $variants: 'callToAction';
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
 
   &:disabled {
     opacity: 0.5;

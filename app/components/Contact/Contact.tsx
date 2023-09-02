@@ -3,24 +3,28 @@
 import axios from 'axios'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
+import { toast } from 'react-toastify'
 
 import Button from '../Button/Button'
 import Checkbox from '../Checkbox/Checkbox'
 import Form from '../Form/Form'
+import H2 from '../H2/H2'
 import Input from '../Input/Input'
 import Link from '../Link/Link'
 import Textarea from '../Textarea/Textarea'
 import s from './Contact.module.scss'
+import { toastOptions } from './data'
 
 type FormValues = {
   name: string
   email: string
   phone?: string
   message: string
+  privacyPolicyAccepted: boolean
 }
 
 type Props = {
-  variant: 'page' | 'component'
+  variant?: 'page' | 'component'
 }
 
 const Contact = ({ variant = 'component' }: Props) => {
@@ -31,7 +35,8 @@ const Contact = ({ variant = 'component' }: Props) => {
       name: '',
       email: '',
       phone: '',
-      message: ''
+      message: '',
+      privacyPolicyAccepted: false
     }
   })
 
@@ -40,15 +45,31 @@ const Contact = ({ variant = 'component' }: Props) => {
   const handleSubmit = (data: FormValues) => {
     setSubmitDisabled(true)
 
-    axios
-      .post('/api/contacts', data)
-      .then(res => {
-        console.log('res', res)
-        // TO-DO: Add a toast to notify the user that the message was sent
+    const { success, error } = toastOptions
 
-        // TO-DO: Clear the form
+    toast
+      .promise(axios.post('/api/contacts', data), {
+        pending: 'Sending...',
+        success: {
+          render: () => (
+            <div className="toast-content">
+              <H2 variant="toast">{success.title}</H2>
+              <p>{success.description}</p>
+            </div>
+          ),
+          autoClose: success.duration
+        },
+        error: {
+          render: () => (
+            <div className="toast-content">
+              <H2 variant="toast-error">{error.title}</H2>
+              <p>{error.description}</p>
+            </div>
+          ),
+          autoClose: error.duration
+        }
       })
-      .catch(error => console.error(error))
+      .then(() => methods.reset())
       .finally(() => setSubmitDisabled(false))
   }
 

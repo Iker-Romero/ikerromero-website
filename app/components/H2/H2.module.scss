@@ -1,10 +1,32 @@
-$variants: 'footer';
+$variants: 'footer', 'toast', 'toast-error';
+
+@mixin toast {
+  font-size: 1rem;
+  font-weight: 600; /* semi-bold */
+  margin: 0;
+}
 
 @each $variant in $variants {
-  .h2-#{$variant}-variant {
-    font-size: 0.875rem;
-    font-weight: 500; /* medium */
-    color: var(--light-text);
-    margin: 0.75rem 0;
+  @if $variant == 'footer' {
+    .h2-#{$variant}-variant {
+      font-size: 0.875rem;
+      font-weight: 500; /* medium */
+      color: var(--light-text);
+      margin: 0.75rem 0;
+    }
+  }
+
+  @if $variant == 'toast' {
+    .h2-#{$variant}-variant {
+      @include toast;
+    }
+  }
+
+  @if $variant == 'toast-error' {
+    .h2-#{$variant}-variant {
+      @include toast;
+
+      color: var(--error-light);
+    }
   }
 }

@@ -4,6 +4,8 @@ import doetenv from 'dotenv'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { ReactNode } from 'react'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 
 import Footer from './components/Footer/Footer'
 import Navbar from './components/Navbar/Navbar'
@@ -29,6 +31,7 @@ export default function RootLayout({ children }: { children: ReactNode }) {
         </header>
         <main>{children}</main>
         <Footer />
+        <ToastContainer />
       </body>
     </html>
   )
