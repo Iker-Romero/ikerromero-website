@@ -1,5 +1,6 @@
 import Image from 'next/image'
 
+import H1 from '../H1/H1'
 import Link from '../Link/Link'
 import s from './Hero.module.scss'
 
@@ -8,7 +9,7 @@ const Hero = () => {
     <section className={s['hero']}>
       <div className={s.content}>
         <div className={s['text-container']}>
-          <h1>Iker Romero</h1>
+          <H1 variant="hero">Iker Romero</H1>
           <p>
             Transforming Ideas into Digital Realities. Whether you need a
             stunning landing page or a complex web application, I create
