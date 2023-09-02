@@ -25,7 +25,7 @@ const ExperienceCard = ({
     <div className={s['experience-card']}>
       <span>{datesRange}</span>
       <h3 className={s.title}>
-        {link && (
+        {link ? (
           <Link
             href={link}
             target="_blank"
@@ -34,6 +34,8 @@ const ExperienceCard = ({
           >
             {role} | {company}
           </Link>
+        ) : (
+          `${role} | ${company}`
         )}
       </h3>
       <div className={s.content}>
