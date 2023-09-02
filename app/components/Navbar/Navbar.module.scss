@@ -1,3 +1,5 @@
+@import './../../scss/color-palette';
+
 .navbar {
   width: 100%;
   display: flex;
@@ -6,10 +8,10 @@
   align-items: center;
   min-height: 4rem;
   padding: 0.5rem;
-  background: var(--primary-light);
+  background: $primary-light;
 
   @supports (-webkit-backdrop-filter: blur(5px)) or (backdrop-filter: blur(5px)) {
-    background: var(--navbar-background-blur-color);
+    background: rgba($primary-light, 0.25);
     -webkit-backdrop-filter: blur(5px);
     backdrop-filter: blur(5px);
     backface-visibility: hidden;

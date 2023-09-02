@@ -1,5 +1,8 @@
+@import './../../scss/color-palette';
+
 $variants: 'callToAction', 'callToActionSecondary', 'header', 'logo',
   'logoSmall', 'small', 'underlined', 'solid';
+
 $CTAs: 'callToAction', 'callToActionSecondary';
 
 @mixin CTAs {
@@ -13,7 +16,7 @@ $CTAs: 'callToAction', 'callToActionSecondary';
 }
 
 @mixin logos {
-  color: var(--accent-gold);
+  color: $accent-gold;
   font-weight: 700;
   white-space: nowrap;
 }
@@ -25,19 +28,30 @@ $CTAs: 'callToAction', 'callToActionSecondary';
     &.#{$variant}-variant {
       @if $variant == 'callToAction' {
         @include CTAs;
+        $bg-color: $accent-orange;
 
-        background: var(--accent-orange);
-        color: var(--primary-dark);
+        background: $accent-orange;
+        color: $primary-dark;
+
+        &:hover {
+          background-color: darken(
+            $bg-color,
+            10%
+          ); // This will make the color slightly darker on hover
+          transform: scale(
+            1.05
+          ); // This will slightly scale up the link on hover
+        }
       }
 
       @if $variant == 'callToActionSecondary' {
         @include CTAs;
 
-        border: 0.1875rem solid var(--accent-orange);
+        border: 0.1875rem solid $accent-orange;
       }
 
       @if $variant == 'header' {
-        color: var(--accent-gold);
+        color: $accent-gold;
       }
 
       @if $variant == 'logo' {
@@ -49,7 +63,7 @@ $CTAs: 'callToAction', 'callToActionSecondary';
       @if $variant == 'logoSmall' {
         @include logos;
 
-        color: var(--accent-gold);
+        color: $accent-gold;
         font-weight: 700;
         font-size: 1.125rem;
         height: fit-content;
@@ -62,16 +76,16 @@ $CTAs: 'callToAction', 'callToActionSecondary';
         display: flex;
         gap: 0.875rem;
         align-items: center;
-        color: var(--medium-text);
+        color: $text-color-medium;
       }
 
       @if $variant == 'underlined' {
         text-underline-offset: 0.25rem;
-        text-decoration: underline var(--light-text) solid 0.125rem;
+        text-decoration: underline $text-color-light solid 0.125rem;
       }
 
       @if $variant == 'solid' {
-        color: var(--medium-text);
+        color: $text-color-medium;
       }
     }
   }

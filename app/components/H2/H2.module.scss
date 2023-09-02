@@ -1,3 +1,5 @@
+@import './../../scss/color-palette';
+
 $variants: 'footer', 'toast', 'toast-error';
 
 @mixin toast {
@@ -11,7 +13,7 @@ $variants: 'footer', 'toast', 'toast-error';
     .h2-#{$variant}-variant {
       font-size: 0.875rem;
       font-weight: 500; /* medium */
-      color: var(--light-text);
+      color: $text-color-light;
       margin: 0.75rem 0;
     }
   }
@@ -26,7 +28,7 @@ $variants: 'footer', 'toast', 'toast-error';
     .h2-#{$variant}-variant {
       @include toast;
 
-      color: var(--error-light);
+      color: $error-color-light;
     }
   }
 }

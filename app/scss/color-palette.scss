@@ -1,19 +1,13 @@
-* {
-  --primary-dark: rgb(18, 33, 43);
-  --primary-dark-rgb: 18, 33, 43;
-  --primary-medium: rgb(14, 42, 58);
-  --primary-light: rgb(8, 48, 68);
-  --primary-light-rgb: 8, 48, 68;
+$primary-dark: rgb(18, 33, 43);
+$primary-medium: rgb(14, 42, 58);
+$primary-light: rgb(8, 48, 68);
 
-  --navbar-background-blur-color: rgba(var(--primary-light-rgb), 0.25);
+$accent-orange: rgb(230, 158, 51);
+$accent-gold: rgb(218, 166, 88);
 
-  --accent-orange: rgb(230, 158, 51);
-  --accent-gold: rgb(218, 166, 88);
+$error-color-dark: rgb(140, 13, 15);
+$error-color-medium: rgb(208, 47, 53);
+$error-color-light: rgb(219, 57, 59);
 
-  --error-dark: rgb(140, 13, 15);
-  --error-medium: rgb(208, 47, 53);
-  --error-light: rgb(219, 57, 59);
-
-  --light-text: rgb(230, 230, 230);
-  --medium-text: rgb(153, 153, 153);
-}
+$text-color-light: rgb(230, 230, 230);
+$text-color-medium: rgb(153, 153, 153);

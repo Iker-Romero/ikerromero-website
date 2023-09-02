@@ -1,3 +1,5 @@
+@import '../../scss/color-palette.scss';
+
 .error-container {
   display: flex;
   flex-direction: column;
@@ -10,7 +12,7 @@
 
     .checkbox {
       border-radius: 0.375rem;
-      background: var(--light-text);
+      background: $text-color-light;
       transition: background ease-in-out 200ms;
       cursor: pointer;
       display: flex;
@@ -21,16 +23,16 @@
         display: inline-block;
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
-        font: var(--fa-font-solid);
+        font: --fa-font-solid;
         content: '\f00c';
-        color: var(--accent-gold);
+        color: $accent-gold;
         transform: scale(0);
         transition: transform ease-in-out 200ms;
         cursor: pointer;
       }
 
       &:checked {
-        background: var(--primary-dark);
+        background: $primary-dark;
 
         &::before {
           transform: scale(1);
