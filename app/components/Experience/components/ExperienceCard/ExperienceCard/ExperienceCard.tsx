@@ -29,7 +29,7 @@ const ExperienceCard = ({
           <Link
             href={link}
             target="_blank"
-            variant="header"
+            variant="heading"
             className={s['external-link-icon']}
           >
             {role} | {company}

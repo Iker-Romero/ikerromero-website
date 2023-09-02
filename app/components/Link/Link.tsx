@@ -8,7 +8,7 @@ interface Props extends LinkProps {
   variant?:
     | 'callToAction'
     | 'callToActionSecondary'
-    | 'header'
+    | 'heading'
     | 'logo'
     | 'logoSmall'
     | 'small'

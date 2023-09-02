@@ -1,6 +1,7 @@
 @import './../../scss/color-palette';
+@import './../../scss/animations';
 
-$variants: 'callToAction', 'callToActionSecondary', 'header', 'logo',
+$variants: 'callToAction', 'callToActionSecondary', 'heading', 'logo',
   'logoSmall', 'small', 'underlined', 'solid';
 
 $CTAs: 'callToAction', 'callToActionSecondary';
@@ -13,6 +14,16 @@ $CTAs: 'callToAction', 'callToActionSecondary';
   align-items: center;
   justify-content: center;
   font-weight: 700;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    border-color: $accent-orange;
+    transform: scale(1.05);
+
+    &::before {
+      animation: none;
+    }
+  }
 }
 
 @mixin logos {
@@ -28,29 +39,27 @@ $CTAs: 'callToAction', 'callToActionSecondary';
     &.#{$variant}-variant {
       @if $variant == 'callToAction' {
         @include CTAs;
-        $bg-color: $accent-orange;
+        @include shimmerAnimation;
 
-        background: $accent-orange;
         color: $primary-dark;
+        background: $accent-gold;
 
         &:hover {
-          background-color: darken(
-            $bg-color,
-            10%
-          ); // This will make the color slightly darker on hover
-          transform: scale(
-            1.05
-          ); // This will slightly scale up the link on hover
+          background: $accent-orange;
         }
       }
 
       @if $variant == 'callToActionSecondary' {
         @include CTAs;
 
-        border: 0.1875rem solid $accent-orange;
+        border: 0.1875rem solid $accent-gold;
+
+        &:hover {
+          border-color: $accent-orange;
+        }
       }
 
-      @if $variant == 'header' {
+      @if $variant == 'heading' {
         color: $accent-gold;
       }
 

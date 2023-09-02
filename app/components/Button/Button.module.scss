@@ -1,4 +1,5 @@
 @import '../../scss/color-palette.scss';
+@import './../../scss/animations';
 
 $variants: 'callToAction';
 
@@ -20,9 +21,18 @@ $variants: 'callToAction';
   @each $variant in $variants {
     &.#{$variant}-variant {
       @if $variant == 'callToAction' {
-        background-color: $accent-orange;
+        @include shimmerAnimation;
+
+        background-color: $accent-gold;
         color: $primary-dark;
         font-weight: 700;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+          animation: none;
+          background-color: $accent-orange;
+          transform: scale(1.05);
+        }
       }
     }
   }

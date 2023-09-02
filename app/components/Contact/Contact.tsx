@@ -83,7 +83,7 @@ const Contact = ({ variant = 'component' }: Props) => {
 
   return (
     <section className={s['contact']}>
-      <Heading className={s.header}>Contact</Heading>
+      <Heading>Contact</Heading>
       <Form<FormValues>
         {...{ methods }}
         onSubmit={handleSubmit}
