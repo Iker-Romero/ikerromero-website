@@ -1,14 +1,12 @@
-@import './scss/reset.scss';
+@use './scss/reset.scss' as *;
 
-@import './scss/base.scss';
+@use './scss/base.scss' as *;
 
-@import './scss/layout.scss';
-
-@import './scss/color-palette.scss';
+@use './scss/layout.scss' as *;
 
 // Font Awesome
-@import '../public/fontawesome/scss/fontawesome.scss';
-@import '../public/fontawesome/scss/solid.scss';
+@use '../public/fontawesome/scss/fontawesome.scss' as *;
+@use '../public/fontawesome/scss/solid.scss' as *;
 
 // Toastify
-@import './scss/toast.scss';
+@use './scss/toast.scss' as *;

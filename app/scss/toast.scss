@@ -1,4 +1,4 @@
-@import './color-palette';
+@use './color-palette' as *;
 
 :root {
   --toastify-color-light: #fff;
@@ -64,7 +64,7 @@
   transform: none !important;
 
   .Toastify__toast {
-    background-color: $primary-light;
+    background: $primary-light;
     border-radius: 0.375rem;
     padding: 1rem;
     margin: 0;

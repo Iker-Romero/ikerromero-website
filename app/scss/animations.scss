@@ -1,3 +1,5 @@
+@use './color-palette' as *;
+
 @mixin shimmerAnimation {
   position: relative;
   overflow: hidden;

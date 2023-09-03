@@ -1,4 +1,4 @@
-@import './../../../../../../../scss/color-palette';
+@use './../../../../../../../scss/color-palette' as *;
 
 .technologies {
   display: flex;

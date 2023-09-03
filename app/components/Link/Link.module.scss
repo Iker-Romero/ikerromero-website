@@ -1,5 +1,5 @@
-@import './../../scss/color-palette';
-@import './../../scss/animations';
+@use './../../scss/color-palette' as *;
+@use './../../scss/animations' as *;
 
 $variants: 'callToAction', 'callToActionSecondary', 'heading', 'logo',
   'logoSmall', 'small', 'underlined', 'solid';

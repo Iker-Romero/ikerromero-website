@@ -1,4 +1,4 @@
-@import '../../scss/color-palette.scss';
+@use '../../scss/color-palette.scss' as *;
 
 .error-container {
   display: flex;
