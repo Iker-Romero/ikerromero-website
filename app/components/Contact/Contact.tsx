@@ -7,6 +7,7 @@ import { toast } from 'react-toastify'
 
 import Button from '../Button/Button'
 import Checkbox from '../Checkbox/Checkbox'
+import Email from '../Email/Email'
 import Form from '../Form/Form'
 import H2 from '../H2/H2'
 import Input from '../Input/Input'
@@ -89,12 +90,15 @@ const Contact = ({ variant = 'component' }: Props) => {
         onSubmit={handleSubmit}
         className={s['contact-form']}
       >
+        <p className={s[`description-${variant}-variant`]}>
+          Complete the form below or drop me a message at <Email />.
+        </p>
         <Input name="name" placeholder="Name" validation="name" required />
         <Input type="email" name="email" placeholder="Email" required />
         <Input type="tel" name="phone" placeholder="Phone (optional)" />
         <Textarea
           name="message"
-          placeholder="Message"
+          placeholder="How can I help you?"
           validation="message"
           required
         />
@@ -104,7 +108,11 @@ const Contact = ({ variant = 'component' }: Props) => {
           required
           validation="privacyPolicy"
         />
-        <Button variant="callToAction" disabled={submitDisabled}>
+        <Button
+          variant="callToAction"
+          disabled={submitDisabled}
+          className={s['send-button']}
+        >
           Send
         </Button>
       </Form>

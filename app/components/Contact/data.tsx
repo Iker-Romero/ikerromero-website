@@ -1,10 +1,4 @@
-import Link from '../Link/Link'
-
-const Email = (
-  <Link href="mailto:ikersoftdev@gmail.com" variant="underlined">
-    ikersoftdev@gmail.com
-  </Link>
-)
+import Email from '../Email/Email'
 
 export const toastOptions = {
   success: {
@@ -18,7 +12,7 @@ export const toastOptions = {
     description: (
       <>
         We encountered an issue processing your request. Feel free to email me
-        at {Email} or try again later.
+        at <Email /> or try again later.
       </>
     ),
     duration: 12000

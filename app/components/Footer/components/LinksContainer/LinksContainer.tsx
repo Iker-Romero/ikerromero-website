@@ -19,7 +19,9 @@ const LinksContainer = ({ title, links }: Props) => {
     <div className={s.container}>
       <H2 variant="footer">{title}</H2>
       {links.map(({ name, icon, link }) => {
-        const isExternal = link.includes('http')
+        const isExternal = ['http', 'mailto'].some(prefix =>
+          link.includes(prefix)
+        )
 
         return (
           <Link

@@ -1,9 +1,10 @@
+$description-variants: 'component', 'page';
+
 .contact {
   max-width: 20rem;
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   .contact-form {
     display: flex;
@@ -11,7 +12,19 @@
     gap: 1rem;
     width: 100%;
 
-    button {
+    @each $descrion-variant in $description-variants {
+      @if $descrion-variant == 'component' {
+        .description-#{$descrion-variant}-variant {
+          margin-bottom: 1rem;
+        }
+      } @else {
+        .description-#{$descrion-variant}-variant {
+          margin-bottom: 2rem;
+        }
+      }
+    }
+
+    .send-button {
       align-self: center;
       min-width: 50%;
     }

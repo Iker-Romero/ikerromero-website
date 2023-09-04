@@ -1,14 +1,14 @@
-import Link from '@/components/Link/Link'
+import Email from '@/components/Email/Email'
 import ObjectList from '@/components/ObjectList/ObjectList'
 import ownerInfo from 'utils/ownerInfo'
 
 const PrivacyPolicy = () => {
-  const { name, address, email } = ownerInfo
+  const { name, address } = ownerInfo
 
   const identification = [
     { key: 'Name', value: name },
     { key: 'Address', value: address },
-    { key: 'Email', value: email, type: 'email' }
+    { key: 'Email', value: <Email /> }
   ]
 
   return (
@@ -61,11 +61,8 @@ const PrivacyPolicy = () => {
         In accordance with Spanish and European legislation, I grant you the
         rights of Access, Rectification, Cancellation, and Opposition (ARCO
         rights). If you wish to exercise these rights, you can email me at{' '}
-        <Link href={`mailto:${email}`} variant="underlined">
-          {email}
-        </Link>
-        . To ensure the authenticity of the request, you must do so from the
-        email you initially used on my site.
+        <Email />. To ensure the authenticity of the request, you must do so
+        from the email you initially used on my site.
       </p>
 
       <h2>Duration of Data Retention</h2>

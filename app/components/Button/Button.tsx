@@ -7,17 +7,21 @@ type Props = {
   variant?: 'callToAction'
   onClick?: (e?: MouseEvent<HTMLButtonElement>) => void
   disabled?: boolean
+  className?: string
 }
 
 const Button = ({
   children,
   variant = 'callToAction',
   onClick,
-  disabled
+  disabled,
+  className
 }: Props) => {
   return (
     <button
-      className={`${s.button} ${variant ? s[`${variant}-variant`] : ''}`}
+      className={`${s.button} ${variant ? s[`${variant}-variant`] : ''} ${
+        className || ''
+      }`}
       {...{ onClick, disabled }}
     >
       {children}

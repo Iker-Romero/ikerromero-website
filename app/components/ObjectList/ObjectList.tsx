@@ -1,17 +1,14 @@
-import Link from '../Link/Link'
+import { ReactNode } from 'react'
+
 import s from './ObjectList.module.scss'
 
-type BaseObject = {
+type Identification = {
   key: string
-  value: string
+  value: ReactNode
 }
 
-type WithType = BaseObject & { type: 'email' }
-
-type IdentificationObject = BaseObject | WithType
-
 type Props = {
-  objects: IdentificationObject[]
+  objects: Identification[]
 }
 
 const ObjectList = ({ objects }: Props) => {
@@ -20,13 +17,7 @@ const ObjectList = ({ objects }: Props) => {
       {objects.map(obj => (
         <li key={obj.key}>
           <span>{obj.key}: </span>
-          {'type' in obj && obj.type === 'email' ? (
-            <Link href={`mailto:${obj.value}`} variant="underlined">
-              {obj.value}
-            </Link>
-          ) : (
-            obj.value
-          )}
+          {obj.value}
         </li>
       ))}
     </ul>

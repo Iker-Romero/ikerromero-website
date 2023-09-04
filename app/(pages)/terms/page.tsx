@@ -1,14 +1,15 @@
+import Email from '@/components/Email/Email'
 import ObjectList from '@/components/ObjectList/ObjectList'
 import ownerInfo from 'utils/ownerInfo'
 
 const Terms = () => {
-  const { name, nationalID, address, email } = ownerInfo
+  const { name, nationalID, address } = ownerInfo
 
   const ownership = [
     { key: 'Owner', value: name },
     { key: 'National ID', value: nationalID },
     { key: 'Address', value: address },
-    { key: 'Email', value: email, type: 'email' }
+    { key: 'Email', value: <Email /> }
   ]
 
   return (
