@@ -1,7 +1,7 @@
 export type TechnologiesType = (
   | 'HTML5'
   | 'CSS3'
-  | 'SCSS'
+  | 'Sass'
   | 'JavaScript'
   | 'TypeScript'
   | 'React'
@@ -30,7 +30,7 @@ export const experience: ExperienceType[] = [
     technologies: [
       'HTML5',
       'CSS3',
-      'SCSS',
+      'Sass',
       'JavaScript',
       'TypeScript',
       'React',
@@ -47,6 +47,6 @@ export const experience: ExperienceType[] = [
     link: 'https://www.triskellsoftware.com/',
     description:
       "Collaborating with a talented team to develop a new web front-end using vanguard technologies, our goal is to replace the existing interface that's been in use for more than a decade. This ambitious project is designed to provide significant enhancements in performance, cost-effectiveness, and user-friendliness for Triskell's Project Portfolio Management software.",
-    technologies: ['HTML5', 'CSS3', 'SCSS', 'JavaScript', 'React']
+    technologies: ['HTML5', 'CSS3', 'Sass', 'JavaScript', 'React']
   }
 ]
