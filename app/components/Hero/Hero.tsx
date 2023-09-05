@@ -27,8 +27,8 @@ const Hero = () => {
           className={s.image}
           width={500}
           height={375}
-          src="/svg/rocket.svg"
-          alt="Hero image of a miniature representing robots building a website design in a big screen"
+          src="/images/rocket.webp"
+          alt="Minimalist cartoon illustration of a rocket taking off"
         />
       </div>
     </section>
