@@ -2,11 +2,11 @@
   .title {
     .external-link-icon {
       &::after {
-        content: '\f35d';
         display: inline-block;
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
-        font: --fa-font-solid;
+        font: var(--fa-font-solid);
+        content: '\f35d';
         margin-inline-start: 1rem;
         font-size: 1rem;
         vertical-align: middle;

@@ -23,12 +23,15 @@
         display: inline-block;
         text-rendering: auto;
         -webkit-font-smoothing: antialiased;
-        font: --fa-font-solid;
+        font: var(--fa-font-solid);
         content: '\f00c';
         color: $accent-gold;
         transform: scale(0);
         transition: transform ease-in-out 200ms;
         cursor: pointer;
+        text-align: center;
+        vertical-align: middle;
+        height: 14px;
       }
 
       &:checked {
