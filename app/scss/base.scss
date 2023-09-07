@@ -1,10 +1,6 @@
 @use './color-palette' as *;
 
-:root {
-  --fa-font-solid: normal 900 1em/1 'Font Awesome 6 Free';
-}
-
-// SCROLLBAR (Chrome, Edge, and Safari
+// SCROLLBAR (Chrome, Edge, and Safari)
 
 ::-webkit-scrollbar {
   width: 1rem;
@@ -15,8 +11,7 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  $bg-color: $primary-light;
-  background-color: $bg-color;
+  background: $primary-light;
   border-radius: 100vw;
   border: 3px solid $primary-medium;
 

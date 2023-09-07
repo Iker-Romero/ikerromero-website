@@ -1,12 +1,10 @@
 @use './scss/reset.scss' as *;
-
 @use './scss/base.scss' as *;
-
 @use './scss/layout.scss' as *;
 
 // Font Awesome
-@use '../public/fontawesome/scss/fontawesome.scss';
-@use '../public/fontawesome/scss/solid.scss' as *;
+@use './scss/fontawesome/fontawesome.scss' as *;
+@use './scss/fontawesome/solid.scss' as *;
 
 // Toastify
 @use './scss/toast.scss' as *;
