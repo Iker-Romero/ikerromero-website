@@ -1,31 +1,34 @@
 {
   "metadata": {
-    "title": "Iker Romero",
-    "description": "Expert Landing Page Designer & Developer."
+    "title": "Iker Romero | Premium Web Design and Development",
+    "description": "Expert in web design, development, and SEO. Transform your online presence with tailor-made web solutions."
   },
   "hero": {
-    "description": "Transforming ideas into digital realities. Whether you need a stunning landing page or a complex web application, I create solutions that fit your vision. Let's build something extraordinary together."
+    "description": "Elevate your brand with tailor-made web solutions. From impactful landing pages to advanced web applications, I offer an unparalleled digital experience. Let's see how I can take your business to the next level."
   },
   "contact": {
-    "CTA": "Let's talk",
-    "title": "Contact",
-    "description": "Complete the form below or drop me a message at",
+    "CTA": "Let's Start",
+    "title": "Let's Discuss Your Project",
+    "description": "Fill out the form or send me a message at ",
     "placeholders": {
       "name": "Name",
-      "email": "Email",
-      "message": "How can I help you?"
+      "email": "Email Address",
+      "message": "Tell me about your project"
     },
-    "privacyPolicy": { "label": "I accept the", "anchor": "privacy policy" },
-    "submit": "Send",
+    "privacyPolicy": {
+      "label": "I accept the",
+      "anchor": "privacy policy"
+    },
+    "submit": "Submit",
     "toast": {
       "success": {
-        "title": "Message Sent!",
-        "description": "Thank you for reaching out! I'll be in touch soon to discuss how we can collaborate."
+        "title": "Message Sent",
+        "description": "Thank you for your interest! I will get in touch with you soon to see how we can work together."
       },
       "error": {
         "title": "Error",
         "description": {
-          "part1": "We encountered an issue processing your request. Feel free to email me at ",
+          "part1": "There was an issue sending your message. Please send me an email directly at",
           "part2": "or try again later."
         }
       }
@@ -39,23 +42,23 @@
         "datesRange": "June 2023 - Present",
         "role": "Full Stack Web Developer",
         "company": "Freelance",
-        "description": "Delivering tailor-made web solutions that align with my clients' unique needs and goals. From captivating landing pages to robust web applications, I utilize the latest technologies to ensure functionality, responsiveness, and visual appeal."
+        "description": "Offering tailor-made web solutions that align with the unique needs and objectives of my clients. From captivating landing pages to robust web applications, I use the latest technologies to ensure functionality, responsiveness, and visual appeal."
       },
       {
         "id": 2,
         "datesRange": "January 2023 - Present",
         "role": "Front-end Web Developer",
         "company": "Triskell Software",
-        "description": "Collaborating with a talented team to develop a new web front-end using vanguard technologies, our goal is to replace the existing interface that's been in use for more than a decade. This ambitious project is designed to provide significant enhancements in performance, cost-effectiveness, and user-friendliness for Triskell's Project Portfolio Management software."
+        "description": "Collaborating with a talented team in developing a new modern and efficient web interface. Our goal is to enhance the user experience and optimize the performance of Triskell's project management software."
       }
     ]
   },
   "footer": {
     "legalLinks": [
-      { "id": 1, "name": "Legal Information" },
+      { "id": 1, "name": "Legal Notice" },
       { "id": 2, "name": "Privacy Policy" }
     ],
-    "copyright": "© 2023-present Iker Romero. All Rights Reserved."
+    "copyright": "© 2023-present Iker Romero. All rights reserved."
   },
   "terms": {
     "title": "Legal Notice",
@@ -69,27 +72,27 @@
     },
     "purposeOfTheWebsite": {
       "title": "Purpose of the Website",
-      "description": "The purpose of this website is to present to potential clients the caliber of projects I create. It also provides an avenue for those interested in my services to connect with me."
+      "description": "The purpose of this website is to showcase to potential clients the caliber of projects I create. It also provides a means for those interested in my services to connect with me."
     },
     "termsOfUser": {
       "title": "Terms of Use",
-      "description": "By using this website, you accept its terms of use. Users agree to utilize the website and its content in compliance with the law, this Legal Notice, and public order. Any illegal or harmful use of the website, against the owner or third parties, is strictly prohibited."
+      "description": "By using this website, you agree to its terms of use. Users commit to using the website and its content in accordance with the law, this Legal Notice, and public order. Any illegal or harmful use of the website against the owner or third parties is strictly prohibited."
     },
     "intellectualProperty": {
       "title": "Intellectual and Industrial Property",
       "paragraphs": [
-        "The website, encompassing its programming, editing, compilation, and other elements vital for its functionality, alongside designs, logos, text, photographs, and graphics, are the property of Iker Romero Carames. In instances where content is not originally owned, the necessary licenses or authorizations from respective authors have been obtained. The entirety of the website content is dutifully safeguarded by intellectual and industrial property laws.",
-        "The use, reproduction, distribution, modification, alteration, or decompilation of any content, whether in whole or in part without the prior written consent from Iker Romero Carames, is expressly prohibited. Any unauthorized use of the content on this website will be regarded as a significant infringement of intellectual and industrial property rights.",
-        "Images and other visual elements present on this website are either owned by Iker Romero Carames or utilized under suitable licenses or permissions. While respecting the original licensing terms of any third-party content, unauthorized use or reproduction of content specifically owned by Iker Romero Carames is strictly prohibited."
+        "The website, including its programming, editing, compilation, and other necessary elements for its operation, along with designs, logos, text, photographs, and graphics, are owned by Iker Romero Carames. In cases where the content is not originally owned, the necessary licenses or authorizations have been obtained from the respective authors. All website content is duly protected by intellectual and industrial property laws.",
+        "Any use, reproduction, distribution, modification, alteration, or decompilation of any content, whether in whole or in part, without the prior written consent of Iker Romero Carames is expressly prohibited. Any unauthorized use of the content of this website will be considered a serious infringement of intellectual and industrial property rights.",
+        "The images and other visual elements present on this website are owned by Iker Romero Carames or are used under appropriate licenses or permissions. Respecting the original license terms of any third-party content, the use or reproduction of content specifically owned by Iker Romero Carames is strictly prohibited."
       ]
     },
     "limitationOfLiability": {
       "title": "Limitation of Liability",
-      "description": "The owner is not responsible for damages arising from interferences, omissions, interruptions, computer viruses, malfunctions, or disconnections due to factors outside the owner&apos;s control."
+      "description": "The owner is not responsible for damages resulting from interferences, omissions, interruptions, computer viruses, malfunctions, or disconnections due to factors beyond the control of the owner."
     },
     "lawAndJurisdiction": {
       "title": "Applicable Law and Jurisdiction",
-      "description": "Spanish law governs any disputes or issues related to this website or activities therein. Both parties agree to the jurisdiction of the Courts and Tribunals of Madrid, Spain for resolution."
+      "description": "Spanish law governs any dispute or issue related to this website or the activities on it. Both parties agree to the jurisdiction of the Courts and Tribunals of Madrid, Spain for its resolution."
     }
   },
   "privacyPolicy": {
@@ -100,16 +103,17 @@
     },
     "dataCollection": {
       "title": "Data Collection",
-      "description": "When using my website, you might be asked to provide certain personal information to contact me. The data I collect is:",
+      "description": "When using my website, you may be asked to provide certain personal information to contact me. The data I collect are:",
       "list": [
         "Name",
-        "Email",
-        "Any message you wish to include when reaching out"
+        "Email address",
+        "Phone (optional)",
+        "Any message you wish to include when contacting me"
       ]
     },
     "useOfData": {
       "title": "Use of Data",
-      "description": "I collect this data exclusively for:",
+      "description": "I collect these data exclusively for:",
       "list": [
         "Responding to inquiries and/or requests.",
         "Directly communicating with you if you wish to hire my services."
@@ -117,7 +121,7 @@
     },
     "dataStorage": {
       "title": "Data Storage",
-      "description": "To manage the information collected, I use MongoDB, which helps me securely store contact information. Additionally, to ensure I'm aware of requests, I use Gmail and Nodemailer to send automated notifications to my professional email. I do not share your data with third parties beyond the mentioned tools, which are essential for the operation of my website."
+      "description": "To manage the information collected, I use MongoDB, which helps me securely store contact information. Additionally, to ensure I am aware of requests, I use Gmail and Nodemailer to send automatic notifications to my professional email. I do not share your data with third parties beyond the mentioned tools, which are essential for the operation of my website."
     },
     "security": {
       "title": "Security",
@@ -126,13 +130,13 @@
     "userRights": {
       "title": "User Rights",
       "description": {
-        "part1": "In accordance with Spanish and European legislation, I grant you the rights of Access, Rectification, Cancellation, and Opposition (ARCO rights). If you wish to exercise these rights, you can email me at ",
+        "part1": "In accordance with Spanish and European legislation, I grant you the rights of Access, Rectification, Cancellation, and Opposition (ARCO rights). If you wish to exercise these rights, you can send me an email at ",
         "part2": ". To ensure the authenticity of the request, you must do so from the email you initially used on my site."
       }
     },
     "durationOfDataRetention": {
       "title": "Duration of Data Retention",
-      "description": "I retain data indefinitely. However, you can request its removal at any time."
+      "description": "I retain the data indefinitely. However, you can request its deletion at any time."
     },
     "changesToThePrivacyPolicy": {
       "title": "Changes to the Privacy Policy",
