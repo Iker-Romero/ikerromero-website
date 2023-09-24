@@ -1,0 +1,20 @@
+$description-variants: 'component', 'page';
+
+.contact {
+  max-width: 20rem;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+
+  @each $description-variant in $description-variants {
+    @if $description-variant == 'component' {
+      .description-#{$description-variant}-variant {
+        margin-bottom: 1rem;
+      }
+    } @else {
+      .description-#{$description-variant}-variant {
+        margin-bottom: 2rem;
+      }
+    }
+  }
+}

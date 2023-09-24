@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 
-import { sendMail } from '../../../service/mail'
+import { sendMail } from '../../../[locale]/service/mail'
 import connectMongoDB from '../../config/mongodb'
 import Contact from '../../models/Contact'
 

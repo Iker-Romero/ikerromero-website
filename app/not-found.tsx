@@ -1,24 +1,17 @@
-import H1 from './components/H1/H1'
-import Link from './components/Link/Link'
+'use client'
 
-const NotFound404 = () => {
+import Error from 'next/error'
+
+// Render the default Next.js 404 page when a route
+// is requested that doesn't match the middleware and
+// therefore doesn't have a locale associated with it.
+
+export default function NotFound() {
   return (
-    <div>
-      <H1>404</H1>
-      <p>
-        The page you are looking for might have been removed, had its name
-        changed, or is temporarily unavailable.
-      </p>
-      <br />
-      <p>
-        Go back to{' '}
-        <Link href="/#" variant="underlined">
-          homepage
-        </Link>
-        .
-      </p>
-    </div>
+    <html lang="en">
+      <body>
+        <Error statusCode={404} />
+      </body>
+    </html>
   )
 }
-
-export default NotFound404

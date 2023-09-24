@@ -1,0 +1,144 @@
+{
+  "metadata": {
+    "title": "Iker Romero",
+    "description": "Expert Landing Page Designer & Developer."
+  },
+  "hero": {
+    "description": "Transforming ideas into digital realities. Whether you need a stunning landing page or a complex web application, I create solutions that fit your vision. Let's build something extraordinary together."
+  },
+  "contact": {
+    "CTA": "Let's talk",
+    "title": "Contact",
+    "description": "Complete the form below or drop me a message at",
+    "placeholders": {
+      "name": "Name",
+      "email": "Email",
+      "phone": "Phone (optional)",
+      "message": "How can I help you?"
+    },
+    "privacyPolicy": { "label": "I accept the", "anchor": "privacy policy" },
+    "submit": "Send",
+    "toast": {
+      "success": {
+        "title": "Message Sent!",
+        "description": "Thank you for reaching out! I'll be in touch soon to discuss how we can collaborate."
+      },
+      "error": {
+        "title": "Error",
+        "description": {
+          "part1": "We encountered an issue processing your request. Feel free to email me at ",
+          "part2": "or try again later."
+        }
+      }
+    }
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "jobs": [
+      {
+        "id": 1,
+        "datesRange": "June 2023 - Present",
+        "role": "Full Stack Web Developer",
+        "company": "Freelance",
+        "description": "Delivering tailor-made web solutions that align with my clients' unique needs and goals. From captivating landing pages to robust web applications, I utilize the latest technologies to ensure functionality, responsiveness, and visual appeal."
+      },
+      {
+        "id": 2,
+        "datesRange": "January 2023 - Present",
+        "role": "Front-end Web Developer",
+        "company": "Triskell Software",
+        "description": "Collaborating with a talented team to develop a new web front-end using vanguard technologies, our goal is to replace the existing interface that's been in use for more than a decade. This ambitious project is designed to provide significant enhancements in performance, cost-effectiveness, and user-friendliness for Triskell's Project Portfolio Management software."
+      }
+    ]
+  },
+  "footer": {
+    "legalLinks": [
+      { "id": 1, "name": "Legal Information" },
+      { "id": 2, "name": "Privacy Policy" }
+    ],
+    "copyright": "© 2023-present Iker Romero. All Rights Reserved."
+  },
+  "terms": {
+    "title": "Legal Notice",
+    "websiteOwnership": {
+      "title": "Website Ownership",
+      "keys": {
+        "owner": "Owner",
+        "nationalID": "National ID",
+        "address": "Address"
+      }
+    },
+    "purposeOfTheWebsite": {
+      "title": "Purpose of the Website",
+      "description": "The purpose of this website is to present to potential clients the caliber of projects I create. It also provides an avenue for those interested in my services to connect with me."
+    },
+    "termsOfUser": {
+      "title": "Terms of Use",
+      "description": "By using this website, you accept its terms of use. Users agree to utilize the website and its content in compliance with the law, this Legal Notice, and public order. Any illegal or harmful use of the website, against the owner or third parties, is strictly prohibited."
+    },
+    "intellectualProperty": {
+      "title": "Intellectual and Industrial Property",
+      "paragraphs": [
+        "The website, encompassing its programming, editing, compilation, and other elements vital for its functionality, alongside designs, logos, text, photographs, and graphics, are the property of Iker Romero Carames. In instances where content is not originally owned, the necessary licenses or authorizations from respective authors have been obtained. The entirety of the website content is dutifully safeguarded by intellectual and industrial property laws.",
+        "The use, reproduction, distribution, modification, alteration, or decompilation of any content, whether in whole or in part without the prior written consent from Iker Romero Carames, is expressly prohibited. Any unauthorized use of the content on this website will be regarded as a significant infringement of intellectual and industrial property rights.",
+        "Images and other visual elements present on this website are either owned by Iker Romero Carames or utilized under suitable licenses or permissions. While respecting the original licensing terms of any third-party content, unauthorized use or reproduction of content specifically owned by Iker Romero Carames is strictly prohibited."
+      ]
+    },
+    "limitationOfLiability": {
+      "title": "Limitation of Liability",
+      "description": "The owner is not responsible for damages arising from interferences, omissions, interruptions, computer viruses, malfunctions, or disconnections due to factors outside the owner&apos;s control."
+    },
+    "lawAndJurisdiction": {
+      "title": "Applicable Law and Jurisdiction",
+      "description": "Spanish law governs any disputes or issues related to this website or activities therein. Both parties agree to the jurisdiction of the Courts and Tribunals of Madrid, Spain for resolution."
+    }
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "identification": {
+      "title": "Identification of the Data Controller",
+      "keys": { "name": "Name", "address": "Address" }
+    },
+    "dataCollection": {
+      "title": "Data Collection",
+      "description": "When using my website, you might be asked to provide certain personal information to contact me. The data I collect is:",
+      "list": [
+        "Name",
+        "Email",
+        "Phone (optional)",
+        "Any message you wish to include when reaching out"
+      ]
+    },
+    "useOfData": {
+      "title": "Use of Data",
+      "description": "I collect this data exclusively for:",
+      "list": [
+        "Responding to inquiries and/or requests.",
+        "Directly communicating with you if you wish to hire my services."
+      ]
+    },
+    "dataStorage": {
+      "title": "Data Storage",
+      "description": "To manage the information collected, I use MongoDB, which helps me securely store contact information. Additionally, to ensure I'm aware of requests, I use Gmail and Nodemailer to send automated notifications to my professional email. I do not share your data with third parties beyond the mentioned tools, which are essential for the operation of my website."
+    },
+    "security": {
+      "title": "Security",
+      "description": "I am committed to ensuring that your information is secure. I continuously seek to implement and improve my security procedures to ensure the safety of the data I collect."
+    },
+    "userRights": {
+      "title": "User Rights",
+      "description": {
+        "part1": "In accordance with Spanish and European legislation, I grant you the rights of Access, Rectification, Cancellation, and Opposition (ARCO rights). If you wish to exercise these rights, you can email me at ",
+        "part2": ". To ensure the authenticity of the request, you must do so from the email you initially used on my site."
+      }
+    },
+    "durationOfDataRetention": {
+      "title": "Duration of Data Retention",
+      "description": "I retain data indefinitely. However, you can request its removal at any time."
+    },
+    "changesToThePrivacyPolicy": {
+      "title": "Changes to the Privacy Policy",
+      "description": "I may update this Privacy Policy as needed. Any updates or changes will be posted on this page for your reference."
+    }
+  }
+}

@@ -1,13 +1,6 @@
-import Contact from './components/Contact/Contact'
-import Experience from './components/Experience/Experience'
-import Hero from './components/Hero/Hero'
+import { redirect } from 'next/navigation'
 
-export default function Home() {
-  return (
-    <>
-      <Hero />
-      <Experience />
-      <Contact />
-    </>
-  )
+// This page only renders when the app is built statically (output: 'export')
+export default function RootPage() {
+  redirect('/en')
 }

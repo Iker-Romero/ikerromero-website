@@ -1,0 +1,147 @@
+{
+  "metadata": {
+    "title": "Iker Romero",
+    "description": "Diseñador y desarrollador de páginas web experto"
+  },
+  "hero": {
+    "description": "Transformando ideas en realidades digitales. Ya sea que necesites una impresionante página de inicio o una aplicación web compleja, creo soluciones que se adaptan a tu visión. Construyamos algo extraordinario juntos."
+  },
+  "contact": {
+    "CTA": "Hablemos",
+    "title": "Contacto",
+    "description": "Completa el siguiente formulario o envíame un mensaje a ",
+    "placeholders": {
+      "name": "Nombre",
+      "email": "Correo electrónico",
+      "phone": "Teléfono (opcional)",
+      "message": "¿Cómo puedo ayudarte?"
+    },
+    "privacyPolicy": {
+      "label": "Acepto la",
+      "anchor": "política de privacidad"
+    },
+    "submit": "Enviar",
+    "toast": {
+      "success": {
+        "title": "Mensaje enviado",
+        "description": "¡Gracias por ponerte en contacto! Pronto estaré en comunicación para discutir cómo podemos colaborar."
+      },
+      "error": {
+        "title": "Error",
+        "description": {
+          "part1": "Encontramos un problema procesando tu solicitud. No dudes en enviarme un correo a",
+          "part2": "o intenta nuevamente más tarde."
+        }
+      }
+    }
+  },
+  "experience": {
+    "title": "Experiencia profesional",
+    "jobs": [
+      {
+        "id": 1,
+        "datesRange": "Junio 2023 - Actualidad",
+        "role": "Desarrollador Web Full Stack",
+        "company": "Freelance",
+        "description": "Ofreciendo soluciones web a medida que se alinean con las necesidades y objetivos únicos de mis clientes. Desde atractivas páginas de inicio hasta robustas aplicaciones web, utilizo las últimas tecnologías para garantizar funcionalidad, respuesta y atractivo visual."
+      },
+      {
+        "id": 2,
+        "datesRange": "Enero 2023 - Actualidad",
+        "role": "Desarrollador Web Front-end",
+        "company": "Triskell Software",
+        "description": "Colaborando con un talentoso equipo para desarrollar una nueva interfaz web utilizando tecnologías de vanguardia, nuestro objetivo es reemplazar la interfaz existente que ha estado en uso durante más de una década. Este ambicioso proyecto está diseñado para ofrecer mejoras significativas en rendimiento, rentabilidad y facilidad de uso para el software de gestión de cartera de proyectos de Triskell."
+      }
+    ]
+  },
+  "footer": {
+    "legalLinks": [
+      { "id": 1, "name": "Aviso Legal" },
+      { "id": 2, "name": "Política de Privacidad" }
+    ],
+    "copyright": "© 2023-presente Iker Romero. Todos los derechos reservados."
+  },
+  "terms": {
+    "title": "Aviso Legal",
+    "websiteOwnership": {
+      "title": "Propiedad del Sitio Web",
+      "keys": {
+        "owner": "Propietario",
+        "nationalID": "ID Nacional",
+        "address": "Dirección"
+      }
+    },
+    "purposeOfTheWebsite": {
+      "title": "Propósito del Sitio Web",
+      "description": "El propósito de este sitio web es presentar a los posibles clientes el calibre de proyectos que creo. También ofrece una vía para aquellos interesados en mis servicios para conectarse conmigo."
+    },
+    "termsOfUser": {
+      "title": "Términos de Uso",
+      "description": "Al usar este sitio web, aceptas sus términos de uso. Los usuarios se comprometen a utilizar el sitio web y su contenido de acuerdo con la ley, este Aviso Legal y el orden público. Está estrictamente prohibido cualquier uso ilegal o perjudicial del sitio web, en contra del propietario o terceros."
+    },
+    "intellectualProperty": {
+      "title": "Propiedad Intelectual e Industrial",
+      "paragraphs": [
+        "El sitio web, que incluye su programación, edición, compilación y otros elementos necesarios para su funcionamiento, junto con diseños, logos, texto, fotografías y gráficos, son propiedad de Iker Romero Carames. En los casos en que el contenido no sea de propiedad original, se han obtenido las licencias o autorizaciones necesarias de los respectivos autores. Todo el contenido del sitio web está debidamente protegido por las leyes de propiedad intelectual e industrial.",
+        "Está expresamente prohibido el uso, reproducción, distribución, modificación, alteración o descompilación de cualquier contenido, ya sea en su totalidad o en parte, sin el previo consentimiento por escrito de Iker Romero Carames. Cualquier uso no autorizado del contenido de este sitio web será considerado como una infracción grave de los derechos de propiedad intelectual e industrial.",
+        "Las imágenes y otros elementos visuales presentes en este sitio web son propiedad de Iker Romero Carames o se utilizan bajo licencias o permisos adecuados. Respetando los términos de licencia originales de cualquier contenido de terceros, está estrictamente prohibido el uso o reproducción de contenido específicamente propiedad de Iker Romero Carames."
+      ]
+    },
+    "limitationOfLiability": {
+      "title": "Limitación de Responsabilidad",
+      "description": "El propietario no es responsable de los daños derivados de interferencias, omisiones, interrupciones, virus informáticos, averías o desconexiones debido a factores ajenos al control del propietario."
+    },
+    "lawAndJurisdiction": {
+      "title": "Ley Aplicable y Jurisdicción",
+      "description": "La ley española rige cualquier disputa o problema relacionado con este sitio web o las actividades en él. Ambas partes acuerdan la jurisdicción de los Tribunales y Tribunales de Madrid, España para su resolución."
+    }
+  },
+  "privacyPolicy": {
+    "title": "Política de Privacidad",
+    "identification": {
+      "title": "Identificación del Responsable del Tratamiento",
+      "keys": { "name": "Nombre", "address": "Dirección" }
+    },
+    "dataCollection": {
+      "title": "Recolección de Datos",
+      "description": "Al usar mi sitio web, se te puede pedir que proporciones cierta información personal para contactarme. Los datos que recojo son:",
+      "list": [
+        "Nombre",
+        "Correo electrónico",
+        "Teléfono (opcional)",
+        "Cualquier mensaje que desees incluir al contactarme"
+      ]
+    },
+    "useOfData": {
+      "title": "Uso de Datos",
+      "description": "Recojo estos datos exclusivamente para:",
+      "list": [
+        "Responder a consultas y/o solicitudes.",
+        "Comunicarme directamente contigo si deseas contratar mis servicios."
+      ]
+    },
+    "dataStorage": {
+      "title": "Almacenamiento de Datos",
+      "description": "Para gestionar la información recopilada, utilizo MongoDB, que me ayuda a almacenar de forma segura la información de contacto. Además, para asegurarme de estar al tanto de las solicitudes, utilizo Gmail y Nodemailer para enviar notificaciones automáticas a mi correo electrónico profesional. No comparto tus datos con terceros más allá de las herramientas mencionadas, que son esenciales para el funcionamiento de mi sitio web."
+    },
+    "security": {
+      "title": "Seguridad",
+      "description": "Estoy comprometido a garantizar que tu información esté segura. Continuamente busco implementar y mejorar mis procedimientos de seguridad para garantizar la seguridad de los datos que recojo."
+    },
+    "userRights": {
+      "title": "Derechos del Usuario",
+      "description": {
+        "part1": "De acuerdo con la legislación española y europea, te otorgo los derechos de Acceso, Rectificación, Cancelación y Oposición (derechos ARCO). Si deseas ejercer estos derechos, puedes enviarme un correo a ",
+        "part2": ". Para garantizar la autenticidad de la solicitud, debes hacerlo desde el correo electrónico que inicialmente usaste en mi sitio."
+      }
+    },
+    "durationOfDataRetention": {
+      "title": "Duración del Almacenamiento de Datos",
+      "description": "Retengo los datos indefinidamente. Sin embargo, puedes solicitar su eliminación en cualquier momento."
+    },
+    "changesToThePrivacyPolicy": {
+      "title": "Cambios en la Política de Privacidad",
+      "description": "Puedo actualizar esta Política de Privacidad según sea necesario. Cualquier actualización o cambio se publicará en esta página para tu referencia."
+    }
+  }
+}
