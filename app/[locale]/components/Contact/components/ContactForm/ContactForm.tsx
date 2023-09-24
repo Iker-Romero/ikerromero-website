@@ -23,7 +23,6 @@ type Props = {
 type FormValues = {
   name: string
   email: string
-  phone?: string
   message: string
   privacyPolicyAccepted: boolean
 }
@@ -35,7 +34,6 @@ const ContactForm = ({ dict }: Props) => {
     defaultValues: {
       name: '',
       email: '',
-      phone: '',
       message: '',
       privacyPolicyAccepted: false
     }
@@ -108,7 +106,6 @@ const ContactForm = ({ dict }: Props) => {
         placeholder={placeholders.email}
         required
       />
-      <Input type="tel" name="phone" placeholder={placeholders.phone} />
       <Textarea
         name="message"
         placeholder={placeholders.message}
@@ -118,7 +115,7 @@ const ContactForm = ({ dict }: Props) => {
       <Checkbox
         label={
           <span>
-            {privacyPolicy.label} {privacyPolicyLink}
+            {privacyPolicy.label} {privacyPolicyLink}.
           </span>
         }
         name="privacyPolicyAccepted"

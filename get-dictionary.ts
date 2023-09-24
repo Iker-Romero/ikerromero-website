@@ -16,7 +16,6 @@ type Hero = {
 type Placeholders = {
   name: string
   email: string
-  phone: string
   message: string
 }
 

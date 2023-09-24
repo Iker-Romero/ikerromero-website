@@ -40,13 +40,6 @@ const validations = {
       message: 'Invalid email address'
     }
   },
-  tel: {
-    required: 'Phone number is required',
-    pattern: {
-      value: /^[0-9]{4,15}$/,
-      message: 'Phone number must be between 4 and 15 digits'
-    }
-  },
   textarea: {
     minLength: {
       value: 10,
@@ -61,7 +54,7 @@ const validations = {
 }
 
 type getValidationParams = {
-  type: 'text' | 'email' | 'tel' | 'textarea' | 'checkbox'
+  type: 'text' | 'email' | 'textarea' | 'checkbox'
   validation?: 'name' | 'message' | 'privacyPolicy'
   required?: boolean
 }

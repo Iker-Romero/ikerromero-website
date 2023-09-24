@@ -13,7 +13,6 @@
     "placeholders": {
       "name": "Name",
       "email": "Email",
-      "phone": "Phone (optional)",
       "message": "How can I help you?"
     },
     "privacyPolicy": { "label": "I accept the", "anchor": "privacy policy" },
@@ -105,7 +104,6 @@
       "list": [
         "Name",
         "Email",
-        "Phone (optional)",
         "Any message you wish to include when reaching out"
       ]
     },

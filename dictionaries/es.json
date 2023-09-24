@@ -1,20 +1,19 @@
 {
   "metadata": {
-    "title": "Iker Romero",
-    "description": "Diseñador y desarrollador de páginas web experto"
+    "title": "Iker Romero | Diseño y Desarrollo Web Premium",
+    "description": "Experto en diseño, desarrollo y SEO web. Transforma tu presencia en línea con soluciones web a medida."
   },
   "hero": {
-    "description": "Transformando ideas en realidades digitales. Ya sea que necesites una impresionante página de inicio o una aplicación web compleja, creo soluciones que se adaptan a tu visión. Construyamos algo extraordinario juntos."
+    "description": "Eleva tu marca con soluciones web a medida. Desde páginas de inicio impactantes hasta aplicaciones web avanzadas, ofrezco una experiencia digital sin igual. Veamos cómo puedo llevar tu negocio al siguiente nivel."
   },
   "contact": {
-    "CTA": "Hablemos",
-    "title": "Contacto",
-    "description": "Completa el siguiente formulario o envíame un mensaje a ",
+    "CTA": "Comencemos",
+    "title": "Hablemos de tu proyecto",
+    "description": "Rellena el formulario o envíame un mensaje a ",
     "placeholders": {
       "name": "Nombre",
       "email": "Correo electrónico",
-      "phone": "Teléfono (opcional)",
-      "message": "¿Cómo puedo ayudarte?"
+      "message": "Cuéntame sobre tu proyecto"
     },
     "privacyPolicy": {
       "label": "Acepto la",
@@ -24,12 +23,12 @@
     "toast": {
       "success": {
         "title": "Mensaje enviado",
-        "description": "¡Gracias por ponerte en contacto! Pronto estaré en comunicación para discutir cómo podemos colaborar."
+        "description": "¡Gracias por tu interés! Me pondré en contacto contigo pronto para ver cómo podemos trabajar juntos."
       },
       "error": {
         "title": "Error",
         "description": {
-          "part1": "Encontramos un problema procesando tu solicitud. No dudes en enviarme un correo a",
+          "part1": "Hubo un problema al enviar tu mensaje. Por favor, envíame un correo a",
           "part2": "o intenta nuevamente más tarde."
         }
       }
@@ -50,7 +49,7 @@
         "datesRange": "Enero 2023 - Actualidad",
         "role": "Desarrollador Web Front-end",
         "company": "Triskell Software",
-        "description": "Colaborando con un talentoso equipo para desarrollar una nueva interfaz web utilizando tecnologías de vanguardia, nuestro objetivo es reemplazar la interfaz existente que ha estado en uso durante más de una década. Este ambicioso proyecto está diseñado para ofrecer mejoras significativas en rendimiento, rentabilidad y facilidad de uso para el software de gestión de cartera de proyectos de Triskell."
+        "description": "Colaborando con un talentoso equipo en el desarrollo de una nueva interfaz web moderna y eficiente. Nuestro objetivo es mejorar la experiencia del usuario y optimizar el rendimiento del software de gestión de proyectos de Triskell."
       }
     ]
   },

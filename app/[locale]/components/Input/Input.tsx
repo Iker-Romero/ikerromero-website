@@ -7,7 +7,7 @@ import { getValidation } from 'utils/validation'
 import s from './Input.module.scss'
 
 type Props = {
-  type?: 'text' | 'email' | 'tel'
+  type?: 'text' | 'email'
   id?: string
   name?: string
   placeholder?: string
