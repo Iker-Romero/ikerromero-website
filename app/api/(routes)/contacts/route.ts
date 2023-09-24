@@ -20,5 +20,7 @@ export const POST = async (request: NextRequest) => {
     return NextResponse.json(newContact, { status: 200 })
   } catch (error) {
     console.error(error)
+
+    return NextResponse.json({ error }, { status: 500 })
   }
 }
