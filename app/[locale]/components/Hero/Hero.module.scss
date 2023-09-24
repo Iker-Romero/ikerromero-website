@@ -6,6 +6,10 @@
   align-items: center;
   margin-top: 1.5rem;
 
+  @media (orientation: landscape) {
+    padding: 3rem 0;
+  }
+
   .content {
     display: flex;
     flex-direction: column;
