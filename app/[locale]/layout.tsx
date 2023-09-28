@@ -20,7 +20,19 @@ type Props = {
 export const generateMetadata = async ({ params: { locale } }: Props) => {
   const { metadata } = await getDictionary(locale)
 
-  return { ...metadata, 'og:image': '/images/iker-romero.webp' }
+  return {
+    ...metadata,
+    openGraph: {
+      type: 'website',
+      url: 'https://ikerromero.com',
+      title: metadata.title,
+      description: metadata.description,
+      images: [
+        { url: '/images/iker-romero-1200x630.png' },
+        { url: '/images/iker-romero-300x300.png' }
+      ]
+    }
+  }
 }
 
 export async function generateStaticParams() {
