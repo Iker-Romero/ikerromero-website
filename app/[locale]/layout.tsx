@@ -20,7 +20,7 @@ type Props = {
 export const generateMetadata = async ({ params: { locale } }: Props) => {
   const { metadata } = await getDictionary(locale)
 
-  return metadata
+  return { ...metadata, 'og:image': '/images/iker-romero.webp' }
 }
 
 export async function generateStaticParams() {
