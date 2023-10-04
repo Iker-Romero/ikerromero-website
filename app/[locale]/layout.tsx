@@ -20,11 +20,22 @@ type Props = {
 export const generateMetadata = async ({ params: { locale } }: Props) => {
   const { metadata } = await getDictionary(locale)
 
+  const mainURL = 'https://www.ikerromero.com'
+
   return {
     ...metadata,
+    metadataBase: new URL(mainURL),
+    alternates: {
+      canonical: '/',
+      languages: {
+        en: '/en',
+        es: '/es'
+      }
+    },
     openGraph: {
       type: 'website',
-      url: 'https://ikerromero.com',
+      url: mainURL,
+      locale,
       title: metadata.title,
       description: metadata.description,
       images: [
