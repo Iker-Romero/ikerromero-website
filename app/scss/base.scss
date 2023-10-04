@@ -4,6 +4,13 @@
   --fa-font-solid: normal 900 1em/1 'Font Awesome 6 Free' !important;
 }
 
+*:focus {
+  outline: none;
+  box-shadow:
+    0 0 0 2px $primary-dark,
+    0 0 0 4px $accent-gold;
+}
+
 // SCROLLBAR (Chrome, Edge, and Safari)
 
 ::-webkit-scrollbar {
@@ -77,8 +84,8 @@ select {
   color: $text-color-light;
   border: none !important;
   border-radius: 0.375rem;
-  outline-color: transparent;
-  outline-offset: 2px;
+  // outline-color: $accent-gold;
+  // outline-offset: 2px;
 
   &::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
