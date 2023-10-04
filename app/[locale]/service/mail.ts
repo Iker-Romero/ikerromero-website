@@ -1,5 +1,9 @@
 import nodemailer from 'nodemailer'
 
+type Info = {
+  response: string
+}
+
 export const sendMail = async (text: string) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
@@ -16,11 +20,13 @@ export const sendMail = async (text: string) => {
     text
   }
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error(error)
-    } else {
-      console.log(`Email sent: ${info.response}`)
-    }
-  })
+  return new Promise<Info>((resolve, reject) =>
+    transporter.sendMail(mailOptions, (error, info) => {
+      if (error) {
+        reject(error)
+      } else {
+        resolve(info)
+      }
+    })
+  )
 }

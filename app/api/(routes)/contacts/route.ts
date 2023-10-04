@@ -9,13 +9,13 @@ export const POST = async (request: NextRequest) => {
     const [body] = await Promise.all([request.json(), connectMongoDB()])
 
     const newContact = await Contact.create(body)
+    console.log('New contact: ', newContact)
 
-    if (newContact) {
-      sendMail(
-        'Potential client has contacted you trough ikerromero.com:\n\r' +
-          JSON.stringify(body)
-      )
-    }
+    const info = await sendMail(
+      'Potential client has contacted you trough ikerromero.com:\n\r' +
+        JSON.stringify(body)
+    )
+    console.log('Email sent: ', info.response)
 
     return NextResponse.json(newContact, { status: 200 })
   } catch (error) {
