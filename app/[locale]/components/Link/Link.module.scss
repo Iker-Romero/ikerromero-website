@@ -1,5 +1,5 @@
 @use '@/scss/color-palette' as *;
-@use '@/scss/animations' as *;
+@use '@/scss/animations';
 
 $variants: 'callToAction', 'callToActionSecondary', 'heading', 'logo',
   'logoSmall', 'small', 'underlined', 'solid';
@@ -14,7 +14,9 @@ $CTAs: 'callToAction', 'callToActionSecondary';
   align-items: center;
   justify-content: center;
   font-weight: 700;
-  transition: all 0.2s ease-in-out;
+  transition:
+    border-color 300ms ease-in-out,
+    transform 300ms ease-in-out;
 
   &:hover {
     border-color: $accent-orange;
@@ -39,7 +41,7 @@ $CTAs: 'callToAction', 'callToActionSecondary';
     &.#{$variant}-variant {
       @if $variant == 'callToAction' {
         @include CTAs;
-        @include shimmerAnimation;
+        @include animations.shimmerAnimation;
 
         color: $primary-dark;
         background: $accent-gold;

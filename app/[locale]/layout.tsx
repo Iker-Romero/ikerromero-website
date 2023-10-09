@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation'
 import { ReactNode } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import ClientLogic from 'utils/ClientLogic'
 
 import { getDictionary } from '../../get-dictionary'
 import { Locale, i18n } from '../../i18n'
@@ -69,6 +70,7 @@ export default async function RootLayout({
         <main>{children}</main>
         <Footer {...{ dict }} />
         <ToastContainer />
+        <ClientLogic />
       </body>
     </html>
   )

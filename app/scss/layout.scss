@@ -1,5 +1,15 @@
 @use '@/scss/color-palette' as *;
 
+:root {
+  --VHDistanceToH1: 5rem;
+}
+
+@media (orientation: landscape) {
+  :root {
+    --VHDistanceToH1: 8rem;
+  }
+}
+
 body {
   display: flex;
   flex-direction: column;

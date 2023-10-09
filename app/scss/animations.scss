@@ -1,5 +1,8 @@
 @use '@/scss/color-palette' as *;
 
+$delays: 700;
+$durations: 100, 300;
+
 @mixin shimmerAnimation {
   position: relative;
   overflow: hidden;
@@ -14,6 +17,7 @@
     background: rgba(255, 255, 255, 0.4);
     background: rgba($text-color-light, 0.4);
     transform: skewX(-25deg);
+    animation: goldShimmerWithPause 5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
 
     @keyframes goldShimmerWithPause {
       0% {
@@ -35,7 +39,129 @@
         left: -100%;
       }
     }
+  }
+}
 
-    animation: goldShimmerWithPause 5s cubic-bezier(0.22, 1, 0.36, 1) infinite;
+.hidden {
+  opacity: 0;
+}
+
+.scaleInFromLeftBottom {
+  &.visible {
+    transform-origin: left bottom;
+    animation: scaleInFromLeftBottom 700ms ease-in-out forwards;
+
+    @keyframes scaleInFromLeftBottom {
+      0% {
+        opacity: 0;
+        transform: scale(0);
+      }
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+  }
+}
+
+.fadeInDown {
+  &.visible {
+    transform-origin: top;
+    animation: fadeInDown 300ms ease-in-out forwards;
+
+    @keyframes fadeInDown {
+      0% {
+        opacity: 0;
+        // --VHDistanceToH1: Aprox. space to the top of the viewport
+        transform: translateY(calc(var(--VHDistanceToH1) * -1 + -100%));
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.fadeInRight {
+  &.visible {
+    animation: fadeInRight 300ms ease-in-out forwards;
+
+    @keyframes fadeInRight {
+      0% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+  }
+}
+
+@each $durationN in $durations {
+  .fadeInLeft-#{$durationN} {
+    $duration: #{$durationN}ms;
+
+    // &.hidden {
+    //   transform: translateX(200%);
+    // }
+
+    &.visible {
+      // transform: translateX(0);
+      // transition:
+      //   opacity $duration ease-in-out,
+      //   transform $duration ease-in-out;
+
+      // @each $delayN in $delays {
+      //   $delay: #{$delayN}ms;
+
+      //   &.delay-#{$delayN} {
+      //     transition-delay: $delay;
+      //   }
+
+      //   @for $i from 0 through 9 {
+      //     &.i-#{$i} {
+      //       transition-delay: #{$i * $durationN}ms;
+
+      //       &.delay-#{$delayN} {
+      //         transition-delay: $delay + $i * $durationN;
+      //       }
+      //     }
+      //   }
+      // }
+
+      animation: fadeInLeft 300ms ease-in-out forwards;
+
+      @each $delayN in $delays {
+        $delay: #{$delayN}ms;
+
+        &.delay-#{$delayN} {
+          animation-delay: $delay;
+        }
+
+        @for $i from 0 through 9 {
+          &.i-#{$i} {
+            animation-delay: #{$i * $durationN}ms;
+
+            &.delay-#{$delayN} {
+              animation-delay: $delay + $i * $durationN;
+            }
+          }
+        }
+      }
+
+      @keyframes fadeInLeft {
+        0% {
+          opacity: 0;
+          transform: translateX(200%);
+        }
+        100% {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+    }
   }
 }

@@ -16,15 +16,16 @@ interface Props extends LinkProps {
     | 'solid'
   target?: '_blank' | '_self' | '_parent' | '_top' | string
   className?: string
+  id?: string
 }
 
-const Link = ({ children, href, variant, target, className }: Props) => {
+const Link = ({ children, href, variant, target, className, id }: Props) => {
   return (
     <NextLink
       className={`${s.link} ${variant ? s[`${variant}-variant`] : ''} ${
         className || ''
       }`}
-      {...{ href, target }}
+      {...{ href, target, id }}
     >
       {children}
     </NextLink>

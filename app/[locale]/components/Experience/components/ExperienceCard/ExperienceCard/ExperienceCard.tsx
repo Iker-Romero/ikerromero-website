@@ -17,7 +17,7 @@ const ExperienceCard = ({ id, link, technologies, dict }: Props) => {
     dict.experience.jobs.find(job => job.id === id) ?? {}
 
   return (
-    <div className={s['experience-card']}>
+    <div className={s['experience-card'] + ' hidden fadeInRight'}>
       <span>{datesRange}</span>
       <h3 className={s.title}>
         {link ? (

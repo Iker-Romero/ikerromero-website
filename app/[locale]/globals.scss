@@ -1,10 +1,11 @@
-@use './scss/reset.scss' as *;
-@use './scss/base.scss' as *;
-@use './scss/layout.scss' as *;
+@use '../scss/reset.scss' as *;
+@use '../scss/base.scss' as *;
+@use '../scss/layout.scss' as *;
+@use '../scss/animations.scss' as *;
 
 // Font Awesome
-@use './scss/fontawesome/fontawesome.scss' as *;
-@use './scss/fontawesome/solid.scss' as *;
+@use '../scss/fontawesome/fontawesome.scss' as *;
+@use '../scss/fontawesome/solid.scss' as *;
 
 // Toastify
-@use './scss/toast.scss' as *;
+@use '../scss/toast.scss' as *;
