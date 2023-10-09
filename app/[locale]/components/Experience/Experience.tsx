@@ -12,7 +12,9 @@ const Experience = ({ dict }: Props) => {
 
   return (
     <section className={s['experience-section']}>
-      <h2 id="experience">{title}</h2>
+      <h2 id="experience" className="hidden fadeInDown">
+        {title}
+      </h2>
       <div className={s['cards-container']}>
         {experience.map(({ id, technologies, link }) => (
           <ExperienceCard key={id} {...{ id, technologies, link, dict }} />

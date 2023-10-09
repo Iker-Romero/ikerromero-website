@@ -104,34 +104,7 @@ $durations: 100, 300;
   .fadeInLeft-#{$durationN} {
     $duration: #{$durationN}ms;
 
-    // &.hidden {
-    //   transform: translateX(200%);
-    // }
-
     &.visible {
-      // transform: translateX(0);
-      // transition:
-      //   opacity $duration ease-in-out,
-      //   transform $duration ease-in-out;
-
-      // @each $delayN in $delays {
-      //   $delay: #{$delayN}ms;
-
-      //   &.delay-#{$delayN} {
-      //     transition-delay: $delay;
-      //   }
-
-      //   @for $i from 0 through 9 {
-      //     &.i-#{$i} {
-      //       transition-delay: #{$i * $durationN}ms;
-
-      //       &.delay-#{$delayN} {
-      //         transition-delay: $delay + $i * $durationN;
-      //       }
-      //     }
-      //   }
-      // }
-
       animation: fadeInLeft 300ms ease-in-out forwards;
 
       @each $delayN in $delays {
