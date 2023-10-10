@@ -96,13 +96,13 @@ select {
 
   &::placeholder {
     /* Chrome, Firefox, Opera, Safari 10.1+ */
-    color: $text-color-medium;
+    color: $text-color-dark;
     opacity: 1; /* Firefox */
   }
 
   &:-ms-input-placeholder {
     /* Microsoft Edge, Internet Explorer 10-11 */
-    color: $text-color-medium;
+    color: $text-color-dark;
   }
 }
 

@@ -21,8 +21,8 @@
   --toastify-font-family: sans-serif;
   --toastify-z-index: 9999;
 
-  --toastify-text-color-light: #{$text-color-medium};
-  --toastify-text-color-dark: #{$text-color-medium};
+  --toastify-text-color-light: #{$text-color-dark};
+  --toastify-text-color-dark: #{$text-color-dark};
 
   //Used only for colored theme
   --toastify-text-color-info: #fff;

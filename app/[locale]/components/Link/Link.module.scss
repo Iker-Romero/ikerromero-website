@@ -34,6 +34,18 @@ $CTAs: 'callToAction', 'callToActionSecondary';
   white-space: nowrap;
 }
 
+@mixin solid {
+  color: $text-color-dark;
+
+  &:hover {
+    $color: $text-color-medium;
+
+    color: $color;
+    text-underline-offset: 0.125rem;
+    text-decoration: underline $color solid 0.0625rem;
+  }
+}
+
 .link {
   text-align: center;
 
@@ -82,21 +94,29 @@ $CTAs: 'callToAction', 'callToActionSecondary';
       }
 
       @if $variant == 'small' {
+        @include solid;
+
         font-size: 0.875rem;
         padding: 0.375rem 0;
         display: flex;
         gap: 0.875rem;
         align-items: center;
-        color: $text-color-medium;
       }
 
       @if $variant == 'underlined' {
         text-underline-offset: 0.25rem;
         text-decoration: underline $text-color-light solid 0.125rem;
+
+        &:hover {
+          $color: $text-color-medium;
+
+          color: $color;
+          text-decoration-color: $color;
+        }
       }
 
       @if $variant == 'solid' {
-        color: $text-color-medium;
+        @include solid;
       }
     }
   }
