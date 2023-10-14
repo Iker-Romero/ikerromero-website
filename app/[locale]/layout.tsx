@@ -62,6 +62,14 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
+      <head>
+        <link
+          rel="mask-icon"
+          href="/icons/safari-pinned-tab-dedicated-image.svg"
+          color="#daa658"
+        />
+        <meta name="msapplication-TileColor" content="#0e2a3a" />
+      </head>
       <body className={exo.className}>
         <header>
           <Navbar {...{ dict }} />
