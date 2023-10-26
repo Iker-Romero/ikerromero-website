@@ -2,21 +2,6 @@ import { RegisterOptions } from 'react-hook-form'
 
 const validations = {
   predefined: {
-    name: {
-      required: 'Name is required',
-      minLength: {
-        value: 2,
-        message: 'Name must be at least 2 characters'
-      },
-      maxLength: {
-        value: 50,
-        message: 'Name must not exceed 50 characters'
-      },
-      pattern: {
-        value: /^[A-Za-z\s]+$/, // Only letters and spaces are allowed
-        message: 'Name must contain only letters and spaces'
-      }
-    },
     message: {
       required: 'Message is required',
       minLength: {
@@ -32,7 +17,6 @@ const validations = {
       required: 'You must accept the privacy policy to proceed'
     }
   },
-  text: { required: 'This field is required' },
   email: {
     required: 'Email is required',
     pattern: {
@@ -54,8 +38,8 @@ const validations = {
 }
 
 type getValidationParams = {
-  type: 'text' | 'email' | 'textarea' | 'checkbox'
-  validation?: 'name' | 'message' | 'privacyPolicy'
+  type: 'email' | 'textarea' | 'checkbox'
+  validation?: 'message' | 'privacyPolicy'
   required?: boolean
 }
 

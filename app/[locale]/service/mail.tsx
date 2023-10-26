@@ -4,7 +4,7 @@ type Info = {
   response: string
 }
 
-export const sendMail = async (text: string) => {
+export const sendMail = async (emailHTMLString: string) => {
   const transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
@@ -17,7 +17,7 @@ export const sendMail = async (text: string) => {
     from: process.env.NODEMAILER_EMAIL,
     to: 'ikersoftdev@gmail.com',
     subject: '✅ New Lead Contact 📲',
-    text
+    html: emailHTMLString
   }
 
   return new Promise<Info>((resolve, reject) =>

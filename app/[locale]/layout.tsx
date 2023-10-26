@@ -1,6 +1,6 @@
 import Footer from '@/components/Footer/Footer'
 import Navbar from '@/components/Navbar/Navbar'
-import { Exo } from 'next/font/google'
+import { Exo_2 } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import { ReactNode } from 'react'
 import { ToastContainer } from 'react-toastify'
@@ -10,7 +10,7 @@ import { getDictionary } from '../../get-dictionary'
 import { Locale, i18n } from '../../i18n'
 import './globals.scss'
 
-const exo = Exo({ subsets: ['latin'] })
+const exo = Exo_2({ subsets: ['latin'] })
 
 type Props = {
   children: ReactNode

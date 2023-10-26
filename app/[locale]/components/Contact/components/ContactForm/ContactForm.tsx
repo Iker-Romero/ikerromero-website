@@ -8,7 +8,9 @@ import H2 from '@/components/H2/H2'
 import Input from '@/components/Input/Input'
 import Link from '@/components/Link/Link'
 import Textarea from '@/components/Textarea/Textarea'
+import { render } from '@react-email/components'
 import axios from 'axios'
+import LeadEmail from 'emails/LeadEmail'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
@@ -21,7 +23,6 @@ type Props = {
 }
 
 type FormValues = {
-  name: string
   email: string
   message: string
   privacyPolicyAccepted: boolean
@@ -32,7 +33,6 @@ const ContactForm = ({ dict }: Props) => {
     mode: 'onBlur',
     shouldUseNativeValidation: false,
     defaultValues: {
-      name: '',
       email: '',
       message: '',
       privacyPolicyAccepted: false
@@ -46,8 +46,12 @@ const ContactForm = ({ dict }: Props) => {
   const handleSubmit = (data: FormValues) => {
     setSubmitDisabled(true)
 
+    const { email, message } = data
+
+    const emailHTMLString = render(<LeadEmail {...{ email, message }} />)
+
     toast
-      .promise(axios.post('/api/contacts', data), {
+      .promise(axios.post('/api/contacts', { data, emailHTMLString }), {
         pending: 'Sending...',
         success: {
           render: () => {
@@ -95,12 +99,6 @@ const ContactForm = ({ dict }: Props) => {
       className={s['contact-form']}
     >
       <Input
-        name="name"
-        placeholder={placeholders.name}
-        validation="name"
-        required
-      />
-      <Input
         type="email"
         name="email"
         placeholder={placeholders.email}
@@ -119,8 +117,8 @@ const ContactForm = ({ dict }: Props) => {
           </span>
         }
         name="privacyPolicyAccepted"
-        required
         validation="privacyPolicy"
+        required
       />
       <Button
         variant="callToAction"
