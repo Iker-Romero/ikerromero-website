@@ -7,23 +7,21 @@ import { getValidation } from 'utils/validation'
 import s from './Input.module.scss'
 
 type Props = {
-  type?: 'text' | 'email'
+  type?: 'email'
   id?: string
   name?: string
   placeholder?: string
   label?: string
   required?: boolean
-  validation?: 'name'
 }
 
 const Input = ({
-  type = 'text',
+  type,
   id: idProp,
   name,
   placeholder,
   label,
-  required,
-  validation
+  required
 }: Props) => {
   const { register } = useFormContext() || {}
 
@@ -34,8 +32,8 @@ const Input = ({
       {label && <label htmlFor={id}>{label}</label>}
       <input
         {...{ id, type, placeholder }}
-        {...(name && register
-          ? register(name, getValidation({ validation, type, required }))
+        {...(name && type && register
+          ? register(name, getValidation({ type, required }))
           : {})}
         className={s.input}
       />
