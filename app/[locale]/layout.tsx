@@ -26,7 +26,7 @@ export const generateMetadata = async ({ params: { locale } }: Props) => {
     ...metadata,
     metadataBase: new URL(mainURL),
     alternates: {
-      canonical: '/',
+      canonical: `/${locale}`,
       languages: {
         en: '/en',
         es: '/es'
