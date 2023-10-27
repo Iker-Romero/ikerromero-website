@@ -11,7 +11,6 @@
     "title": "Let's Discuss Your Project",
     "description": "Fill out the form or send me a message at ",
     "placeholders": {
-      "name": "Name",
       "email": "Email Address",
       "message": "Tell me about your project"
     },
@@ -105,7 +104,6 @@
       "title": "Data Collection",
       "description": "When using my website, you may be asked to provide certain personal information to contact me. The data I collect are:",
       "list": [
-        "Name",
         "Email address",
         "Any message you wish to include when contacting me"
       ]

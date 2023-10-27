@@ -11,7 +11,6 @@
     "title": "Hablemos de tu proyecto",
     "description": "Rellena el formulario o envíame un mensaje a ",
     "placeholders": {
-      "name": "Nombre",
       "email": "Correo electrónico",
       "message": "Cuéntame sobre tu proyecto"
     },
@@ -105,7 +104,6 @@
       "title": "Recolección de Datos",
       "description": "Al usar mi sitio web, se te puede pedir que proporciones cierta información personal para contactarme. Los datos que recojo son:",
       "list": [
-        "Nombre",
         "Correo electrónico",
         "Cualquier mensaje que desees incluir al contactarme"
       ]
