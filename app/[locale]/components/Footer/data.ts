@@ -1,4 +1,5 @@
 import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { EMAIL } from 'consts'
 
 export const aboutMeLinks = [
   {
@@ -12,8 +13,8 @@ export const aboutMeLinks = [
     link: 'https://github.com/Iker-Romero'
   },
   {
-    name: 'ikersoftdev@gmail.com',
-    link: 'mailto:ikersoftdev@gmail.com'
+    name: EMAIL,
+    link: `mailto:${EMAIL}`
   }
 ]
 

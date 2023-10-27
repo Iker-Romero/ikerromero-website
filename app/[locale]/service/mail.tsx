@@ -1,3 +1,4 @@
+import { EMAIL } from 'consts'
 import nodemailer from 'nodemailer'
 
 type Info = {
@@ -15,7 +16,7 @@ export const sendMail = async (emailHTMLString: string) => {
 
   const mailOptions = {
     from: process.env.NODEMAILER_EMAIL,
-    to: 'ikersoftdev@gmail.com',
+    to: EMAIL,
     subject: '✅ New Lead Contact 📲',
     html: emailHTMLString
   }

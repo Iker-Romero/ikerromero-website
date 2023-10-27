@@ -1,11 +1,10 @@
 import Link from '@/components/Link/Link'
+import { EMAIL } from 'consts'
 
 const Email = () => {
-  const email = 'ikersoftdev@gmail.com'
-
   return (
-    <Link href={`mailto:${email}`} target="_blank" variant="underlined">
-      {email}
+    <Link href={`mailto:${EMAIL}`} target="_blank" variant="underlined">
+      {EMAIL}
     </Link>
   )
 }
