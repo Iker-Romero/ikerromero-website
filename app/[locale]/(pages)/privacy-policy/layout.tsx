@@ -11,7 +11,7 @@ export const generateMetadata = async ({
   params: { locale }
 }: MetadataProps) => {
   const {
-    terms: { title, metadataDescription }
+    privacyPolicy: { title, metadataDescription }
   } = await getDictionary(locale)
 
   return {
