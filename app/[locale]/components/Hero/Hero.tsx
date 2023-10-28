@@ -24,7 +24,6 @@ const Hero = ({ dict }: Props) => {
         <Link
           href="/contact"
           variant="callToAction"
-          id="heroCTA"
           className="hidden fadeInLeft-300 delay-700"
         >
           {dict.contact.CTA}

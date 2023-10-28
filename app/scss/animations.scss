@@ -130,9 +130,12 @@ $durations: 100, 300;
           opacity: 0;
           transform: translateX(200%);
         }
-        100% {
+        99% {
           opacity: 1;
           transform: translateX(0);
+        }
+        100% {
+          opacity: 1;
         }
       }
     }
