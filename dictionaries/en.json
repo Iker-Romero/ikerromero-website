@@ -40,17 +40,17 @@
     "jobs": [
       {
         "id": 1,
-        "datesRange": "June 2023 - Present",
-        "role": "Full Stack Web Developer",
-        "company": "Freelance",
-        "description": "Offering tailor-made web solutions that align with the unique needs and objectives of my clients. From captivating landing pages to robust web applications, I use the latest technologies to ensure functionality, responsiveness, and visual appeal."
-      },
-      {
-        "id": 2,
         "datesRange": "January 2023 - Present",
         "role": "Front-end Web Developer",
         "company": "Triskell Software",
         "description": "Collaborating with a talented team in developing a new modern and efficient web interface. Our goal is to enhance the user experience and optimize the performance of Triskell's project management software."
+      },
+      {
+        "id": 2,
+        "datesRange": "June 2023 - Present",
+        "role": "Full Stack Web Developer",
+        "company": "Freelance",
+        "description": "Offering tailor-made web solutions that align with the unique needs and objectives of my clients. From captivating landing pages to robust web applications, I use the latest technologies to ensure functionality, responsiveness, and visual appeal."
       }
     ]
   },

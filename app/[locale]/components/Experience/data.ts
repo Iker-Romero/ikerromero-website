@@ -20,6 +20,11 @@ type ExperienceType = {
 export const experience: ExperienceType[] = [
   {
     id: 1,
+    link: 'https://www.triskellsoftware.com/',
+    technologies: ['HTML5', 'CSS3', 'Sass', 'JavaScript', 'React']
+  },
+  {
+    id: 2,
     technologies: [
       'HTML5',
       'CSS3',
@@ -32,10 +37,5 @@ export const experience: ExperienceType[] = [
       'Express',
       'MongoDB'
     ]
-  },
-  {
-    id: 2,
-    link: 'https://www.triskellsoftware.com/',
-    technologies: ['HTML5', 'CSS3', 'Sass', 'JavaScript', 'React']
   }
 ]
