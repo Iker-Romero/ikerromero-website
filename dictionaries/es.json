@@ -9,7 +9,9 @@
   "contact": {
     "CTA": "Comencemos",
     "title": "Hablemos de tu proyecto",
+    "metadataTitle": "Contacto | Iker Romero",
     "description": "Rellena el formulario o envíame un mensaje a ",
+    "metaDescription": "Demos vida a tu proyecto. Ponte en contacto para discutir tus necesidades de diseño y desarrollo web. Completa el formulario o envíame un mensaje directamente.",
     "placeholders": {
       "email": "Correo electrónico",
       "message": "Cuéntame sobre tu proyecto"
@@ -61,6 +63,7 @@
   },
   "terms": {
     "title": "Aviso Legal",
+    "metaDescription": "Explora los términos legales que rigen el uso de los servicios de diseño web de Iker Romero, incluyendo la propiedad del sitio web, términos de uso y derechos de propiedad intelectual.",
     "websiteOwnership": {
       "title": "Propiedad del Sitio Web",
       "keys": {
@@ -96,6 +99,7 @@
   },
   "privacyPolicy": {
     "title": "Política de Privacidad",
+    "metaDescription": "Descubre cómo se recopilan, utilizan y protegen tus datos al interactuar con los servicios de diseño web de Iker Romero.",
     "identification": {
       "title": "Identificación del Responsable del Tratamiento",
       "keys": { "name": "Nombre", "address": "Dirección" }

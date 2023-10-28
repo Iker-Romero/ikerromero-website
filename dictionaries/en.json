@@ -9,7 +9,9 @@
   "contact": {
     "CTA": "Let's Start",
     "title": "Let's Discuss Your Project",
+    "metadataTitle": "Contact | Iker Romero",
     "description": "Fill out the form or send me a message at ",
+    "metadataDescription": "Let's bring your project to life. Reach out to discuss your web design and development needs. Fill out the form or send me a message directly.",
     "placeholders": {
       "email": "Email Address",
       "message": "Tell me about your project"
@@ -61,6 +63,7 @@
   },
   "terms": {
     "title": "Legal Notice",
+    "metadataDescription": "Explore the legal terms governing the use of Iker Romero's web design services, including website ownership, terms of use, and intellectual property rights.",
     "websiteOwnership": {
       "title": "Website Ownership",
       "keys": {
@@ -96,6 +99,7 @@
   },
   "privacyPolicy": {
     "title": "Privacy Policy",
+    "metadataDescription": "Discover how your data is collected, used, and protected when engaging with Iker Romero's web design services.",
     "identification": {
       "title": "Identification of the Data Controller",
       "keys": { "name": "Name", "address": "Address" }

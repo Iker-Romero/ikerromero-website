@@ -1,17 +1,30 @@
 import { ReactNode } from 'react'
 
+import { getDictionary } from '../../../../get-dictionary'
+
 type MetadataProps = {
   params: { locale: string }
 }
 
-export const generateMetadata = ({ params: { locale } }: MetadataProps) => {
+export const generateMetadata = async ({
+  params: { locale }
+}: MetadataProps) => {
+  const {
+    terms: { title, metadataDescription }
+  } = await getDictionary(locale)
+
   return {
+    title: title,
     alternates: {
       canonical: `/${locale}/terms`,
       languages: {
         en: '/en/terms',
         es: '/es/terms'
       }
+    },
+    openGraph: {
+      title: title,
+      description: metadataDescription
     }
   }
 }
