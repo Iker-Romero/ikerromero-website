@@ -1,6 +1,7 @@
 import { ReactNode } from 'react'
 
 import { getDictionary } from '../../../../get-dictionary'
+import { i18n } from '../../../../i18n'
 
 type MetadataProps = {
   params: { locale: string }
@@ -15,11 +16,14 @@ export const generateMetadata = async ({
 
   return {
     title: metadataTitle,
+    description: metadataDescription,
     alternates: {
-      canonical: `/${locale}/contact`,
+      canonical:
+        locale === i18n.defaultLocale ? '/contact' : `/${locale}/contact`,
       languages: {
-        en: '/en/contact',
-        es: '/es/contact'
+        en: '/contact',
+        es: '/es/contact',
+        [i18n.defaultLocale]: '/contact'
       }
     },
     openGraph: {

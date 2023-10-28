@@ -26,10 +26,11 @@ export const generateMetadata = async ({ params: { locale } }: Props) => {
     ...metadata,
     metadataBase: new URL(mainURL),
     alternates: {
-      canonical: `/${locale}`,
+      canonical: locale === i18n.defaultLocale ? '/' : `/${locale}`,
       languages: {
         en: '/en',
-        es: '/es'
+        es: '/es',
+        [i18n.defaultLocale]: '/'
       }
     },
     openGraph: {
