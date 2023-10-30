@@ -1,6 +1,6 @@
 import Email from '@/components/Email/Email'
 import ObjectList from '@/components/ObjectList/ObjectList'
-import { ADDRESS, NAME } from 'consts'
+import { ADDRESS, FULL_NAME } from 'consts'
 
 import { getDictionary } from '../../../../get-dictionary'
 import { Locale } from '../../../../i18n'
@@ -13,7 +13,7 @@ const PrivacyPolicy = async ({ params }: Props) => {
   const { privacyPolicy: dict } = await getDictionary(params.locale)
 
   const identification = [
-    { key: dict.identification.keys.name, value: NAME },
+    { key: dict.identification.keys.name, value: FULL_NAME },
     { key: dict.identification.keys.address, value: ADDRESS },
     { key: 'Email', value: <Email /> }
   ]

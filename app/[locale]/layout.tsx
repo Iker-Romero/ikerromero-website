@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer/Footer'
 import Navbar from '@/components/Navbar/Navbar'
+import { FULL_NAME, MAIN_URL } from 'consts'
 import { Exo_2 } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import { ReactNode } from 'react'
@@ -18,13 +19,16 @@ type Props = {
 }
 
 export const generateMetadata = async ({ params: { locale } }: Props) => {
-  const { metadata } = await getDictionary(locale)
+  const {
+    home: { metadataDescription: description }
+  } = await getDictionary(locale)
 
-  const mainURL = 'https://www.ikerromero.com'
+  const title = FULL_NAME
 
   return {
-    ...metadata,
-    metadataBase: new URL(mainURL),
+    title,
+    description,
+    metadataBase: new URL(MAIN_URL),
     alternates: {
       canonical: locale === i18n.defaultLocale ? '/' : `/${locale}`,
       languages: {
@@ -35,10 +39,10 @@ export const generateMetadata = async ({ params: { locale } }: Props) => {
     },
     openGraph: {
       type: 'website',
-      url: mainURL,
+      url: MAIN_URL,
       locale,
-      title: metadata.title,
-      description: metadata.description,
+      title,
+      description,
       images: [
         { url: '/images/iker-romero-1200x630.png' },
         { url: '/images/iker-romero-300x300.png' }

@@ -1,10 +1,9 @@
 import { notFound } from 'next/navigation'
 import 'server-only'
 
-// Metadata
-type Metadata = {
-  title: string
-  description: string
+// Home
+type Home = {
+  metadataDescription: string
 }
 
 // Hero
@@ -111,7 +110,7 @@ type SectionDetails = {
 
 // Props (to represent the full object structure)
 export type Dictionary = {
-  metadata: Metadata
+  home: Home
   hero: Hero
   contact: Contact
   experience: Experience

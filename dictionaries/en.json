@@ -1,7 +1,6 @@
 {
-  "metadata": {
-    "title": "Iker Romero | Premium Web Design and Development",
-    "description": "Expert in web design, development, and SEO. Transform your online presence with tailor-made web solutions."
+  "home": {
+    "metadataDescription": "Expert in web design, development, and SEO. Transform your online presence with tailor-made web solutions."
   },
   "hero": {
     "description": "Elevate your brand with tailor-made web solutions. From impactful landing pages to advanced web applications, I offer an unparalleled digital experience. Let's see how I can take your business to the next level."
