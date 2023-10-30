@@ -1,6 +1,7 @@
 export const NAME = 'Iker'
 export const SURNAME = 'Romero'
-export const FULL_NAME = `${NAME} ${SURNAME} Carames`
+export const FULL_NAME = `${NAME} ${SURNAME}`
+export const LONG_FULL_NAME = `${FULL_NAME} Carames`
 
 export const NATIONAL_ID = '49667948T'
 
