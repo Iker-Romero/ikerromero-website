@@ -3,7 +3,7 @@ import 'server-only'
 
 // Home
 type Home = {
-  metadataDescription: string
+  metaDescription: string
 }
 
 // Hero
@@ -31,9 +31,9 @@ type ErrorToast = {
 type Contact = {
   CTA: string
   title: string
-  metadataTitle: string
+  metaTitle: string
   description: string
-  metadataDescription: string
+  metaDescription: string
   placeholders: Placeholders
   privacyPolicy: {
     label: string
@@ -74,7 +74,7 @@ type IntellectualPropertyDetails = {
 
 type Terms = {
   title: string
-  metadataDescription: string
+  metaDescription: string
   websiteOwnership: SectionDetails & { keys: { [key: string]: string } }
   purposeOfTheWebsite: SectionDetails
   termsOfUser: SectionDetails
@@ -91,7 +91,7 @@ type UserRightsDetails = {
 
 type PrivacyPolicy = {
   title: string
-  metadataDescription: string
+  metaDescription: string
   identification: SectionDetails & { keys: { [key: string]: string } }
   dataCollection: SectionDetails & { list: string[] }
   useOfData: SectionDetails & { list: string[] }

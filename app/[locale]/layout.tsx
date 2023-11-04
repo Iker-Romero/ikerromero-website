@@ -20,7 +20,7 @@ type Props = {
 
 export const generateMetadata = async ({ params: { locale } }: Props) => {
   const {
-    home: { metadataDescription: description }
+    home: { metaDescription: description }
   } = await getDictionary(locale)
 
   const title = FULL_NAME

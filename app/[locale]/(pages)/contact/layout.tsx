@@ -11,12 +11,12 @@ export const generateMetadata = async ({
   params: { locale }
 }: MetadataProps) => {
   const {
-    contact: { metadataTitle, metadataDescription }
+    contact: { metaTitle, metaDescription }
   } = await getDictionary(locale)
 
   return {
-    title: metadataTitle,
-    description: metadataDescription,
+    title: metaTitle,
+    description: metaDescription,
     alternates: {
       canonical:
         locale === i18n.defaultLocale ? '/contact' : `/${locale}/contact`,
@@ -27,8 +27,8 @@ export const generateMetadata = async ({
       }
     },
     openGraph: {
-      title: metadataTitle,
-      description: metadataDescription
+      title: metaTitle,
+      description: metaDescription
     }
   }
 }

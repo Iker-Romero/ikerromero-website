@@ -1,6 +1,6 @@
 {
   "home": {
-    "metadataDescription": "Experto en diseño, desarrollo y SEO web. Transforma tu presencia en línea con soluciones web a medida."
+    "metaDescription": "Experto en diseño, desarrollo y SEO web. Transforma tu presencia en línea con soluciones web a medida."
   },
   "hero": {
     "description": "Eleva tu marca con soluciones web a medida. Desde páginas de inicio impactantes hasta aplicaciones web avanzadas, ofrezco una experiencia digital sin igual. Veamos cómo puedo llevar tu negocio al siguiente nivel."
@@ -8,7 +8,7 @@
   "contact": {
     "CTA": "Comencemos",
     "title": "Hablemos de tu proyecto",
-    "metadataTitle": "Contacto | Iker Romero",
+    "metaTitle": "Contacto | Iker Romero",
     "description": "Rellena el formulario o envíame un mensaje a ",
     "metaDescription": "Demos vida a tu proyecto. Ponte en contacto para discutir tus necesidades de diseño y desarrollo web. Completa el formulario o envíame un mensaje directamente.",
     "placeholders": {
