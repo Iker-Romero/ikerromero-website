@@ -69,6 +69,20 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
+        {/* Google tag (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-11396681838"
+        />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-11396681838');
+          `}
+        </Script>
         <link
           rel="mask-icon"
           href="/icons/safari-pinned-tab-dedicated-image.svg"
@@ -76,20 +90,7 @@ export default async function RootLayout({
         />
         <meta name="msapplication-TileColor" content="#0e2a3a" />
       </head>
-      {/* Google tag (gtag.js) */}
-      <Script
-        async
-        src="https://www.googletagmanager.com/gtag/js?id=AW-11396681838"
-      />
-      <Script id="google-analytics">
-        {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
 
-            gtag('config', 'AW-11396681838');
-          `}
-      </Script>
       <body className={exo.className}>
         <header>
           <Navbar {...{ dict }} />
