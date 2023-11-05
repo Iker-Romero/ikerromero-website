@@ -76,22 +76,21 @@ export default async function RootLayout({
         />
         <meta name="msapplication-TileColor" content="#0e2a3a" />
       </head>
-      <body className={exo.className}>
-        {/* Google tag (gtag.js) */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-11396681838"
-        />
-        <Script id="google-analytics">
-          {`
+      {/* Google tag (gtag.js) */}
+      <Script
+        async
+        src="https://www.googletagmanager.com/gtag/js?id=AW-11396681838"
+      />
+      <Script id="google-analytics">
+        {`
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
 
             gtag('config', 'AW-11396681838');
           `}
-        </Script>
-
+      </Script>
+      <body className={exo.className}>
         <header>
           <Navbar {...{ dict }} />
         </header>
