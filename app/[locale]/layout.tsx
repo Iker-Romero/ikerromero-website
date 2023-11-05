@@ -3,6 +3,7 @@ import Navbar from '@/components/Navbar/Navbar'
 import { FULL_NAME, MAIN_URL } from 'consts'
 import { Exo_2 } from 'next/font/google'
 import { notFound } from 'next/navigation'
+import Script from 'next/script'
 import { ReactNode } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
@@ -76,6 +77,21 @@ export default async function RootLayout({
         <meta name="msapplication-TileColor" content="#0e2a3a" />
       </head>
       <body className={exo.className}>
+        {/* Google tag (gtag.js) */}
+        <Script
+          async
+          src="https://www.googletagmanager.com/gtag/js?id=AW-11396681838"
+        />
+        <Script id="google-analytics">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'AW-11396681838');
+          `}
+        </Script>
+
         <header>
           <Navbar {...{ dict }} />
         </header>
