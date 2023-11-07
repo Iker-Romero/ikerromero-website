@@ -3,13 +3,14 @@ import Navbar from '@/components/Navbar/Navbar'
 import { FULL_NAME, MAIN_URL } from 'consts'
 import { Exo_2 } from 'next/font/google'
 import { notFound } from 'next/navigation'
-import Script from 'next/script'
 import { ReactNode } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 
 import { getDictionary } from '../../get-dictionary'
 import { Locale, i18n } from '../../i18n'
+import GTMNoScript from './components/GTMNoScript/GTMNoScript'
+import GTMScript from './components/GTMScript/GTMScript'
 import './globals.scss'
 
 const exo = Exo_2({ subsets: ['latin'] })
@@ -69,20 +70,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
-        {/* Google tag (gtag.js) */}
-        <Script
-          async
-          src="https://www.googletagmanager.com/gtag/js?id=AW-11396681838"
-        />
-        <Script id="google-analytics">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-
-            gtag('config', 'AW-11396681838');
-          `}
-        </Script>
+        <GTMScript />
         <link
           rel="mask-icon"
           href="/icons/safari-pinned-tab-dedicated-image.svg"
@@ -92,6 +80,8 @@ export default async function RootLayout({
       </head>
 
       <body className={exo.className}>
+        <GTMNoScript />
+
         <header>
           <Navbar {...{ dict }} />
         </header>
