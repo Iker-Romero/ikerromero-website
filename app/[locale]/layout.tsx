@@ -1,6 +1,7 @@
 import Footer from '@/components/Footer/Footer'
 import Navbar from '@/components/Navbar/Navbar'
-import { FULL_NAME, MAIN_URL } from 'consts'
+import { GoogleTagManager } from '@next/third-parties/google'
+import { FULL_NAME, GTM_ID, MAIN_URL } from 'consts'
 import { Exo_2 } from 'next/font/google'
 import { notFound } from 'next/navigation'
 import { ReactNode } from 'react'
@@ -9,8 +10,6 @@ import 'react-toastify/dist/ReactToastify.css'
 
 import { getDictionary } from '../../get-dictionary'
 import { Locale, i18n } from '../../i18n'
-import GTMNoScript from './components/GTMNoScript/GTMNoScript'
-import GTMScript from './components/GTMScript/GTMScript'
 import './globals.scss'
 
 const exo = Exo_2({ subsets: ['latin'] })
@@ -70,7 +69,6 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
-        <GTMScript />
         <link
           rel="mask-icon"
           href="/icons/safari-pinned-tab-dedicated-image.svg"
@@ -80,8 +78,6 @@ export default async function RootLayout({
       </head>
 
       <body className={exo.className}>
-        <GTMNoScript />
-
         <header>
           <Navbar {...{ dict }} />
         </header>
@@ -89,6 +85,8 @@ export default async function RootLayout({
         <Footer {...{ dict }} />
         <ToastContainer />
       </body>
+
+      <GoogleTagManager gtmId={GTM_ID} />
     </html>
   )
 }

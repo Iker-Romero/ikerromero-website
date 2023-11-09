@@ -10,3 +10,7 @@ export const ADDRESS = 'Madrid, Spain'
 export const EMAIL = 'ikerromeroweb@gmail.com'
 
 export const MAIN_URL = 'https://www.ikerromero.com'
+
+// Analitycs
+
+export const GTM_ID = 'GTM-5HPFGSZR'
