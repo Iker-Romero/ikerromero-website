@@ -13,7 +13,8 @@ const contactSchema = new Schema(
     privacyPolicyAccepted: {
       type: Boolean,
       required: true
-    }
+    },
+    href: { type: String, required: true }
   },
   { timestamps: true }
 )

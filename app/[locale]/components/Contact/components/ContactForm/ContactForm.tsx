@@ -51,37 +51,43 @@ const ContactForm = ({ dict }: Props) => {
     const emailHTMLString = render(<LeadEmail {...{ email, message }} />)
 
     toast
-      .promise(axios.post('/api/contacts', { data, emailHTMLString }), {
-        pending: 'Sending...',
-        success: {
-          render: () => {
-            const { title, description } = toastDict.success
+      .promise(
+        axios.post('/api/contacts', {
+          data: { ...data, href: window.location.href },
+          emailHTMLString
+        }),
+        {
+          pending: 'Sending...',
+          success: {
+            render: () => {
+              const { title, description } = toastDict.success
 
-            return (
-              <div className="toast-content">
-                <H2 variant="toast">{title}</H2>
-                <p>{description}</p>
-              </div>
-            )
+              return (
+                <div className="toast-content">
+                  <H2 variant="toast">{title}</H2>
+                  <p>{description}</p>
+                </div>
+              )
+            },
+            autoClose: 8000
           },
-          autoClose: 8000
-        },
-        error: {
-          render: () => {
-            const { title, description } = toastDict.error
+          error: {
+            render: () => {
+              const { title, description } = toastDict.error
 
-            return (
-              <div className="toast-content">
-                <H2 variant="toast-error">{title}</H2>
-                <p>
-                  {description.part1} <Email /> {description.part2}
-                </p>
-              </div>
-            )
-          },
-          autoClose: 12000
+              return (
+                <div className="toast-content">
+                  <H2 variant="toast-error">{title}</H2>
+                  <p>
+                    {description.part1} <Email /> {description.part2}
+                  </p>
+                </div>
+              )
+            },
+            autoClose: 12000
+          }
         }
-      })
+      )
       .then(() => methods.reset())
       .finally(() => setSubmitDisabled(false))
   }
