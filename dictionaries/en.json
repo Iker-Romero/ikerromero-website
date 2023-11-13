@@ -108,7 +108,8 @@
       "description": "When using my website, you may be asked to provide certain personal information to contact me. The data I collect are:",
       "list": [
         "Email address",
-        "Any message you wish to include when contacting me"
+        "Any message you wish to include when contacting me",
+        "The origin URL from which the contact form is sent, to better understand how visitors interact with my site and to improve the effectiveness of my services and advertising campaigns"
       ]
     },
     "useOfData": {

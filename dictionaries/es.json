@@ -108,7 +108,8 @@
       "description": "Al usar mi sitio web, se te puede pedir que proporciones cierta información personal para contactarme. Los datos que recojo son:",
       "list": [
         "Correo electrónico",
-        "Cualquier mensaje que desees incluir al contactarme"
+        "Cualquier mensaje que desees incluir al contactarme",
+        "La URL de origen desde la cual se envía el formulario de contacto, para entender mejor cómo los visitantes interactúan con mi sitio y mejorar la eficacia de mis servicios y campañas publicitarias"
       ]
     },
     "useOfData": {
