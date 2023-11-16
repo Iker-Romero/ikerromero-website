@@ -54,10 +54,14 @@
     ]
   },
   "footer": {
-    "legalLinks": [
-      { "id": 1, "name": "Legal Notice" },
-      { "id": 2, "name": "Privacy Policy" }
-    ],
+    "aboutMe": { "title": "About me" },
+    "legal": {
+      "title": "Legal",
+      "links": [
+        { "id": 1, "name": "Legal notice" },
+        { "id": 2, "name": "Privacy policy" }
+      ]
+    },
     "copyright": "© 2023-present Iker Romero. All rights reserved."
   },
   "terms": {

@@ -18,7 +18,7 @@ export const aboutMeLinks = [
   }
 ]
 
-export const legalLinks = [
+export const legalPaths = [
   { id: 1, link: '/terms' },
   { id: 2, link: '/privacy-policy' }
 ]

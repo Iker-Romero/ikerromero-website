@@ -2,18 +2,17 @@ import { Dictionary } from '../../../../get-dictionary'
 import Link from '../Link/Link'
 import s from './Footer.module.scss'
 import LinksContainer from './components/LinksContainer/LinksContainer'
-import { aboutMeLinks, legalLinks as legalLinksData } from './data'
+import { aboutMeLinks, legalPaths } from './data'
 
 type Props = {
   dict: Dictionary
 }
 
 const Footer = ({ dict }: Props) => {
-  const { copyright } = dict.footer
+  const { aboutMe, legal, copyright } = dict.footer
 
-  const legalLinks = legalLinksData.map(({ id, link }) => {
-    const { name } =
-      dict.footer.legalLinks.find(dictLink => dictLink.id === id) ?? {}
+  const legalLinks = legalPaths.map(({ id, link }) => {
+    const { name } = legal.links.find(dictLink => dictLink.id === id) ?? {}
 
     return { name, link }
   })
@@ -25,8 +24,8 @@ const Footer = ({ dict }: Props) => {
           <Link href="/" variant="logoSmall">
             {'< Iker />'}
           </Link>
-          <LinksContainer title="About Me" links={aboutMeLinks} />
-          <LinksContainer title="Legal" links={legalLinks} />
+          <LinksContainer title={aboutMe.title} links={aboutMeLinks} />
+          <LinksContainer title={legal.title} links={legalLinks} />
         </div>
         <p className={s.copyright}>{copyright}</p>
       </div>
