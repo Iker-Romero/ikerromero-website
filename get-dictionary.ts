@@ -47,6 +47,7 @@ type Contact = {
 }
 
 // Experience
+
 type Job = {
   id: number
   datesRange: string
@@ -62,7 +63,14 @@ type Experience = {
 
 // Footer
 type Footer = {
-  legalLinks: { id: number; name: string }[]
+  aboutMe: { title: string }
+  legal: {
+    title: string
+    links: {
+      id: number
+      name: string
+    }[]
+  }
   copyright: string
 }
 
