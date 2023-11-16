@@ -16,7 +16,7 @@ const Hero = ({ dict }: Props) => {
     <section className={s['hero']}>
       <div className={s.content}>
         <div className={s['text-container']}>
-          <H1 variant="hero" className="hidden fadeInDown">
+          <H1 variant="hero" className="hidden fadeInTop">
             Iker Romero
           </H1>
           <p className={'hidden fadeInRight'}>{description}</p>
@@ -24,7 +24,7 @@ const Hero = ({ dict }: Props) => {
         <Link
           href="/contact"
           variant="callToAction"
-          className="hidden fadeInLeft-300 delay-700"
+          className="hidden fadeInLeft-333 delay-666"
         >
           {dict.contact.CTA}
         </Link>

@@ -5,6 +5,23 @@
   "hero": {
     "description": "Elevate your brand with tailor-made web solutions. From impactful landing pages to advanced web applications, I offer an unparalleled digital experience. Let's see how I can take your business to the next level."
   },
+  "benefits": [
+    {
+      "id": "SEO",
+      "title": "SEO",
+      "description": "The equivalent of having your store on the main street of a bustling city, but at a much lower cost. So that your customers can find you."
+    },
+    {
+      "id": "design",
+      "title": "Design",
+      "description": "Attractive people sell more, it's not just me saying it, it's science. And your website should be no less."
+    },
+    {
+      "id": "performance",
+      "title": "Performance",
+      "description": "A fast and reliable website ensures an excellent experience, making your customers repeat and recommend you."
+    }
+  ],
   "contact": {
     "CTA": "Let's Start",
     "title": "Let's Discuss Your Project",

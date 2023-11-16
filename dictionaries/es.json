@@ -34,6 +34,23 @@
       }
     }
   },
+  "benefits": [
+    {
+      "id": "SEO",
+      "title": "SEO",
+      "description": "El equivalente a tener tu tienda en Gran Vía, por un coste mucho menor. Para que tus clientes te encuentren."
+    },
+    {
+      "id": "design",
+      "title": "Diseño",
+      "description": "Las personas atractivas venden más, no lo digo yo, lo dice la ciencia. Y tu web no puede ser menos."
+    },
+    {
+      "id": "performance",
+      "title": "Rendimiento",
+      "description": "Una web rápida y fiable garantiza una experiencia excelente, haciendo que tus clientes repitan y te recomienden."
+    }
+  ],
   "experience": {
     "title": "Experiencia profesional",
     "jobs": [

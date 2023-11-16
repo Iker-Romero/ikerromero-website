@@ -12,7 +12,7 @@ const Experience = ({ dict }: Props) => {
 
   return (
     <section className={s['experience-section']}>
-      <h2 id="experience" className="hidden fadeInDown">
+      <h2 id="experience" className="hidden fadeInTop">
         {title}
       </h2>
       <div className={s['cards-container']}>
