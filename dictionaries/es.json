@@ -3,7 +3,7 @@
     "metaDescription": "Experto en diseño, desarrollo y SEO web. Transforma tu presencia en línea con soluciones web a medida."
   },
   "hero": {
-    "description": "Eleva tu marca con soluciones web a medida. Desde páginas de inicio impactantes hasta aplicaciones web avanzadas, ofrezco una experiencia digital sin igual. Veamos cómo puedo llevar tu negocio al siguiente nivel."
+    "description": "Creo sitios web de calidad que te diferencian de la competencia y conducen resultados escalables a tu negocio. Si acepto tu proyecto, eso es lo que recibes."
   },
   "contact": {
     "CTA": "Comencemos",
@@ -34,6 +34,23 @@
       }
     }
   },
+  "benefits": [
+    {
+      "id": "SEO",
+      "title": "SEO",
+      "description": "El equivalente a tener tu tienda en Gran Vía, pero por un coste mucho menor. Para que tus clientes te encuentren."
+    },
+    {
+      "id": "design",
+      "title": "Diseño",
+      "description": "Las personas atractivas venden más, no lo digo yo, lo dice la ciencia. Y tu web no puede ser menos."
+    },
+    {
+      "id": "performance",
+      "title": "Rendimiento",
+      "description": "Una web rápida y fiable garantiza una experiencia excelente, haciendo que tus clientes repitan y te recomienden."
+    }
+  ],
   "experience": {
     "title": "Experiencia profesional",
     "jobs": [

@@ -3,7 +3,7 @@
     "metaDescription": "Expert in web design, development, and SEO. Transform your online presence with tailor-made web solutions."
   },
   "hero": {
-    "description": "Elevate your brand with tailor-made web solutions. From impactful landing pages to advanced web applications, I offer an unparalleled digital experience. Let's see how I can take your business to the next level."
+    "description": "I create quality websites that set you apart from the competition and drive scalable results to your business. If I take on your project, that's what you get."
   },
   "contact": {
     "CTA": "Let's Start",
@@ -34,6 +34,23 @@
       }
     }
   },
+  "benefits": [
+    {
+      "id": "SEO",
+      "title": "SEO",
+      "description": "The equivalent of having your store on the main street of a bustling city, but at a much lower cost. So that your customers can find you."
+    },
+    {
+      "id": "design",
+      "title": "Design",
+      "description": "Attractive people sell more, it's not just me saying it, it's science. And your website should be no less."
+    },
+    {
+      "id": "performance",
+      "title": "Performance",
+      "description": "A fast and reliable website ensures an excellent experience, making your customers repeat and recommend you."
+    }
+  ],
   "experience": {
     "title": "Professional Experience",
     "jobs": [

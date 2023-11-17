@@ -46,6 +46,12 @@ type Contact = {
   }
 }
 
+type Benefits = {
+  id: 'SEO' | 'design' | 'performance'
+  title: string
+  description: string
+}[]
+
 // Experience
 
 type Job = {
@@ -121,6 +127,7 @@ export type Dictionary = {
   home: Home
   hero: Hero
   contact: Contact
+  benefits: Benefits
   experience: Experience
   footer: Footer
   terms: Terms

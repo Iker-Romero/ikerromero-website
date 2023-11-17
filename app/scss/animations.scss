@@ -1,7 +1,7 @@
 @use '@/scss/color-palette' as *;
 
-$delays: 700;
-$durations: 100, 300;
+$delays: 333, 666, 1000;
+$durations: 100, 333;
 
 @mixin shimmerAnimation {
   position: relative;
@@ -49,7 +49,7 @@ $durations: 100, 300;
 .scaleInFromLeftBottom {
   &.visible {
     transform-origin: left bottom;
-    animation: scaleInFromLeftBottom 700ms ease-in-out forwards;
+    animation: scaleInFromLeftBottom 666ms ease-in-out forwards;
 
     @keyframes scaleInFromLeftBottom {
       0% {
@@ -64,16 +64,54 @@ $durations: 100, 300;
   }
 }
 
-.fadeInDown {
+.fadeInTop {
   &.visible {
     transform-origin: top;
-    animation: fadeInDown 300ms ease-in-out forwards;
+    animation: fadeInTop 300ms ease-in-out forwards;
 
-    @keyframes fadeInDown {
+    @keyframes fadeInTop {
       0% {
         opacity: 0;
         // --VHDistanceToH1: Aprox. space to the top of the viewport
         transform: translateY(calc(var(--VHDistanceToH1) * -1 + -100%));
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  }
+}
+
+.fadeInBottom {
+  &.visible {
+    $duration: 333ms;
+
+    transform-origin: top;
+    animation: fadeInBottom $duration ease-in-out forwards;
+
+    @each $delayN in $delays {
+      $delay: #{$delayN}ms;
+
+      &.delay-#{$delayN} {
+        animation-delay: $delay;
+      }
+
+      @for $i from 0 through 9 {
+        &.i-#{$i} {
+          animation-delay: $i * $duration;
+
+          &.delay-#{$delayN} {
+            animation-delay: $delayN + $i * $duration;
+          }
+        }
+      }
+    }
+
+    @keyframes fadeInBottom {
+      0% {
+        opacity: 0;
+        transform: translateY(100%);
       }
       100% {
         opacity: 1;
@@ -102,8 +140,6 @@ $durations: 100, 300;
 
 @each $durationN in $durations {
   .fadeInLeft-#{$durationN} {
-    $duration: #{$durationN}ms;
-
     &.visible {
       animation: fadeInLeft 300ms ease-in-out forwards;
 
