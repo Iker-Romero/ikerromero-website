@@ -21,7 +21,7 @@ const Footer = ({ dict }: Props) => {
     <footer>
       <div className={s['footer-content']}>
         <div className={s.links}>
-          <Link href="/" variant="logoSmall">
+          <Link id="footerLogo" href="/" variant="logoSmall">
             {'< Iker />'}
           </Link>
           <LinksContainer title={aboutMe.title} links={aboutMeLinks} />

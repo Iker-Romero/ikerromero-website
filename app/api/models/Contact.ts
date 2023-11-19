@@ -14,7 +14,9 @@ const contactSchema = new Schema(
       type: Boolean,
       required: true
     },
-    href: { type: String, required: true }
+    page: { type: Schema.Types.ObjectId, ref: 'Page', required: true },
+    session: { type: Schema.Types.ObjectId, ref: 'Session', required: true },
+    user: { type: Schema.Types.ObjectId, ref: 'User', required: true }
   },
   { timestamps: true }
 )

@@ -11,7 +11,7 @@ const Experience = ({ dict }: Props) => {
   const { title } = dict.experience
 
   return (
-    <section className={s['experience-section']}>
+    <section id="experienceSection" className={s['experience-section']}>
       <h2 id="experience" className="hidden fadeInTop">
         {title}
       </h2>

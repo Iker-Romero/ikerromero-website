@@ -11,7 +11,7 @@ const Navbar = ({ dict }: Props) => {
 
   return (
     <nav className={s.navbar}>
-      <Link href="/" variant="logo">
+      <Link id="navbarLogo" href="/" variant="logo">
         {'< Iker />'}
       </Link>
       <div className={s['sections-links-container']}>

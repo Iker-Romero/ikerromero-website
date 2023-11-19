@@ -53,7 +53,7 @@ const ContactForm = ({ dict }: Props) => {
     toast
       .promise(
         axios.post('/api/contacts', {
-          data: { ...data, href: window.location.href },
+          data,
           emailHTMLString
         }),
         {
@@ -127,6 +127,7 @@ const ContactForm = ({ dict }: Props) => {
         required
       />
       <Button
+        id="contactFormSubmitButton"
         variant="callToAction"
         disabled={submitDisabled}
         className={s['send-button']}

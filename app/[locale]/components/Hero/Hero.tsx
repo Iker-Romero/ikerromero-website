@@ -14,7 +14,7 @@ const Hero = ({ dict }: Props) => {
 
   return (
     <section className={s['hero']}>
-      <div className={s.content}>
+      <div id="heroContent" className={s.content}>
         <div className={s['text-container']}>
           <H1 variant="hero" className="hidden fadeInTop">
             Iker Romero
@@ -22,6 +22,7 @@ const Hero = ({ dict }: Props) => {
           <p className={'hidden fadeInRight'}>{description}</p>
         </div>
         <Link
+          id="heroCTA"
           href="/contact"
           variant="callToAction"
           className="hidden fadeInLeft-333 delay-666"

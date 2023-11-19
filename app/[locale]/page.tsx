@@ -20,7 +20,6 @@ const Home = async ({ params }: Props) => {
       <Benefits {...{ dict }} />
       <Experience {...{ dict }} />
       <Contact {...{ dict, params }} />
-      <ClientLogic />
     </>
   )
 }
