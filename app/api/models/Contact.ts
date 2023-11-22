@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose'
+import { Schema, model, models } from 'mongoose'
 
 const contactSchema = new Schema(
   {
@@ -21,6 +21,6 @@ const contactSchema = new Schema(
   { timestamps: true }
 )
 
-const Contact = model('Contact', contactSchema)
+const Contact = models.Contact || model('Contact', contactSchema)
 
 export default Contact

@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose'
+import { Schema, model, models } from 'mongoose'
 
 const pageSchema = new Schema(
   {
@@ -23,6 +23,6 @@ const pageSchema = new Schema(
   { timestamps: true }
 )
 
-const Page = model('Page', pageSchema)
+const Page = models.Page || model('Page', pageSchema)
 
 export default Page

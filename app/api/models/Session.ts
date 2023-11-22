@@ -1,4 +1,4 @@
-import { Schema, model } from 'mongoose'
+import { Schema, model, models } from 'mongoose'
 
 const sessionSchema = new Schema(
   {
@@ -94,6 +94,6 @@ const sessionSchema = new Schema(
   { timestamps: true }
 )
 
-const Session = model('Session', sessionSchema)
+const Session = models.Session || model('Session', sessionSchema)
 
 export default Session
