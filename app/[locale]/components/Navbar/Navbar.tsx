@@ -11,11 +11,11 @@ const Navbar = ({ dict }: Props) => {
 
   return (
     <nav className={s.navbar}>
-      <Link href="/" variant="logo">
+      <Link id="navbarLogo" href="/" variant="logo">
         {'< Iker />'}
       </Link>
       <div className={s['sections-links-container']}>
-        <Link href="/contact" variant="callToActionSecondary">
+        <Link id="navbarCTA" href="/contact" variant="callToActionSecondary">
           {contact.CTA}
         </Link>
       </div>

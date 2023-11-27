@@ -1,7 +1,6 @@
 import Contact from '@/components/Contact/Contact'
 import Experience from '@/components/Experience/Experience'
 import Hero from '@/components/Hero/Hero'
-import ClientLogic from 'utils/ClientLogic'
 
 import { getDictionary } from '../../get-dictionary'
 import { Locale } from '../../i18n'
@@ -20,7 +19,6 @@ const Home = async ({ params }: Props) => {
       <Benefits {...{ dict }} />
       <Experience {...{ dict }} />
       <Contact {...{ dict, params }} />
-      <ClientLogic />
     </>
   )
 }

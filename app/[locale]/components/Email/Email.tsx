@@ -3,7 +3,12 @@ import { EMAIL } from 'consts'
 
 const Email = () => {
   return (
-    <Link href={`mailto:${EMAIL}`} target="_blank" variant="underlined">
+    <Link
+      id="emailLink"
+      href={`mailto:${EMAIL}`}
+      target="_blank"
+      variant="underlined"
+    >
       {EMAIL}
     </Link>
   )

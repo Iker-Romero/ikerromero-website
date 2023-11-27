@@ -18,7 +18,7 @@ const Benefits = ({ dict }: Props) => {
   const { benefits } = dict
 
   return (
-    <section className={s['benefits-section']}>
+    <section id="benefitsSection" className={s['benefits-section']}>
       <ul className={s[`benefits-container`]}>
         {benefits.map(({ id, title, description }, i) => {
           const Icon = icons[id]

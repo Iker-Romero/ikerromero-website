@@ -7,4 +7,5 @@ const withNextIntl = intlPlugin(
 
 export default withNextIntl({
   // Other Next.js configuration ...
+  reactStrictMode: false
 })
