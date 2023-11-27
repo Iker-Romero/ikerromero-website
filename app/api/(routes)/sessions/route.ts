@@ -14,22 +14,23 @@ const { IPGEOLOCATION_API_KEY } = process.env
 
 export const POST = async (request: NextRequest) => {
   try {
-    const { ip, url: href } = request
+    const { ip } = request
+    const href = request.headers.get('referer')
+
     const userAgent = getUserAgent(request)
 
     const [body] = await Promise.all([request.json(), connectMongoDB()])
 
-    const { siteLoadDate, sectionsData } = body
+    const { sessionStartDate, sections: sectionsData } = body
     let { userId } = body
 
     const geolocationResponse = await axios.get(
-      // `https://api.ipgeolocation.io/ipgeo?apiKey=${IPGEOLOCATION_API_KEY}&ip=${ip}`
-      `https://api.ipgeolocation.io/ipgeo?apiKey=${IPGEOLOCATION_API_KEY}&ip=86.127.230.229`
+      `https://api.ipgeolocation.io/ipgeo?apiKey=${IPGEOLOCATION_API_KEY}&ip=${ip}`
     )
 
     const sections = await Section.insertMany(sectionsData)
 
-    const time = Date.now() - new Date(siteLoadDate).getTime()
+    const time = Date.now() - new Date(sessionStartDate).getTime()
 
     const page = await Page.create({
       href,
@@ -45,7 +46,7 @@ export const POST = async (request: NextRequest) => {
     }
 
     const newSession = await Session.create({
-      startDate: siteLoadDate,
+      startDate: sessionStartDate,
       user: userId,
       userAgent,
       geolocation: geolocationResponse.data,
@@ -54,10 +55,13 @@ export const POST = async (request: NextRequest) => {
     })
 
     await User.findByIdAndUpdate(userId, {
-      sessions: [newSession]
+      session: { $push: newSession._id }
     })
 
-    return NextResponse.json({ userId }, { status: 200 })
+    return NextResponse.json(
+      { userId, sessionId: newSession._id, pageId: page._id },
+      { status: 200 }
+    )
   } catch (error) {
     console.error(error)
 

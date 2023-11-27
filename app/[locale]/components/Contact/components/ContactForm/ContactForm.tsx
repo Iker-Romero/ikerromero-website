@@ -14,6 +14,7 @@ import LeadEmail from 'emails/LeadEmail'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
+import { page } from 'utils/ClientLogic'
 
 import { Dictionary } from '../../../../../../get-dictionary'
 import s from './ContactForm.module.scss'
@@ -43,11 +44,16 @@ const ContactForm = ({ dict }: Props) => {
 
   const { placeholders, privacyPolicy, submit, toast: toastDict } = dict.contact
 
-  const handleSubmit = (data: FormValues) => {
+  const handleSubmit = (formValues: FormValues) => {
     setSubmitDisabled(true)
 
-    const { email, message } = data
-
+    const { email, message } = formValues
+    const data = {
+      ...formValues,
+      pageId: page._id,
+      sessionId: localStorage.getItem('sessionId'),
+      userId: localStorage.getItem('userId')
+    }
     const emailHTMLString = render(<LeadEmail {...{ email, message }} />)
 
     toast

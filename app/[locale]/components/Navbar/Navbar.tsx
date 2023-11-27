@@ -15,7 +15,7 @@ const Navbar = ({ dict }: Props) => {
         {'< Iker />'}
       </Link>
       <div className={s['sections-links-container']}>
-        <Link href="/contact" variant="callToActionSecondary">
+        <Link id="navbarCTA" href="/contact" variant="callToActionSecondary">
           {contact.CTA}
         </Link>
       </div>

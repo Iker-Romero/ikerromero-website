@@ -12,7 +12,7 @@ const Contact = async ({ variant = 'component', dict }: Props) => {
   const Heading = variant === 'page' ? 'h1' : 'h2'
 
   return (
-    <section className={s['contact']}>
+    <section id="contactSection" className={s['contact']}>
       <Heading>{dict.contact.title}</Heading>
       <p className={s[`description-${variant}-variant`]}>
         {dict.contact.description} <Email />.

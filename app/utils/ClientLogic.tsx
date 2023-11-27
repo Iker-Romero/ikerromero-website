@@ -1,101 +1,115 @@
 'use client'
 
 import axios from 'axios'
+import { ANALYTICS_INTERVAL } from 'consts'
+import { usePathname } from 'next/navigation'
 import { useEffect } from 'react'
 
+import {
+  getSectionObserver,
+  listenClicks,
+  observeSections,
+  saveInitialAnalyticsData
+} from './analytics'
 import addScrollAnimationsListener from './scrollDrivenAnimations'
 
-const loadAnalytics = async () => {
-  const siteLoadDate = new Date()
+// States
 
-  // const clickElementsIds = [
-  //   'navbarLogo',
-  //   'navbarCTA',
-  //   'heroCTA',
-  //   'emailLink',
-  //   'contactFormSubmitButton',
-  //   'footerLogo'
-  // ]
+export let sessionStartDate: Date
 
-  // const clickElements = clickElementsIds
-  //   .map(id => document.getElementById(id))
-  //   .filter(Boolean) as HTMLElement[]
+export let sectionObserver: IntersectionObserver
 
-  // // clickElements.forEach((element) => element?.addEventListener('click', () => ))
+export let page: Page = { sections: {}, clicks: [] }
 
-  // const observer = new IntersectionObserver((entries) => {
-  //   entries.forEach((entry) => {
+export let analyticsIntervalId: NodeJS.Timer
 
-  //   })
-  // })
+// Functions
 
-  // clickElements.forEach(element => observer.observe(element))
+const startSessionAnalytics = async () => {
+  try {
+    sessionStartDate = new Date()
 
-  // observer.observe(clickElements)
+    // Add listeners to click elements
+    listenClicks()
 
-  const sectionsIds = [
-    'heroContent',
-    'benefitsSection',
-    'experienceSection',
-    'contactSection'
-  ]
+    // Add listeners to sections
+    sectionObserver = getSectionObserver()
+    observeSections(sectionObserver)
 
-  // const threshold = []
+    // Save session data in DB and user in localStorage
+    saveInitialAnalyticsData()
+  } catch (error) {
+    console.error(error)
+  }
+}
 
-  // const interval = 0.1
-
-  // for (let i = 0; threshold.length !== 1 / interval + 1; i += interval) {
-  //   threshold.push(Number(i.toFixed(2)))
-  // }
-
-  const sectionsData = await new Promise(resolve => {
-    const array: Section[] = []
-
-    const sectionObserver = new IntersectionObserver(entries => {
-      entries.forEach(
-        ({ isIntersecting, target: { id }, intersectionRatio }) => {
-          if (isIntersecting) {
-            const maxIntersectionRatio = Number(intersectionRatio.toFixed(2))
-
-            array.push({ id, maxIntersectionRatio })
-          }
-        }
-      )
-
-      resolve(array)
-    })
-
-    const sections = sectionsIds
-      .map(id => document.getElementById(id))
-      .filter(Boolean) as HTMLElement[]
-
-    sections.forEach(section => sectionObserver.observe(section))
-  })
-  console.log('sectionsData', sectionsData)
-
-  const userId = localStorage.getItem('userId')
-
-  const sessionResponse = await axios.post('/api/sessions', {
-    siteLoadDate,
-    sectionsData,
-    userId
-  })
-
-  if (!userId) {
-    const newUserId = sessionResponse.data.userId
-
-    if (newUserId) {
-      localStorage.setItem('userId', newUserId)
+const analyticsUpdate = async ({ lastPage }: { lastPage?: Page } = {}) => {
+  try {
+    if (lastPage) {
+      axios.patch(`/api/pages/${lastPage._id}`, {
+        sessionStartDate,
+        sections: Object.values(lastPage.sections)
+      })
     }
+
+    const sessionId = localStorage.getItem('sessionId')
+
+    if (page._id) {
+      axios.patch(`/api/pages/${page._id}`, {
+        sessionStartDate,
+        sections: Object.values(page.sections)
+      })
+    } else {
+      const pageCreateResponse = await axios.post('/api/pages', {
+        sessionId,
+        timeSinceSessionStart: Date.now() - sessionStartDate.getTime(),
+        sections: Object.values(page.sections)
+      })
+
+      page._id = pageCreateResponse.data._id
+    }
+
+    axios.patch(`/api/sessions/${sessionId}`, {
+      sessionStartDate
+    })
+  } catch (error) {
+    console.error(error)
   }
 }
 
 const ClientLogic = () => {
-  useEffect(() => {
-    addScrollAnimationsListener()
+  const pathname = usePathname()
 
-    loadAnalytics()
+  useEffect(() => {
+    try {
+      startSessionAnalytics()
+    } catch (error) {
+      console.error(error)
+    }
   }, [])
+
+  useEffect(() => {
+    const handleRouteChange = async () => {
+      addScrollAnimationsListener()
+
+      if (analyticsIntervalId) {
+        clearInterval(analyticsIntervalId)
+
+        const lastPage = page
+
+        page = { sections: {}, clicks: [] }
+        listenClicks()
+        sectionObserver.disconnect()
+        observeSections(sectionObserver)
+
+        analyticsUpdate({ lastPage })
+      }
+
+      analyticsIntervalId = setInterval(analyticsUpdate, ANALYTICS_INTERVAL)
+    }
+
+    handleRouteChange()
+  }, [pathname])
 
   return null
 }
