@@ -24,9 +24,11 @@ export const POST = async (request: NextRequest) => {
     const { sessionStartDate, sections: sectionsData } = body
     let { userId } = body
 
-    const geolocationResponse = await axios.get(
-      `https://api.ipgeolocation.io/ipgeo?apiKey=${IPGEOLOCATION_API_KEY}&ip=${ip}`
-    )
+    const geolocationResponse =
+      ip &&
+      (await axios.get(
+        `https://api.ipgeolocation.io/ipgeo?apiKey=${IPGEOLOCATION_API_KEY}&ip=${ip}`
+      ))
 
     const sections = await Section.insertMany(sectionsData)
 
@@ -49,7 +51,10 @@ export const POST = async (request: NextRequest) => {
       startDate: sessionStartDate,
       user: userId,
       userAgent,
-      geolocation: geolocationResponse.data,
+      ...(typeof geolocationResponse === 'object' &&
+      geolocationResponse?.status === 200
+        ? { geolocation: geolocationResponse.data }
+        : {}),
       pages: [page],
       time
     })
@@ -59,7 +64,11 @@ export const POST = async (request: NextRequest) => {
     })
 
     return NextResponse.json(
-      { userId, sessionId: newSession._id, pageId: page._id },
+      {
+        userId: userId.toString(),
+        sessionId: newSession._id.toString(),
+        pageId: page._id.toString()
+      },
       { status: 200 }
     )
   } catch (error) {
