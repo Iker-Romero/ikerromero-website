@@ -27,7 +27,7 @@ export const POST = async (request: NextRequest) => {
       $push: { pages: page._id }
     })
 
-    return NextResponse.json({ pageId: page._id }, { status: 200 })
+    return NextResponse.json({ pageId: page._id.toString() }, { status: 200 })
   } catch (error) {
     console.error(error)
 

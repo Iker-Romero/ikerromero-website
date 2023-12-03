@@ -32,7 +32,7 @@ export const POST = async (request: NextRequest) => {
     const info = await sendMail(emailHTMLString)
     console.log('Email sent: ', info.response)
 
-    return NextResponse.json(newContact, { status: 200 })
+    return NextResponse.json({ status: 200 })
   } catch (error) {
     console.error(error)
 
