@@ -86,10 +86,10 @@
     "metaDescription": "Explora los términos legales que rigen el uso de los servicios de diseño web de Iker Romero, incluyendo la propiedad del sitio web, términos de uso y derechos de propiedad intelectual.",
     "websiteOwnership": {
       "title": "Propiedad del Sitio Web",
-      "keys": {
-        "owner": "Propietario",
-        "nationalID": "ID Nacional",
-        "address": "Dirección"
+      "bulletPoints": {
+        "owner": { "key": "Propietario" },
+        "nationalID": { "key": "ID Nacional" },
+        "address": { "key": "Dirección", "value": "Madrid, España" }
       }
     },
     "purposeOfTheWebsite": {
@@ -122,47 +122,49 @@
     "metaDescription": "Descubre cómo se recopilan, utilizan y protegen tus datos al interactuar con los servicios de diseño web de Iker Romero.",
     "identification": {
       "title": "Identificación del Responsable del Tratamiento",
-      "keys": { "name": "Nombre", "address": "Dirección" }
+      "bulletPoints": {
+        "name": { "key": "Nombre" },
+        "address": { "key": "Dirección", "value": "Madrid, España" }
+      }
     },
     "dataCollection": {
       "title": "Recolección de Datos",
-      "description": "Al usar mi sitio web, se te puede pedir que proporciones cierta información personal para contactarme. Los datos que recojo son:",
+      "description": "Al visitar mi sitio web, se recopilan datos para mejorar tu experiencia y ofrecerte un servicio personalizado. Estos incluyen:",
       "list": [
-        "Correo electrónico",
-        "Cualquier mensaje que desees incluir al contactarme",
-        "La URL de origen desde la cual se envía el formulario de contacto, para entender mejor cómo los visitantes interactúan con mi sitio y mejorar la eficacia de mis servicios y campañas publicitarias"
+        "Correo electrónico y mensaje en el formulario de contacto.",
+        "Información técnica como la URL de origen y detalles del navegador, para mejorar la usabilidad del sitio y la eficacia de mis campañas publicitarias."
       ]
     },
     "useOfData": {
       "title": "Uso de Datos",
-      "description": "Recojo estos datos exclusivamente para:",
+      "description": "Los datos recopilados se utilizan exclusivamente para:",
       "list": [
-        "Responder a consultas y/o solicitudes.",
-        "Comunicarme directamente contigo si deseas contratar mis servicios."
+        "Responder a consultas y procesar solicitudes de servicios.",
+        "Análisis interno para mejorar la experiencia del usuario en mi sitio web."
       ]
     },
     "dataStorage": {
       "title": "Almacenamiento de Datos",
-      "description": "Para gestionar la información recopilada, utilizo MongoDB, que me ayuda a almacenar de forma segura la información de contacto. Además, para asegurarme de estar al tanto de las solicitudes, utilizo Gmail y Nodemailer para enviar notificaciones automáticas a mi correo electrónico profesional. No comparto tus datos con terceros más allá de las herramientas mencionadas, que son esenciales para el funcionamiento de mi sitio web."
+      "description": "Utilizo sistemas seguros como MongoDB para el almacenamiento de datos y Gmail junto con Nodemailer para las comunicaciones por correo electrónico. Estas herramientas son esenciales para operar mi sitio web y responder a tus solicitudes, sin compartir tus datos con terceros no relacionados."
     },
     "security": {
       "title": "Seguridad",
-      "description": "Estoy comprometido a garantizar que tu información esté segura. Continuamente busco implementar y mejorar mis procedimientos de seguridad para garantizar la seguridad de los datos que recojo."
+      "description": "La seguridad de tus datos es una prioridad. Implemento medidas de seguridad robustas para proteger la información recopilada y mantener su confidencialidad."
     },
     "userRights": {
       "title": "Derechos del Usuario",
       "description": {
-        "part1": "De acuerdo con la legislación española y europea, te otorgo los derechos de Acceso, Rectificación, Cancelación y Oposición (derechos ARCO). Si deseas ejercer estos derechos, puedes enviarme un correo a ",
-        "part2": ". Para garantizar la autenticidad de la solicitud, debes hacerlo desde el correo electrónico que inicialmente usaste en mi sitio."
+        "part1": "Conforme a la ley, tienes derecho a Acceder, Rectificar, Cancelar u Oponerte al uso de tus datos. Puedes ejercer estos derechos enviando una solicitud a ",
+        "part2": ", utilizando el mismo correo electrónico registrado en el sitio."
       }
     },
     "durationOfDataRetention": {
       "title": "Duración del Almacenamiento de Datos",
-      "description": "Retengo los datos indefinidamente. Sin embargo, puedes solicitar su eliminación en cualquier momento."
+      "description": "Los datos se retienen mientras sean necesarios para los fines indicados. Puedes solicitar su eliminación en cualquier momento, conforme a tus derechos ARCO."
     },
     "changesToThePrivacyPolicy": {
       "title": "Cambios en la Política de Privacidad",
-      "description": "Puedo actualizar esta Política de Privacidad según sea necesario. Cualquier actualización o cambio se publicará en esta página para tu referencia."
+      "description": "Esta política puede ser actualizada para reflejar cambios en las prácticas de privacidad. Las modificaciones se publicarán en el sitio para tu conocimiento."
     }
   }
 }

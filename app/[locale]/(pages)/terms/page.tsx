@@ -1,6 +1,6 @@
 import Email from '@/components/Email/Email'
 import ObjectList from '@/components/ObjectList/ObjectList'
-import { ADDRESS, LONG_FULL_NAME, NATIONAL_ID } from 'consts'
+import { LONG_FULL_NAME, NATIONAL_ID } from 'consts'
 
 import { getDictionary } from '../../../../get-dictionary'
 import { Locale } from '../../../../i18n'
@@ -13,9 +13,18 @@ const Terms = async ({ params }: Props) => {
   const { terms: dict } = await getDictionary(params.locale)
 
   const ownership = [
-    { key: dict.websiteOwnership.keys.owner, value: LONG_FULL_NAME },
-    { key: dict.websiteOwnership.keys.nationalID, value: NATIONAL_ID },
-    { key: dict.websiteOwnership.keys.address, value: ADDRESS },
+    {
+      key: dict.websiteOwnership.bulletPoints.owner.key,
+      value: LONG_FULL_NAME
+    },
+    {
+      key: dict.websiteOwnership.bulletPoints.nationalID.key,
+      value: NATIONAL_ID
+    },
+    {
+      key: dict.websiteOwnership.bulletPoints.address.key,
+      value: dict.websiteOwnership.bulletPoints.address.value
+    },
     { key: 'Email', value: <Email /> }
   ]
 
