@@ -60,7 +60,7 @@ export const POST = async (request: NextRequest) => {
     })
 
     await User.findByIdAndUpdate(userId, {
-      session: { $push: newSession._id }
+      sessions: { $push: newSession._id }
     })
 
     return NextResponse.json(
