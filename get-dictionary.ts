@@ -89,7 +89,14 @@ type IntellectualPropertyDetails = {
 type Terms = {
   title: string
   metaDescription: string
-  websiteOwnership: SectionDetails & { keys: { [key: string]: string } }
+  websiteOwnership: SectionDetails & {
+    bulletPoints: {
+      [key in 'owner' | 'nationalID' | 'address']: {
+        key: string
+        value: string
+      }
+    }
+  }
   purposeOfTheWebsite: SectionDetails
   termsOfUser: SectionDetails
   intellectualProperty: IntellectualPropertyDetails
@@ -106,7 +113,11 @@ type UserRightsDetails = {
 type PrivacyPolicy = {
   title: string
   metaDescription: string
-  identification: SectionDetails & { keys: { [key: string]: string } }
+  identification: SectionDetails & {
+    bulletPoints: {
+      [key in 'name' | 'address']: { key: string; value: string }
+    }
+  }
   dataCollection: SectionDetails & { list: string[] }
   useOfData: SectionDetails & { list: string[] }
   dataStorage: SectionDetails

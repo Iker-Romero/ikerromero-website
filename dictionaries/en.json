@@ -86,15 +86,15 @@
     "metaDescription": "Explore the legal terms governing the use of Iker Romero's web design services, including website ownership, terms of use, and intellectual property rights.",
     "websiteOwnership": {
       "title": "Website Ownership",
-      "keys": {
-        "owner": "Owner",
-        "nationalID": "National ID",
-        "address": "Address"
+      "bulletPoints": {
+        "owner": { "key": "Owner" },
+        "nationalID": { "key": "National ID" },
+        "address": { "key": "Address", "value": "Madrid, Spain" }
       }
     },
     "purposeOfTheWebsite": {
       "title": "Purpose of the Website",
-      "description": "The purpose of this website is to showcase to potential clients the caliber of projects I create. It also provides a means for those interested in my services to connect with me."
+      "description": "The purpose of this website is to showcase to potential clients the caliber of projects I create. It also provides a way for those interested in my services to connect with me."
     },
     "termsOfUser": {
       "title": "Terms of Use",
@@ -103,66 +103,68 @@
     "intellectualProperty": {
       "title": "Intellectual and Industrial Property",
       "paragraphs": [
-        "The website, including its programming, editing, compilation, and other necessary elements for its operation, along with designs, logos, text, photographs, and graphics, are owned by Iker Romero Carames. In cases where the content is not originally owned, the necessary licenses or authorizations have been obtained from the respective authors. All website content is duly protected by intellectual and industrial property laws.",
-        "Any use, reproduction, distribution, modification, alteration, or decompilation of any content, whether in whole or in part, without the prior written consent of Iker Romero Carames is expressly prohibited. Any unauthorized use of the content of this website will be considered a serious infringement of intellectual and industrial property rights.",
-        "The images and other visual elements present on this website are owned by Iker Romero Carames or are used under appropriate licenses or permissions. Respecting the original license terms of any third-party content, the use or reproduction of content specifically owned by Iker Romero Carames is strictly prohibited."
+        "The website, including its programming, editing, compilation, and other elements necessary for its operation, along with designs, logos, text, photographs, and graphics, are the property of Iker Romero Carames. Where content is not originally owned, necessary licenses or authorizations have been obtained from the respective authors. All website content is duly protected by intellectual and industrial property laws.",
+        "The use, reproduction, distribution, modification, alteration, or decompilation of any content, in whole or in part, without the prior written consent of Iker Romero Carames, is expressly prohibited. Any unauthorized use of the content of this website will be considered a serious infringement of intellectual and industrial property rights.",
+        "The images and other visual elements present on this website are the property of Iker Romero Carames or are used under adequate licenses or permissions. Respecting the original license terms of any third-party content, the use or reproduction of content specifically owned by Iker Romero Carames is strictly prohibited."
       ]
     },
     "limitationOfLiability": {
       "title": "Limitation of Liability",
-      "description": "The owner is not responsible for damages resulting from interferences, omissions, interruptions, computer viruses, malfunctions, or disconnections due to factors beyond the control of the owner."
+      "description": "The owner is not responsible for damages resulting from interference, omissions, interruptions, computer viruses, breakdowns, or disconnections due to factors beyond the owner's control."
     },
     "lawAndJurisdiction": {
-      "title": "Applicable Law and Jurisdiction",
-      "description": "Spanish law governs any dispute or issue related to this website or the activities on it. Both parties agree to the jurisdiction of the Courts and Tribunals of Madrid, Spain for its resolution."
+      "title": "Law and Jurisdiction",
+      "description": "Spanish law governs any dispute or issue related to this website or the activities on it. Both parties agree to the jurisdiction of the Courts of Madrid, Spain for resolution."
     }
   },
   "privacyPolicy": {
     "title": "Privacy Policy",
-    "metaDescription": "Discover how your data is collected, used, and protected when engaging with Iker Romero's web design services.",
+    "metaDescription": "Discover how your data is collected, used, and protected when interacting with Iker Romero's web design services.",
     "identification": {
       "title": "Identification of the Data Controller",
-      "keys": { "name": "Name", "address": "Address" }
+      "bulletPoints": {
+        "name": { "key": "Name" },
+        "address": { "key": "Address", "value": "Madrid, Spain" }
+      }
     },
     "dataCollection": {
       "title": "Data Collection",
-      "description": "When using my website, you may be asked to provide certain personal information to contact me. The data I collect are:",
+      "description": "When visiting my website, data are collected to improve your experience and provide a personalized service. These include:",
       "list": [
-        "Email address",
-        "Any message you wish to include when contacting me",
-        "The origin URL from which the contact form is sent, to better understand how visitors interact with my site and to improve the effectiveness of my services and advertising campaigns"
+        "Email and message in the contact form.",
+        "Technical information such as the source URL and browser details, to improve the usability of the site and the effectiveness of my advertising campaigns."
       ]
     },
     "useOfData": {
       "title": "Use of Data",
-      "description": "I collect these data exclusively for:",
+      "description": "The collected data are used exclusively for:",
       "list": [
-        "Responding to inquiries and/or requests.",
-        "Directly communicating with you if you wish to hire my services."
+        "Responding to inquiries and processing service requests.",
+        "Internal analysis to improve the user experience on my website."
       ]
     },
     "dataStorage": {
       "title": "Data Storage",
-      "description": "To manage the information collected, I use MongoDB, which helps me securely store contact information. Additionally, to ensure I am aware of requests, I use Gmail and Nodemailer to send automatic notifications to my professional email. I do not share your data with third parties beyond the mentioned tools, which are essential for the operation of my website."
+      "description": "I use secure systems such as MongoDB for data storage and Gmail along with Nodemailer for email communications. These tools are essential for operating my website and responding to your requests, without sharing your data with unrelated third parties."
     },
     "security": {
       "title": "Security",
-      "description": "I am committed to ensuring that your information is secure. I continuously seek to implement and improve my security procedures to ensure the safety of the data I collect."
+      "description": "The security of your data is a priority. I implement robust security measures to protect the collected information and maintain its confidentiality."
     },
     "userRights": {
       "title": "User Rights",
       "description": {
-        "part1": "In accordance with Spanish and European legislation, I grant you the rights of Access, Rectification, Cancellation, and Opposition (ARCO rights). If you wish to exercise these rights, you can send me an email at ",
-        "part2": ". To ensure the authenticity of the request, you must do so from the email you initially used on my site."
+        "part1": "In accordance with the law, you have the right to Access, Rectify, Cancel, or Oppose the use of your data. You can exercise these rights by sending a request to ",
+        "part2": ", using the same email registered on the site."
       }
     },
     "durationOfDataRetention": {
       "title": "Duration of Data Retention",
-      "description": "I retain the data indefinitely. However, you can request its deletion at any time."
+      "description": "Data are retained as long as necessary for the indicated purposes. You can request their deletion at any time, in accordance with your ARCO rights."
     },
     "changesToThePrivacyPolicy": {
       "title": "Changes to the Privacy Policy",
-      "description": "I may update this Privacy Policy as needed. Any updates or changes will be posted on this page for your reference."
+      "description": "This policy may be updated to reflect changes in privacy practices. Modifications will be published on the site for your knowledge."
     }
   }
 }
