@@ -7,7 +7,7 @@ import { NextRequest, NextResponse } from 'next/server'
 
 export const POST = async (request: NextRequest) => {
   try {
-    const href = request.headers.get('referer')
+    const URL = request.headers.get('referer')
 
     const [body] = await Promise.all([request.json(), connectMongoDB()])
 
@@ -17,7 +17,7 @@ export const POST = async (request: NextRequest) => {
     const sectionsIds = sections.map(({ _id }: { _id?: ObjectId }) => _id)
 
     const page = await Page.create({
-      href,
+      URL,
       timeSinceSessionStart,
       time: 0,
       sections: sectionsIds

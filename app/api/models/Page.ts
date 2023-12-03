@@ -2,7 +2,7 @@ import { Schema, model, models } from 'mongoose'
 
 const pageSchema = new Schema(
   {
-    href: {
+    URL: {
       type: String,
       required: true
     },
