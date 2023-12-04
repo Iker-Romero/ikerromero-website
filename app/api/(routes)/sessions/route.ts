@@ -15,7 +15,7 @@ const { IPGEOLOCATION_API_KEY } = process.env
 export const POST = async (request: NextRequest) => {
   try {
     const { ip } = request
-    const href = request.headers.get('referer')
+    const URL = request.headers.get('referer')
 
     const userAgent = getUserAgent(request)
 
@@ -35,7 +35,7 @@ export const POST = async (request: NextRequest) => {
     const time = Date.now() - new Date(sessionStartDate).getTime()
 
     const page = await Page.create({
-      href,
+      URL,
       timeSinceSessionStart: 0,
       time,
       sections

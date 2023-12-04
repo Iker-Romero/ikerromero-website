@@ -1,7 +1,15 @@
 import axios from 'axios'
 import { CLICK_ELEMENTS_IDS, SECTIONS_IDS } from 'consts'
 
-import { page, sessionStartDate } from './ClientLogic'
+import { page } from './ClientLogic'
+
+// Variables
+
+export let sessionStartDate: Date
+
+export let sectionObserver: IntersectionObserver
+
+// Functions
 
 export const listenClicks = () => {
   const clickElements = CLICK_ELEMENTS_IDS.map(id =>
@@ -79,7 +87,7 @@ export const saveInitialAnalyticsData = async () => {
 
   const sessionResponse = await axios.post('/api/sessions', {
     sessionStartDate,
-    sections: Object.values(page.sections),
+    sections: getSectionsTransformed(page),
     userId
   })
 
@@ -95,3 +103,60 @@ export const saveInitialAnalyticsData = async () => {
     }
   }
 }
+
+export const startSessionAnalytics = async () => {
+  try {
+    sessionStartDate = new Date()
+
+    // Add listeners to click elements
+    listenClicks()
+
+    // Add listeners to sections
+    sectionObserver = getSectionObserver()
+    observeSections(sectionObserver)
+
+    // Save session data in DB and user in localStorage
+    saveInitialAnalyticsData()
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export const analyticsUpdate = async ({
+  lastPage
+}: { lastPage?: Page } = {}) => {
+  try {
+    if (lastPage) {
+      axios.patch(`/api/pages/${lastPage._id}`, {
+        sessionStartDate,
+        sections: getSectionsTransformed(lastPage)
+      })
+    }
+
+    const sessionId = localStorage.getItem('sessionId')
+
+    if (page._id) {
+      axios.patch(`/api/pages/${page._id}`, {
+        sessionStartDate,
+        sections: getSectionsTransformed(page)
+      })
+    } else {
+      const pageCreateResponse = await axios.post('/api/pages', {
+        sessionId,
+        timeSinceSessionStart: Date.now() - sessionStartDate.getTime(),
+        sections: getSectionsTransformed(page)
+      })
+
+      page._id = pageCreateResponse.data._id
+    }
+
+    axios.patch(`/api/sessions/${sessionId}`, {
+      sessionStartDate
+    })
+  } catch (error) {
+    console.error(error)
+  }
+}
+
+export const getSectionsTransformed = (page: Page) =>
+  Object.values(page.sections).map(section => ({ ...section, page: page._id }))
