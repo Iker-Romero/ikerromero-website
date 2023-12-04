@@ -33,7 +33,9 @@ export const PATCH = async (
           } else {
             const newSection = await Section.create({
               id,
-              maxIntersectionRatio
+              maxIntersectionRatio,
+              URL: currentPage.URL,
+              page: pageId
             })
 
             return newSection._id
