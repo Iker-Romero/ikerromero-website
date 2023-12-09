@@ -22,11 +22,11 @@ export const POST = async (request: NextRequest) => {
     console.log('New contact: ', newContact)
 
     User.findByIdAndUpdate(userId, {
-      contactSubmissions: { $push: newContact._id }
+      $push: { contactSubmissions: newContact._id }
     })
 
     Session.findByIdAndUpdate(sessionId, {
-      contactSubmissions: { $push: newContact._id }
+      $push: { contactSubmissions: newContact._id }
     })
 
     const info = await sendMail(emailHTMLString)

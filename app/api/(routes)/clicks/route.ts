@@ -16,7 +16,7 @@ export const POST = async (request: NextRequest) => {
     })
 
     await Page.findByIdAndUpdate(pageId, {
-      $push: { clicks: click }
+      $push: { clicks: click._id }
     })
 
     return NextResponse.json({ status: 200 })
