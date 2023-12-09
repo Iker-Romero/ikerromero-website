@@ -9,6 +9,10 @@ type Section = {
   maxIntersectionRatio: number
 }
 
+type SectionData = Section & {
+  page: string
+}
+
 type Sections = Partial<Record<SectionsIdsUnion, Section>>
 
 type ClickIdUnion =
