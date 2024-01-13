@@ -1,0 +1,40 @@
+import { getDictionary } from 'i18n/get-dictionary'
+import { i18n } from 'i18n/i18n'
+import { ReactNode } from 'react'
+
+type MetadataProps = {
+  params: { locale: string }
+}
+
+export const generateMetadata = async ({
+  params: { locale }
+}: MetadataProps) => {
+  const {
+    terms: { title, metaDescription }
+  } = await getDictionary(locale)
+
+  return {
+    title: title,
+    description: metaDescription,
+    alternates: {
+      canonical: locale === i18n.defaultLocale ? '/terms' : `/${locale}/terms`,
+      languages: {
+        en: '/en/terms',
+        es: '/es/terms',
+        [i18n.defaultLocale]: '/terms'
+      }
+    },
+    openGraph: {
+      title: title,
+      description: metaDescription
+    }
+  }
+}
+
+type LayoutProps = {
+  children: ReactNode
+}
+
+export default function TermsLayout({ children }: LayoutProps) {
+  return children
+}
