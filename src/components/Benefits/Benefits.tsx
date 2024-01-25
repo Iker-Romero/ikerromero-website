@@ -1,13 +1,10 @@
-import { Dictionary } from 'i18n/get-dictionary'
+import { getMessages } from 'i18n'
+import { getLocale } from 'next-intl/server'
 
 import Compass from '../Icons/Compass'
 import ShieldZap from '../Icons/ShieldZap'
 import Telescope from '../Icons/Telescope'
 import s from './Benefits.module.scss'
-
-type Props = {
-  dict: Dictionary
-}
 
 const icons = {
   SEO: Telescope,
@@ -15,13 +12,14 @@ const icons = {
   performance: ShieldZap
 }
 
-const Benefits = ({ dict }: Props) => {
-  const { benefits } = dict
+const Benefits = async () => {
+  const locale = await getLocale()
+  const messages = await getMessages(locale)
 
   return (
     <section id="benefitsSection" className={s['benefits-section']}>
       <ul className={s[`benefits-container`]}>
-        {benefits.map(({ id, title, description }, i) => {
+        {messages.benefits.map(({ id, title, description }, i) => {
           const Icon = icons[id]
 
           return (

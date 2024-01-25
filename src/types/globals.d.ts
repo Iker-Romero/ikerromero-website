@@ -1,3 +1,5 @@
+import { locales } from './consts'
+
 type SectionIdUnion =
   | 'heroContent'
   | 'benefitsSection'
@@ -33,3 +35,5 @@ type Page = {
   clicks: Click[]
   _id?: string
 }
+
+type Locale = (typeof locales)[number]

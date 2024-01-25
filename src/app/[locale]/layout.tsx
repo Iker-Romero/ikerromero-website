@@ -1,47 +1,48 @@
 import Footer from '@/components/Footer/Footer'
 import Navbar from '@/components/Navbar/Navbar'
 import { GoogleTagManager } from '@next/third-parties/google'
-import { FULL_NAME, GTM_ID, MAIN_URL } from 'consts'
-import { getDictionary } from 'i18n/get-dictionary'
+import { BASE_URL, FULL_NAME, GTM_ID, defaultLocale, locales } from 'consts'
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { Exo_2 } from 'next/font/google'
-import { notFound } from 'next/navigation'
 import { ReactNode } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+import { Locale } from 'types/globals'
 import ClientLogic from 'utils/ClientLogic'
 
-import { Locale, i18n } from '../../i18n/i18n'
 import './globals.scss'
 
 const exo = Exo_2({ subsets: ['latin'] })
 
 type Props = {
   children: ReactNode
-  params: { locale: string }
+  params: { locale: Locale }
+}
+
+export async function generateStaticParams() {
+  return locales.map(locale => ({ locale }))
 }
 
 export const generateMetadata = async ({ params: { locale } }: Props) => {
-  const {
-    home: { metaDescription: description }
-  } = await getDictionary(locale)
+  const t = await getTranslations({ locale, namespace: 'home' })
 
   const title = FULL_NAME
+  const description = t('metaDescription')
 
   return {
     title,
     description,
-    metadataBase: new URL(MAIN_URL),
+    metadataBase: new URL(BASE_URL),
     alternates: {
-      canonical: locale === i18n.defaultLocale ? '/' : `/${locale}`,
+      canonical: locale === defaultLocale ? '/' : `/${locale}`,
       languages: {
-        en: '/en',
-        es: '/es',
-        [i18n.defaultLocale]: '/'
+        [defaultLocale]: '/',
+        es: '/es'
       }
     },
     openGraph: {
       type: 'website',
-      url: MAIN_URL,
+      url: BASE_URL,
       locale,
       title,
       description,
@@ -53,19 +54,11 @@ export const generateMetadata = async ({ params: { locale } }: Props) => {
   }
 }
 
-export async function generateStaticParams() {
-  return i18n.locales.map((locale: Locale) => ({ locale }))
-}
-
 export default async function RootLayout({
   children,
   params: { locale }
 }: Props) {
-  // Validate that the incoming `locale` parameter is valid
-  const isValidLocale = i18n.locales.some(cur => cur === locale)
-  if (!isValidLocale) notFound()
-
-  const dict = await getDictionary(locale)
+  unstable_setRequestLocale(locale)
 
   return (
     <html lang={locale}>
@@ -80,10 +73,10 @@ export default async function RootLayout({
 
       <body className={exo.className}>
         <header>
-          <Navbar {...{ dict }} />
+          <Navbar />
         </header>
         <main>{children}</main>
-        <Footer {...{ dict }} />
+        <Footer />
 
         <ClientLogic />
         <ToastContainer />

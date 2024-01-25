@@ -1,25 +1,40 @@
-import { Dictionary } from 'i18n/get-dictionary'
+import { getMessages } from 'i18n'
+import { getLocale, getTranslations } from 'next-intl/server'
 
 import s from './Experience.module.scss'
 import ExperienceCard from './components/ExperienceCard/ExperienceCard/ExperienceCard'
 import { experience } from './data'
 
-type Props = {
-  dict: Dictionary
-}
+const Experience = async () => {
+  const t = await getTranslations('experience')
 
-const Experience = ({ dict }: Props) => {
-  const { title } = dict.experience
+  const locale = await getLocale()
+  const messages = await getMessages(locale)
 
   return (
     <section id="experienceSection" className={s['experience-section']}>
       <h2 id="experience" className="hidden fadeInTop">
-        {title}
+        {t('title')}
       </h2>
       <div className={s['cards-container']}>
-        {experience.map(({ id, technologies, link }) => (
-          <ExperienceCard key={id} {...{ id, technologies, link, dict }} />
-        ))}
+        {experience.map(({ id, technologies, link }) => {
+          const { role, company, description, datesRange } =
+            messages.experience.jobs.find(job => job.id === id) || {}
+
+          return (
+            <ExperienceCard
+              key={id}
+              {...{
+                technologies,
+                link,
+                role,
+                company,
+                description,
+                datesRange
+              }}
+            />
+          )
+        })}
       </div>
     </section>
   )

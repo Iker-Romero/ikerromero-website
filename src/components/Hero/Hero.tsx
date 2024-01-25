@@ -1,16 +1,12 @@
 import H1 from '@/components/H1/H1'
 import Link from '@/components/Link/Link'
-import { Dictionary } from 'i18n/get-dictionary'
+import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 
 import s from './Hero.module.scss'
 
-type Props = {
-  dict: Dictionary
-}
-
-const Hero = ({ dict }: Props) => {
-  const { description } = dict.hero
+const Hero = () => {
+  const t = useTranslations()
 
   return (
     <section className={s['hero']}>
@@ -19,7 +15,7 @@ const Hero = ({ dict }: Props) => {
           <H1 variant="hero" className="hidden fadeInTop">
             Iker Romero
           </H1>
-          <p className={'hidden fadeInRight'}>{description}</p>
+          <p className={'hidden fadeInRight'}>{t('hero.description')}</p>
         </div>
         <Link
           id="heroCTA"
@@ -27,7 +23,7 @@ const Hero = ({ dict }: Props) => {
           variant="callToAction"
           className="hidden fadeInLeft-333 delay-666"
         >
-          {dict.contact.CTA}
+          {t('contact.CTA')}
         </Link>
       </div>
       <div className={s['image-wrapper']}>

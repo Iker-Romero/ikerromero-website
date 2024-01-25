@@ -1,30 +1,33 @@
-import { getDictionary } from 'i18n/get-dictionary'
-import { i18n } from 'i18n/i18n'
+import { defaultLocale } from 'consts'
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { ReactNode } from 'react'
+import { Locale } from 'types/globals'
 
 type MetadataProps = {
-  params: { locale: string }
+  params: { locale: Locale }
 }
 
 export const generateMetadata = async ({
   params: { locale }
 }: MetadataProps) => {
-  const {
-    privacyPolicy: { title, metaDescription }
-  } = await getDictionary(locale)
+  unstable_setRequestLocale(locale)
+
+  const { title, metaDescription } = await getTranslations({
+    locale,
+    namespace: 'privacy-policy'
+  })
 
   return {
     title: title,
     description: metaDescription,
     alternates: {
       canonical:
-        locale === i18n.defaultLocale
+        locale === defaultLocale
           ? '/privacy-policy'
           : `/${locale}/privacy-policy`,
       languages: {
-        en: '/en/privacy-policy',
-        es: '/es/privacy-policy',
-        [i18n.defaultLocale]: '/privacy-policy'
+        [defaultLocale]: '/privacy-policy',
+        es: '/es/privacy-policy'
       }
     },
     openGraph: {

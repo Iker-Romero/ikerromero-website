@@ -84,7 +84,7 @@
   "terms": {
     "title": "Legal Notice",
     "metaDescription": "Explore the legal terms governing the use of Iker Romero's web design services, including website ownership, terms of use, and intellectual property rights.",
-    "websiteOwnership": {
+    "ownership": {
       "title": "Website Ownership",
       "bulletPoints": {
         "owner": { "key": "Owner" },

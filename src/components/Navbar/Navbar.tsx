@@ -1,14 +1,11 @@
 import Link from '@/components/Link/Link'
-import { Dictionary } from 'i18n/get-dictionary'
+import { useTranslations } from 'next-intl'
 
 import s from './Navbar.module.scss'
 
-type Props = {
-  dict: Dictionary
-}
-
-const Navbar = ({ dict }: Props) => {
-  const { contact } = dict
+const Navbar = () => {
+  const t = useTranslations('contact')
+  console.log('t("CTA")', t('CTA'))
 
   return (
     <nav className={s.navbar}>
@@ -17,7 +14,7 @@ const Navbar = ({ dict }: Props) => {
       </Link>
       <div className={s['sections-links-container']}>
         <Link id="navbarCTA" href="/contact" variant="callToActionSecondary">
-          {contact.CTA}
+          {t('CTA')}
         </Link>
       </div>
     </nav>

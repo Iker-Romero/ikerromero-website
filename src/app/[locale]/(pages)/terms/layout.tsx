@@ -1,27 +1,28 @@
-import { getDictionary } from 'i18n/get-dictionary'
-import { i18n } from 'i18n/i18n'
+import { defaultLocale } from 'consts'
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { ReactNode } from 'react'
+import { Locale } from 'types/globals'
 
 type MetadataProps = {
-  params: { locale: string }
+  params: { locale: Locale }
 }
 
 export const generateMetadata = async ({
   params: { locale }
 }: MetadataProps) => {
-  const {
-    terms: { title, metaDescription }
-  } = await getDictionary(locale)
+  const { title, metaDescription } = await getTranslations({
+    locale,
+    namespace: 'terms'
+  })
 
   return {
     title: title,
     description: metaDescription,
     alternates: {
-      canonical: locale === i18n.defaultLocale ? '/terms' : `/${locale}/terms`,
+      canonical: locale === defaultLocale ? '/terms' : `/${locale}/terms`,
       languages: {
-        en: '/en/terms',
-        es: '/es/terms',
-        [i18n.defaultLocale]: '/terms'
+        [defaultLocale]: '/terms',
+        es: '/es/terms'
       }
     },
     openGraph: {
@@ -33,8 +34,14 @@ export const generateMetadata = async ({
 
 type LayoutProps = {
   children: ReactNode
+  params: { locale: Locale }
 }
 
-export default function TermsLayout({ children }: LayoutProps) {
+export default function TermsLayout({
+  children,
+  params: { locale }
+}: LayoutProps) {
+  unstable_setRequestLocale(locale)
+
   return children
 }

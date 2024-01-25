@@ -9,19 +9,14 @@ import Input from '@/components/Input/Input'
 import Link from '@/components/Link/Link'
 import Textarea from '@/components/Textarea/Textarea'
 import { render } from '@react-email/components'
-import axios from 'axios'
 import LeadEmail from 'emails/LeadEmail'
-import { Dictionary } from 'i18n/get-dictionary'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
+import { axiosClient } from 'services/axiosClient'
 import { page } from 'utils/ClientLogic'
 
 import s from './ContactForm.module.scss'
-
-type Props = {
-  dict: Dictionary
-}
 
 type FormValues = {
   email: string
@@ -29,7 +24,12 @@ type FormValues = {
   privacyPolicyAccepted: boolean
 }
 
-const ContactForm = ({ dict }: Props) => {
+const ContactForm = ({
+  toast: toastMessages,
+  privacyPolicy,
+  placeholders,
+  submit
+}) => {
   const methods = useForm<FormValues>({
     mode: 'onBlur',
     shouldUseNativeValidation: false,
@@ -41,8 +41,6 @@ const ContactForm = ({ dict }: Props) => {
   })
 
   const [submitDisabled, setSubmitDisabled] = useState(false)
-
-  const { placeholders, privacyPolicy, submit, toast: toastDict } = dict.contact
 
   const handleSubmit = (formValues: FormValues) => {
     setSubmitDisabled(true)
@@ -58,38 +56,31 @@ const ContactForm = ({ dict }: Props) => {
 
     toast
       .promise(
-        axios.post('/api/contacts', {
+        axiosClient.post('/api/contacts', {
           data,
           emailHTMLString
         }),
         {
           pending: 'Sending...',
           success: {
-            render: () => {
-              const { title, description } = toastDict.success
-
-              return (
-                <div className="toast-content">
-                  <H2 variant="toast">{title}</H2>
-                  <p>{description}</p>
-                </div>
-              )
-            },
+            render: () => (
+              <div className="toast-content">
+                <H2 variant="toast">{toastMessages.success.title}</H2>
+                <p>{toastMessages.success.description}</p>
+              </div>
+            ),
             autoClose: 8000
           },
           error: {
-            render: () => {
-              const { title, description } = toastDict.error
-
-              return (
-                <div className="toast-content">
-                  <H2 variant="toast-error">{title}</H2>
-                  <p>
-                    {description.part1} <Email /> {description.part2}
-                  </p>
-                </div>
-              )
-            },
+            render: () => (
+              <div className="toast-content">
+                <H2 variant="toast-error">{toastMessages.error.title}</H2>
+                <p>
+                  {toastMessages.error.description.part1} <Email />{' '}
+                  {toastMessages.error.description.part2}
+                </p>
+              </div>
+            ),
             autoClose: 12000
           }
         }

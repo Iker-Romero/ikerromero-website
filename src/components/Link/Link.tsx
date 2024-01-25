@@ -1,4 +1,4 @@
-import { Link as NextIntlLink } from 'app/navigation'
+import { Link as NextIntlLink } from 'navigation'
 import { LinkProps } from 'next/link'
 import { ReactNode } from 'react'
 

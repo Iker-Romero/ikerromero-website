@@ -1,59 +1,68 @@
 import Email from '@/components/Email/Email'
 import ObjectList from '@/components/ObjectList/ObjectList'
 import { LONG_FULL_NAME, NATIONAL_ID } from 'consts'
-
-import { getDictionary } from '../../../../i18n/get-dictionary'
-import { Locale } from '../../../../i18n/i18n'
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
+import { Locale } from 'types/globals'
 
 type Props = {
   params: { locale: Locale }
 }
 
-const Terms = async ({ params }: Props) => {
-  const { terms: dict } = await getDictionary(params.locale)
+const Terms = async ({ params: { locale } }: Props) => {
+  unstable_setRequestLocale(locale)
+
+  const {
+    title,
+    ownership: ownershipData,
+    purposeOfTheWebsite,
+    termsOfUser,
+    intellectualProperty,
+    limitationOfLiability,
+    lawAndJurisdiction
+  } = await getTranslations('terms')
 
   const ownership = [
     {
-      key: dict.websiteOwnership.bulletPoints.owner.key,
+      key: ownershipData.bulletPoints.owner.key,
       value: LONG_FULL_NAME
     },
     {
-      key: dict.websiteOwnership.bulletPoints.nationalID.key,
+      key: ownershipData.bulletPoints.nationalID.key,
       value: NATIONAL_ID
     },
     {
-      key: dict.websiteOwnership.bulletPoints.address.key,
-      value: dict.websiteOwnership.bulletPoints.address.value
+      key: ownershipData.bulletPoints.address.key,
+      value: ownershipData.bulletPoints.address.value
     },
     { key: 'Email', value: <Email /> }
   ]
 
   return (
     <>
-      <h1>{dict.title}</h1>
+      <h1>{title}</h1>
 
-      <h2>{dict.websiteOwnership.title}</h2>
+      <h2>{ownershipData.title}</h2>
       <ObjectList objects={ownership} />
 
-      <h2>{dict.purposeOfTheWebsite.title}</h2>
-      <p>{dict.purposeOfTheWebsite.description}</p>
+      <h2>{purposeOfTheWebsite.title}</h2>
+      <p>{purposeOfTheWebsite.description}</p>
 
-      <h2>{dict.termsOfUser.title}</h2>
-      <p>{dict.termsOfUser.description}</p>
+      <h2>{termsOfUser.title}</h2>
+      <p>{termsOfUser.description}</p>
 
-      <h2>{dict.intellectualProperty.title}</h2>
-      {dict.intellectualProperty.paragraphs.map((paragraph, i, paragraphs) => (
+      <h2>{intellectualProperty.title}</h2>
+      {intellectualProperty.paragraphs.map((paragraph, i, paragraphs) => (
         <>
           <p>{paragraph}</p>
           {i < paragraphs.length - 1 && <br />}
         </>
       ))}
 
-      <h2>{dict.limitationOfLiability.title}</h2>
-      <p>{dict.limitationOfLiability.description}</p>
+      <h2>{limitationOfLiability.title}</h2>
+      <p>{limitationOfLiability.description}</p>
 
-      <h2>{dict.lawAndJurisdiction.title}</h2>
-      <p>{dict.lawAndJurisdiction.description}</p>
+      <h2>{lawAndJurisdiction.title}</h2>
+      <p>{lawAndJurisdiction.description}</p>
     </>
   )
 }

@@ -1,7 +1,7 @@
 'use client'
 
-import { usePathname } from 'app/navigation'
 import { DEFAULT_PAGE_DATA, OWN_ANALYTICS_INTERVAL_MS } from 'consts'
+import { usePathname } from 'navigation'
 import { useEffect } from 'react'
 
 import {

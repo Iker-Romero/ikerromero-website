@@ -1,19 +1,19 @@
 import Link from '@/components/Link/Link'
-import { Dictionary } from 'i18n/get-dictionary'
+import { getMessages } from 'i18n'
+import { getLocale, getTranslations } from 'next-intl/server'
 
 import s from './Footer.module.scss'
 import LinksContainer from './components/LinksContainer/LinksContainer'
 import { aboutMeLinks, legalPaths } from './data'
 
-type Props = {
-  dict: Dictionary
-}
-
-const Footer = ({ dict }: Props) => {
-  const { aboutMe, legal, copyright } = dict.footer
+const Footer = async () => {
+  const t = await getTranslations('footer')
+  const locale = await getLocale()
+  const messages = await getMessages(locale)
 
   const legalLinks = legalPaths.map(({ id, link }) => {
-    const { name } = legal.links.find(dictLink => dictLink.id === id) ?? {}
+    const { name } =
+      messages.footer.legal.links.find(dictLink => dictLink.id === id) ?? {}
 
     return { name, link }
   })
@@ -25,10 +25,10 @@ const Footer = ({ dict }: Props) => {
           <Link id="footerLogo" href="/" variant="logoSmall">
             {'< Iker />'}
           </Link>
-          <LinksContainer title={aboutMe.title} links={aboutMeLinks} />
-          <LinksContainer title={legal.title} links={legalLinks} />
+          <LinksContainer title={t('aboutMe.title')} links={aboutMeLinks} />
+          <LinksContainer title={t('legal.title')} links={legalLinks} />
         </div>
-        <p className={s.copyright}>{copyright}</p>
+        <p className={s.copyright}>{t('copyright')}</p>
       </div>
     </footer>
   )

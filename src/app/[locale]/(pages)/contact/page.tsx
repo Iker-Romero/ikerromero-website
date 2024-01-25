@@ -1,15 +1,15 @@
 import Contact from '@/components/Contact/Contact'
-import { getDictionary } from 'i18n/get-dictionary'
-import { Locale } from 'i18n/i18n'
+import { unstable_setRequestLocale } from 'next-intl/server'
+import { Locale } from 'types/globals'
 
 type Props = {
   params: { locale: Locale }
 }
 
-const page = async ({ params }: Props) => {
-  const dict = await getDictionary(params.locale)
+const page = async ({ params: { locale } }: Props) => {
+  unstable_setRequestLocale(locale)
 
-  return <Contact variant="page" {...{ dict, params }} />
+  return <Contact variant="page" />
 }
 
 export default page

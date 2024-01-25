@@ -2,22 +2,22 @@ import Benefits from '@/components/Benefits/Benefits'
 import Contact from '@/components/Contact/Contact'
 import Experience from '@/components/Experience/Experience'
 import Hero from '@/components/Hero/Hero'
-import { getDictionary } from 'i18n/get-dictionary'
-import { Locale } from 'i18n/i18n'
+import { unstable_setRequestLocale } from 'next-intl/server'
+import { Locale } from 'types/globals'
 
 type Props = {
   params: { locale: Locale }
 }
 
-const Home = async ({ params }: Props) => {
-  const dict = await getDictionary(params.locale)
+const Home = async ({ params: { locale } }: Props) => {
+  unstable_setRequestLocale(locale)
 
   return (
     <>
-      <Hero {...{ dict }} />
-      <Benefits {...{ dict }} />
-      <Experience {...{ dict }} />
-      <Contact {...{ dict, params }} />
+      <Hero />
+      <Benefits />
+      <Experience />
+      <Contact />
     </>
   )
 }

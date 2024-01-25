@@ -1,3 +1,9 @@
+// Routing
+
+export const locales = ['en', 'es']
+export const defaultLocale = 'en'
+export const localePrefix = undefined // Use the default: `always`
+
 // Personal data
 
 export const NAME = 'Iker'
@@ -9,7 +15,7 @@ export const EMAIL = 'ikerromeroweb@gmail.com'
 
 // Metadata
 
-export const MAIN_URL = 'https://www.ikerromero.com'
+export const BASE_URL = 'https://www.ikerromero.com'
 
 // Analitycs
 

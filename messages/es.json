@@ -84,7 +84,7 @@
   "terms": {
     "title": "Aviso Legal",
     "metaDescription": "Explora los términos legales que rigen el uso de los servicios de diseño web de Iker Romero, incluyendo la propiedad del sitio web, términos de uso y derechos de propiedad intelectual.",
-    "websiteOwnership": {
+    "ownership": {
       "title": "Propiedad del Sitio Web",
       "bulletPoints": {
         "owner": { "key": "Propietario" },

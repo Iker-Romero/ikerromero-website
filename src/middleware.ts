@@ -1,23 +1,28 @@
 import createMiddleware from 'next-intl/middleware'
+import { NextRequest } from 'next/server'
 
-import { localePrefix, locales } from './app/navigation'
+import { defaultLocale, localePrefix, locales } from './consts'
 
-export default createMiddleware({
-  defaultLocale: 'en',
-  localePrefix,
-  locales
+const nextIntlMiddleware = createMiddleware({
+  locales,
+  defaultLocale,
+  localePrefix
 })
 
-console.log('matcher', [`/', '/(${locales.join('|')})/:path*`])
+export default function middleware(req: NextRequest) {
+  console.log('req.url', req.url)
+  const res = nextIntlMiddleware(req)
+  console.log('res', res)
+  return res
+}
 
 export const config = {
   matcher: [
-    // // Match only internationalized pathnames
-    // `/', '/(${locales.join('|')})/:path*`,
+    // Enable a redirect to a matching locale at the root
+    '/',
 
-    // Match all pathnames except for
-    // - … if they start with `/api`, `/_next` or `/_vercel`
-    // - … the ones containing a dot (e.g. `favicon.ico`)
-    '/((?!api|_next|_vercel|.*\\..*).*)'
+    // Set a cookie to remember the previous locale for
+    // all requests that have a locale prefix
+    '/(en|es)/:path*'
   ]
 }

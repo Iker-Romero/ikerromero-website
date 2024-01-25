@@ -1,21 +1,28 @@
 import { TechnologiesType } from '@/components/Experience/data'
 import Link from '@/components/Link/Link'
-import { Dictionary } from 'i18n/get-dictionary'
 
 import s from './ExperienceCard.module.scss'
 import Technologies from './components/Technologies/Technologies'
 
 type Props = {
-  id: number
   link?: string
   technologies: TechnologiesType
-  dict: Dictionary
+  // Localized
+  role: string
+  company: string
+  description: string
+  datesRange: string
 }
 
-const ExperienceCard = ({ id, link, technologies, dict }: Props) => {
-  const { role, company, description, datesRange } =
-    dict.experience.jobs.find(job => job.id === id) ?? {}
-
+const ExperienceCard = ({
+  link,
+  technologies,
+  // Localized
+  role,
+  company,
+  description,
+  datesRange
+}: Props) => {
   return (
     <div className={s['experience-card'] + ' hidden fadeInRight'}>
       <span>{datesRange}</span>

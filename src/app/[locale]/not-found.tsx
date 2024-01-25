@@ -1,5 +1,3 @@
-'use client'
-
 import H1 from '@/components/H1/H1'
 import Link from '@/components/Link/Link'
 

@@ -1,5 +1,5 @@
-import axios from 'axios'
 import { CLICK_ELEMENTS_IDS, SECTIONS_IDS } from 'consts'
+import { axiosClient } from 'services/axiosClient'
 
 import { page } from './ClientLogic'
 
@@ -27,7 +27,7 @@ export const listenClicks = () => {
 
       page.clicks.push(click)
 
-      axios.post('/api/clicks', {
+      axiosClient.post('/api/clicks', {
         ...click,
         pageId: page._id
       })
@@ -86,7 +86,7 @@ export const observeSections = (sectionObserver: IntersectionObserver) => {
 const saveInitialAnalyticsData = async () => {
   const userId = localStorage.getItem('userId')
 
-  const sessionResponse = await axios.post('/api/sessions', {
+  const sessionResponse = await axiosClient.post('/api/sessions', {
     sessionStartDate,
     sections: getSectionsTransformed(page),
     userId
@@ -129,7 +129,7 @@ export const analyticsUpdate = async ({
   try {
     console.log('lastPage', lastPage)
     if (lastPage) {
-      axios.patch(`/api/pages/${lastPage._id}`, {
+      axiosClient.patch(`/api/pages/${lastPage._id}`, {
         sessionStartDate,
         sections: getSectionsTransformed(lastPage)
       })
@@ -138,12 +138,12 @@ export const analyticsUpdate = async ({
     const sessionId = localStorage.getItem('sessionId')
 
     if (page._id) {
-      axios.patch(`/api/pages/${page._id}`, {
+      axiosClient.patch(`/api/pages/${page._id}`, {
         sessionStartDate,
         sections: getSectionsTransformed(page)
       })
     } else {
-      const pageCreateResponse = await axios.post('/api/pages', {
+      const pageCreateResponse = await axiosClient.post('/api/pages', {
         sessionId,
         timeSinceSessionStart: Date.now() - sessionStartDate.getTime(),
         sections: getSectionsTransformed(page)
@@ -152,7 +152,7 @@ export const analyticsUpdate = async ({
       page._id = pageCreateResponse.data._id
     }
 
-    axios.patch(`/api/sessions/${sessionId}`, {
+    axiosClient.patch(`/api/sessions/${sessionId}`, {
       sessionStartDate
     })
   } catch (error) {
