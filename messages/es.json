@@ -166,5 +166,13 @@
       "title": "Cambios en la Política de Privacidad",
       "description": "Esta política puede ser actualizada para reflejar cambios en las prácticas de privacidad. Las modificaciones se publicarán en el sitio para tu conocimiento."
     }
+  },
+  "404NotFound": {
+    "title": "404 - Página No Encontrada",
+    "description": "La página que estás buscando pudo haber sido eliminada, haber cambiado de nombre, o estar temporalmente no disponible.",
+    "redirect": {
+      "indication": "Volver a la ",
+      "destination": "página principal"
+    }
   }
 }

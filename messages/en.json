@@ -166,5 +166,13 @@
       "title": "Changes to the Privacy Policy",
       "description": "This policy may be updated to reflect changes in privacy practices. Modifications will be published on the site for your knowledge."
     }
+  },
+  "404NotFound": {
+    "title": "404 - Page Not Found",
+    "description": "The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.",
+    "redirect": {
+      "indication": "Go back to the ",
+      "destination": "home page"
+    }
   }
 }
