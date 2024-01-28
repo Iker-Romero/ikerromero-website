@@ -128,7 +128,6 @@ export const analyticsUpdate = async ({
   lastPage
 }: { lastPage?: Page } = {}) => {
   try {
-    console.log('lastPage', lastPage)
     if (lastPage) {
       axiosClient.patch(`/api/pages/${lastPage._id}`, {
         sessionStartDate,

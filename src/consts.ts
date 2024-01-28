@@ -15,7 +15,7 @@ export const EMAIL = 'ikerromeroweb@gmail.com'
 
 // Metadata
 
-export const BASE_URL = 'https://www.ikerromero.com'
+export const BASE_URL = process.env.BASE_URL
 
 // Analitycs
 
