@@ -1,0 +1,43 @@
+import H1 from '@/components/H1/H1'
+import Link from '@/components/Link/Link'
+import { useTranslations } from 'next-intl'
+import Image from 'next/image'
+
+import s from './Hero.module.scss'
+
+const Hero = () => {
+  const t = useTranslations()
+
+  return (
+    <section className={s['hero']}>
+      <div id="heroContent" className={s.content}>
+        <div className={s['text-container']}>
+          <H1 variant="hero" className="hidden fadeInTop">
+            Iker Romero
+          </H1>
+          <p className={'hidden fadeInRight'}>{t('hero.description')}</p>
+        </div>
+        <Link
+          id="heroCTA"
+          href="/contact"
+          variant="callToAction"
+          className="hidden fadeInLeft-333 delay-666"
+        >
+          {t('contact.CTA')}
+        </Link>
+      </div>
+      <div className={s['image-wrapper']}>
+        <Image
+          priority
+          className={s.image + ' hidden scaleInFromLeftBottom'}
+          width={500}
+          height={375}
+          src="/images/rocket.webp"
+          alt="Minimalist cartoon illustration of a rocket taking off"
+        />
+      </div>
+    </section>
+  )
+}
+
+export default Hero

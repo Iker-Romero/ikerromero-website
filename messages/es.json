@@ -1,0 +1,178 @@
+{
+  "home": {
+    "metaDescription": "Experto en diseño, desarrollo y SEO web. Transforma tu presencia en línea con soluciones web a medida."
+  },
+  "hero": {
+    "description": "Creo sitios web de calidad que te diferencian de la competencia y conducen resultados escalables a tu negocio. Si acepto tu proyecto, eso es lo que recibes."
+  },
+  "contact": {
+    "CTA": "Comencemos",
+    "title": "Hablemos de tu proyecto",
+    "metaTitle": "Contacto | Iker Romero",
+    "description": "Rellena el formulario o envíame un mensaje a ",
+    "metaDescription": "Demos vida a tu proyecto. Ponte en contacto para discutir tus necesidades de diseño y desarrollo web. Completa el formulario o envíame un mensaje directamente.",
+    "placeholders": {
+      "email": "Correo electrónico",
+      "message": "Cuéntame sobre tu proyecto"
+    },
+    "privacyPolicy": {
+      "label": "Acepto la",
+      "anchor": "política de privacidad"
+    },
+    "submit": "Enviar",
+    "toast": {
+      "success": {
+        "title": "Mensaje enviado",
+        "description": "¡Gracias por tu interés! Me pondré en contacto contigo pronto para ver cómo podemos trabajar juntos."
+      },
+      "error": {
+        "title": "Error",
+        "description": {
+          "part1": "Hubo un problema al enviar tu mensaje. Por favor, envíame un correo a",
+          "part2": "o intenta nuevamente más tarde."
+        }
+      }
+    }
+  },
+  "benefits": [
+    {
+      "id": "SEO",
+      "title": "SEO",
+      "description": "El equivalente a tener tu tienda en Gran Vía, pero por un coste mucho menor. Para que tus clientes te encuentren."
+    },
+    {
+      "id": "design",
+      "title": "Diseño",
+      "description": "Las personas atractivas venden más, no lo digo yo, lo dice la ciencia. Y tu web no puede ser menos."
+    },
+    {
+      "id": "performance",
+      "title": "Rendimiento",
+      "description": "Una web rápida y fiable garantiza una experiencia excelente, haciendo que tus clientes repitan y te recomienden."
+    }
+  ],
+  "experience": {
+    "title": "Experiencia profesional",
+    "jobs": [
+      {
+        "id": 1,
+        "datesRange": "Enero 2023 - Actualidad",
+        "role": "Desarrollador Web Front-end",
+        "company": "Triskell Software",
+        "description": "Colaborando con un talentoso equipo en el desarrollo de una nueva interfaz web moderna y eficiente. Nuestro objetivo es mejorar la experiencia del usuario y optimizar el rendimiento del software de gestión de proyectos de Triskell."
+      },
+      {
+        "id": 2,
+        "datesRange": "Junio 2023 - Actualidad",
+        "role": "Desarrollador Web Full Stack",
+        "company": "Freelance",
+        "description": "Ofreciendo soluciones web a medida que se alinean con las necesidades y objetivos únicos de mis clientes. Desde atractivas páginas de inicio hasta robustas aplicaciones web, utilizo las últimas tecnologías para garantizar funcionalidad, adaptabilidad y atractivo visual."
+      }
+    ]
+  },
+  "footer": {
+    "aboutMe": { "title": "Sobre mí" },
+    "legal": {
+      "title": "Legal",
+      "links": [
+        { "id": 1, "name": "Aviso legal" },
+        { "id": 2, "name": "Política de privacidad" }
+      ]
+    },
+    "copyright": "© 2023-presente Iker Romero. Todos los derechos reservados."
+  },
+  "terms": {
+    "title": "Aviso Legal",
+    "metaDescription": "Explora los términos legales que rigen el uso de los servicios de diseño web de Iker Romero, incluyendo la propiedad del sitio web, términos de uso y derechos de propiedad intelectual.",
+    "ownership": {
+      "title": "Propiedad del Sitio Web",
+      "bulletPoints": {
+        "owner": { "key": "Propietario" },
+        "nationalID": { "key": "ID Nacional" },
+        "address": { "key": "Dirección", "value": "Madrid, España" }
+      }
+    },
+    "purposeOfTheWebsite": {
+      "title": "Propósito del Sitio Web",
+      "description": "El propósito de este sitio web es presentar a los posibles clientes el calibre de proyectos que creo. También ofrece una vía para aquellos interesados en mis servicios para conectarse conmigo."
+    },
+    "termsOfUser": {
+      "title": "Términos de Uso",
+      "description": "Al usar este sitio web, aceptas sus términos de uso. Los usuarios se comprometen a utilizar el sitio web y su contenido de acuerdo con la ley, este Aviso Legal y el orden público. Está estrictamente prohibido cualquier uso ilegal o perjudicial del sitio web, en contra del propietario o terceros."
+    },
+    "intellectualProperty": {
+      "title": "Propiedad Intelectual e Industrial",
+      "paragraphs": [
+        "El sitio web, que incluye su programación, edición, compilación y otros elementos necesarios para su funcionamiento, junto con diseños, logos, texto, fotografías y gráficos, son propiedad de Iker Romero Carames. En los casos en que el contenido no sea de propiedad original, se han obtenido las licencias o autorizaciones necesarias de los respectivos autores. Todo el contenido del sitio web está debidamente protegido por las leyes de propiedad intelectual e industrial.",
+        "Está expresamente prohibido el uso, reproducción, distribución, modificación, alteración o descompilación de cualquier contenido, ya sea en su totalidad o en parte, sin el previo consentimiento por escrito de Iker Romero Carames. Cualquier uso no autorizado del contenido de este sitio web será considerado como una infracción grave de los derechos de propiedad intelectual e industrial.",
+        "Las imágenes y otros elementos visuales presentes en este sitio web son propiedad de Iker Romero Carames o se utilizan bajo licencias o permisos adecuados. Respetando los términos de licencia originales de cualquier contenido de terceros, está estrictamente prohibido el uso o reproducción de contenido específicamente propiedad de Iker Romero Carames."
+      ]
+    },
+    "limitationOfLiability": {
+      "title": "Limitación de Responsabilidad",
+      "description": "El propietario no es responsable de los daños derivados de interferencias, omisiones, interrupciones, virus informáticos, averías o desconexiones debido a factores ajenos al control del propietario."
+    },
+    "lawAndJurisdiction": {
+      "title": "Ley Aplicable y Jurisdicción",
+      "description": "La ley española rige cualquier disputa o problema relacionado con este sitio web o las actividades en él. Ambas partes acuerdan la jurisdicción de los Tribunales y Tribunales de Madrid, España para su resolución."
+    }
+  },
+  "privacyPolicy": {
+    "title": "Política de Privacidad",
+    "metaDescription": "Descubre cómo se recopilan, utilizan y protegen tus datos al interactuar con los servicios de diseño web de Iker Romero.",
+    "identification": {
+      "title": "Identificación del Responsable del Tratamiento",
+      "bulletPoints": {
+        "name": { "key": "Nombre" },
+        "address": { "key": "Dirección", "value": "Madrid, España" }
+      }
+    },
+    "dataCollection": {
+      "title": "Recolección de Datos",
+      "description": "Al visitar mi sitio web, se recopilan datos para mejorar tu experiencia y ofrecerte un servicio personalizado. Estos incluyen:",
+      "list": [
+        "Correo electrónico y mensaje en el formulario de contacto.",
+        "Información técnica como la URL de origen y detalles del navegador, para mejorar la usabilidad del sitio y la eficacia de mis campañas publicitarias."
+      ]
+    },
+    "useOfData": {
+      "title": "Uso de Datos",
+      "description": "Los datos recopilados se utilizan exclusivamente para:",
+      "list": [
+        "Responder a consultas y procesar solicitudes de servicios.",
+        "Análisis interno para mejorar la experiencia del usuario en mi sitio web."
+      ]
+    },
+    "dataStorage": {
+      "title": "Almacenamiento de Datos",
+      "description": "Utilizo sistemas seguros como MongoDB para el almacenamiento de datos y Gmail junto con Nodemailer para las comunicaciones por correo electrónico. Estas herramientas son esenciales para operar mi sitio web y responder a tus solicitudes, sin compartir tus datos con terceros no relacionados."
+    },
+    "security": {
+      "title": "Seguridad",
+      "description": "La seguridad de tus datos es una prioridad. Implemento medidas de seguridad robustas para proteger la información recopilada y mantener su confidencialidad."
+    },
+    "userRights": {
+      "title": "Derechos del Usuario",
+      "description": {
+        "part1": "Conforme a la ley, tienes derecho a Acceder, Rectificar, Cancelar u Oponerte al uso de tus datos. Puedes ejercer estos derechos enviando una solicitud a ",
+        "part2": ", utilizando el mismo correo electrónico registrado en el sitio."
+      }
+    },
+    "durationOfDataRetention": {
+      "title": "Duración del Almacenamiento de Datos",
+      "description": "Los datos se retienen mientras sean necesarios para los fines indicados. Puedes solicitar su eliminación en cualquier momento, conforme a tus derechos ARCO."
+    },
+    "changesToThePrivacyPolicy": {
+      "title": "Cambios en la Política de Privacidad",
+      "description": "Esta política puede ser actualizada para reflejar cambios en las prácticas de privacidad. Las modificaciones se publicarán en el sitio para tu conocimiento."
+    }
+  },
+  "404NotFound": {
+    "title": "404 - Página No Encontrada",
+    "description": "La página que estás buscando pudo haber sido eliminada, haber cambiado de nombre, o estar temporalmente no disponible.",
+    "redirect": {
+      "indication": "Volver a la ",
+      "destination": "página principal"
+    }
+  }
+}
