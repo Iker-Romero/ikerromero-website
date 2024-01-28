@@ -1,8 +1,10 @@
 import Email from '@/components/Email/Email'
 import ObjectList from '@/components/ObjectList/ObjectList'
 import { LONG_FULL_NAME, NATIONAL_ID } from 'consts'
+import { getMessages } from 'i18n'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
-import { Locale } from 'types/globals'
+
+import { Locale } from '../../../../../globals'
 
 type Props = {
   params: { locale: Locale }
@@ -11,15 +13,10 @@ type Props = {
 const Terms = async ({ params: { locale } }: Props) => {
   unstable_setRequestLocale(locale)
 
+  const t = await getTranslations('terms')
   const {
-    title,
-    ownership: ownershipData,
-    purposeOfTheWebsite,
-    termsOfUser,
-    intellectualProperty,
-    limitationOfLiability,
-    lawAndJurisdiction
-  } = await getTranslations('terms')
+    terms: { ownership: ownershipData, intellectualProperty }
+  } = await getMessages(locale)
 
   const ownership = [
     {
@@ -39,18 +36,18 @@ const Terms = async ({ params: { locale } }: Props) => {
 
   return (
     <>
-      <h1>{title}</h1>
+      <h1>{t('title')}</h1>
 
-      <h2>{ownershipData.title}</h2>
+      <h2>{t('ownership.title')}</h2>
       <ObjectList objects={ownership} />
 
-      <h2>{purposeOfTheWebsite.title}</h2>
-      <p>{purposeOfTheWebsite.description}</p>
+      <h2>{t('purposeOfTheWebsite.title')}</h2>
+      <p>{t('purposeOfTheWebsite.description')}</p>
 
-      <h2>{termsOfUser.title}</h2>
-      <p>{termsOfUser.description}</p>
+      <h2>{t('termsOfUser.title')}</h2>
+      <p>{t('termsOfUser.description')}</p>
 
-      <h2>{intellectualProperty.title}</h2>
+      <h2>{t('intellectualProperty.title')}</h2>
       {intellectualProperty.paragraphs.map((paragraph, i, paragraphs) => (
         <>
           <p>{paragraph}</p>
@@ -58,11 +55,11 @@ const Terms = async ({ params: { locale } }: Props) => {
         </>
       ))}
 
-      <h2>{limitationOfLiability.title}</h2>
-      <p>{limitationOfLiability.description}</p>
+      <h2>{t('limitationOfLiability.title')}</h2>
+      <p>{t('limitationOfLiability.description')}</p>
 
-      <h2>{lawAndJurisdiction.title}</h2>
-      <p>{lawAndJurisdiction.description}</p>
+      <h2>{t('lawAndJurisdiction.title')}</h2>
+      <p>{t('lawAndJurisdiction.description')}</p>
     </>
   )
 }

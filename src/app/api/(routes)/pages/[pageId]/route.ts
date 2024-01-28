@@ -3,6 +3,8 @@ import Page from '@/api/models/Page'
 import Section from '@/api/models/Section'
 import { NextRequest, NextResponse } from 'next/server'
 
+import { Section as SectionType } from '../../../../../../globals'
+
 type Params = { params: { pageId: string } }
 
 export const PATCH = async (
@@ -14,14 +16,14 @@ export const PATCH = async (
 
     const { sessionStartDate, sections } = body
 
-    const sectionsIds = sections.map(({ id }: Section) => id)
+    const sectionsIds = sections.map(({ id }: SectionType) => id)
 
     // Retrieve the current page to compare sections
     const currentPage = await Page.findById(pageId).populate('sections')
 
     const updatedSectionsIds = await Promise.all(
       currentPage.sections.map(
-        async ({ id, maxIntersectionRatio }: Section) => {
+        async ({ id, maxIntersectionRatio }: SectionType) => {
           if (sectionsIds.includes(id)) {
             const updatedSection = await Section.findOneAndUpdate(
               { id },

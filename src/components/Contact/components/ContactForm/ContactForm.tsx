@@ -24,12 +24,37 @@ type FormValues = {
   privacyPolicyAccepted: boolean
 }
 
+type Props = {
+  toast: {
+    success: {
+      title: string
+      description: string
+    }
+    error: {
+      title: string
+      description: {
+        part1: string
+        part2: string
+      }
+    }
+  }
+  privacyPolicy: {
+    label: string
+    anchor: string
+  }
+  placeholders: {
+    email: string
+    message: string
+  }
+  submit: string
+}
+
 const ContactForm = ({
   toast: toastMessages,
   privacyPolicy,
   placeholders,
   submit
-}) => {
+}: Props) => {
   const methods = useForm<FormValues>({
     mode: 'onBlur',
     shouldUseNativeValidation: false,

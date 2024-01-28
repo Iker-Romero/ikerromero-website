@@ -1,7 +1,8 @@
 import { defaultLocale } from 'consts'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { ReactNode } from 'react'
-import { Locale } from 'types/globals'
+
+import { Locale } from '../../../../../globals'
 
 type MetadataProps = {
   params: { locale: Locale }
@@ -10,14 +11,19 @@ type MetadataProps = {
 export const generateMetadata = async ({
   params: { locale }
 }: MetadataProps) => {
-  const { title, metaDescription } = await getTranslations({
+  unstable_setRequestLocale(locale)
+
+  const t = await getTranslations({
     locale,
     namespace: 'terms'
   })
 
+  const title = t('title')
+  const description = t('metaDescription')
+
   return {
-    title: title,
-    description: metaDescription,
+    title,
+    description,
     alternates: {
       canonical: locale === defaultLocale ? '/terms' : `/${locale}/terms`,
       languages: {
@@ -26,8 +32,8 @@ export const generateMetadata = async ({
       }
     },
     openGraph: {
-      title: title,
-      description: metaDescription
+      title,
+      description
     }
   }
 }

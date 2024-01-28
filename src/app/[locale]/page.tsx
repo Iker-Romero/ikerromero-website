@@ -3,7 +3,8 @@ import Contact from '@/components/Contact/Contact'
 import Experience from '@/components/Experience/Experience'
 import Hero from '@/components/Hero/Hero'
 import { unstable_setRequestLocale } from 'next-intl/server'
-import { Locale } from 'types/globals'
+
+import { Locale } from '../../../globals'
 
 type Props = {
   params: { locale: Locale }

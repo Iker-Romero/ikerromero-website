@@ -5,6 +5,8 @@ import Session from '@/api/models/Session'
 import { ObjectId } from 'mongoose'
 import { NextRequest, NextResponse } from 'next/server'
 
+import { SectionData } from '../../../../../globals'
+
 export const POST = async (request: NextRequest) => {
   try {
     const URL = request.headers.get('referer')

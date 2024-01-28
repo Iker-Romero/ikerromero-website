@@ -7,9 +7,9 @@ import { Exo_2 } from 'next/font/google'
 import { ReactNode } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
-import { Locale } from 'types/globals'
 import ClientLogic from 'utils/ClientLogic'
 
+import { Locale } from '../../../globals'
 import './globals.scss'
 
 const exo = Exo_2({ subsets: ['latin'] })
@@ -24,6 +24,8 @@ export async function generateStaticParams() {
 }
 
 export const generateMetadata = async ({ params: { locale } }: Props) => {
+  unstable_setRequestLocale(locale)
+
   const t = await getTranslations({ locale, namespace: 'home' })
 
   const title = FULL_NAME

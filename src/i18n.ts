@@ -1,7 +1,7 @@
 import { getRequestConfig } from 'next-intl/server'
 import { notFound } from 'next/navigation'
-import { Locale } from 'types/globals'
 
+import { Locale, Messages } from '../globals'
 import { locales } from './consts'
 
 export default getRequestConfig(async ({ locale }) => {
@@ -13,5 +13,5 @@ export default getRequestConfig(async ({ locale }) => {
   }
 })
 
-export const getMessages = async (locale: Locale) =>
+export const getMessages = async (locale: Locale): Promise<Messages> =>
   (await import(`../messages/${locale}.json`)).default

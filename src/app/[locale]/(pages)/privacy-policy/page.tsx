@@ -3,7 +3,8 @@ import ObjectList from '@/components/ObjectList/ObjectList'
 import { LONG_FULL_NAME } from 'consts'
 import { getMessages } from 'i18n'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
-import { Locale } from 'types/globals'
+
+import { Locale } from '../../../../../globals'
 
 type Props = {
   params: { locale: Locale }
@@ -12,8 +13,10 @@ type Props = {
 const PrivacyPolicy = async ({ params: { locale } }: Props) => {
   unstable_setRequestLocale(locale)
 
-  const { dataCollection, useOfData } = await getMessages(locale)
-  const t = await getTranslations('privacy-policy')
+  const {
+    privacyPolicy: { dataCollection, useOfData }
+  } = await getMessages(locale)
+  const t = await getTranslations('privacyPolicy')
 
   const identification = [
     { key: t('identification.bulletPoints.name.key'), value: LONG_FULL_NAME },

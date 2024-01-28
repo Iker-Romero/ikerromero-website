@@ -1,6 +1,7 @@
 import Contact from '@/components/Contact/Contact'
 import { unstable_setRequestLocale } from 'next-intl/server'
-import { Locale } from 'types/globals'
+
+import { Locale } from '../../../../../globals'
 
 type Props = {
   params: { locale: Locale }

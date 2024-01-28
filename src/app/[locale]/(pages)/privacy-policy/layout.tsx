@@ -1,7 +1,8 @@
 import { defaultLocale } from 'consts'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { ReactNode } from 'react'
-import { Locale } from 'types/globals'
+
+import { Locale } from '../../../../../globals'
 
 type MetadataProps = {
   params: { locale: Locale }
@@ -12,14 +13,17 @@ export const generateMetadata = async ({
 }: MetadataProps) => {
   unstable_setRequestLocale(locale)
 
-  const { title, metaDescription } = await getTranslations({
+  const t = await getTranslations({
     locale,
-    namespace: 'privacy-policy'
+    namespace: 'privacyPolicy'
   })
 
+  const title = t('title')
+  const description = t('metaDescription')
+
   return {
-    title: title,
-    description: metaDescription,
+    title,
+    description,
     alternates: {
       canonical:
         locale === defaultLocale
@@ -31,16 +35,22 @@ export const generateMetadata = async ({
       }
     },
     openGraph: {
-      title: title,
-      description: metaDescription
+      title,
+      description
     }
   }
 }
 
 type LayoutProps = {
   children: ReactNode
+  params: { locale: Locale }
 }
 
-export default function PrivacyPolicyLayout({ children }: LayoutProps) {
+export default function PrivacyPolicyLayout({
+  children,
+  params: { locale }
+}: LayoutProps) {
+  unstable_setRequestLocale(locale)
+
   return children
 }

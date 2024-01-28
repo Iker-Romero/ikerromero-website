@@ -5,7 +5,6 @@ import s from './Navbar.module.scss'
 
 const Navbar = () => {
   const t = useTranslations('contact')
-  console.log('t("CTA")', t('CTA'))
 
   return (
     <nav className={s.navbar}>

@@ -1,6 +1,7 @@
 import { CLICK_ELEMENTS_IDS, SECTIONS_IDS } from 'consts'
 import { axiosClient } from 'services/axiosClient'
 
+import { ClickIdUnion, Page, SectionIdUnion } from '../../globals'
 import { page } from './ClientLogic'
 
 // Variables

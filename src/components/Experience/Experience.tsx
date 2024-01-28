@@ -18,8 +18,14 @@ const Experience = async () => {
       </h2>
       <div className={s['cards-container']}>
         {experience.map(({ id, technologies, link }) => {
-          const { role, company, description, datesRange } =
-            messages.experience.jobs.find(job => job.id === id) || {}
+          const job = messages.experience.jobs.find(job => job.id === id)
+
+          if (!job) {
+            console.error(`Job with id ${id} not found`)
+            return null
+          }
+
+          const { role, company, description, datesRange } = job
 
           return (
             <ExperienceCard
