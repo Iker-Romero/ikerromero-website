@@ -1,13 +1,14 @@
 import Footer from '@/components/Footer/Footer'
 import Navbar from '@/components/Navbar/Navbar'
 import { GoogleTagManager } from '@next/third-parties/google'
-import { BASE_URL, FULL_NAME, GTM_ID, defaultLocale, locales } from 'consts'
+import { BASE_URL, FULL_NAME, GTM_ID, locales } from 'consts'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { Exo_2 } from 'next/font/google'
 import { ReactNode } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import ClientLogic from 'utils/ClientLogic'
+import { getAlternates } from 'utils/metadata'
 
 import { Locale } from '../../../globals'
 import './globals.scss'
@@ -35,13 +36,7 @@ export const generateMetadata = async ({ params: { locale } }: Props) => {
     title,
     description,
     metadataBase: new URL(BASE_URL),
-    alternates: {
-      canonical: locale === defaultLocale ? '/' : `/${locale}`,
-      languages: {
-        [defaultLocale]: '/',
-        es: '/es'
-      }
-    },
+    alternates: getAlternates({ locale, pathname: '/' }),
     openGraph: {
       type: 'website',
       url: BASE_URL,

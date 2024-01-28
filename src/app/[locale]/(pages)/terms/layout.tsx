@@ -1,6 +1,6 @@
-import { defaultLocale } from 'consts'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { ReactNode } from 'react'
+import { getAlternates } from 'utils/metadata'
 
 import { Locale } from '../../../../../globals'
 
@@ -24,13 +24,7 @@ export const generateMetadata = async ({
   return {
     title,
     description,
-    alternates: {
-      canonical: locale === defaultLocale ? '/terms' : `/${locale}/terms`,
-      languages: {
-        [defaultLocale]: '/terms',
-        es: '/es/terms'
-      }
-    },
+    alternates: getAlternates({ locale, pathname: '/contact' }),
     openGraph: {
       title,
       description
