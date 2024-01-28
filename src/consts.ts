@@ -1,7 +1,7 @@
 // Routing
 
 export const locales = ['en', 'es']
-export const defaultLocale = 'en'
+export const defaultLocale = 'es'
 export const localePrefix = undefined // Use the default: `always`
 
 // Personal data
