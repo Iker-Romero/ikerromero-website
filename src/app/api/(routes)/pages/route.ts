@@ -15,16 +15,23 @@ export const POST = async (request: NextRequest) => {
 
     const { timeSinceSessionStart, sections: sectionsData, sessionId } = body
 
-    const sections = await Section.insertMany(
-      sectionsData.map((sectionData: SectionData) => ({ ...sectionData, URL }))
-    )
-    const sectionsIds = sections.map(({ _id }: { _id?: ObjectId }) => _id)
-
     const page = await Page.create({
       URL,
       timeSinceSessionStart,
-      time: 0,
-      sections: sectionsIds
+      time: 0
+    })
+
+    const sections = await Section.insertMany(
+      sectionsData.map((sectionData: SectionData) => ({
+        ...sectionData,
+        URL,
+        page: page._id
+      }))
+    )
+    const sectionsIds = sections.map(({ _id }: { _id?: ObjectId }) => _id)
+
+    await Page.findByIdAndUpdate(page._id, {
+      $set: { sections: sectionsIds }
     })
 
     await Session.findByIdAndUpdate(sessionId, {
