@@ -20,7 +20,6 @@ export const POST = async (request: NextRequest) => {
     const userAgent = getUserAgent(request)
 
     const [body] = await Promise.all([request.json(), connectMongoDB()])
-    console.log('body', body)
 
     const { sessionStartDate, sections: sectionsData } = body
     let { userId } = body
@@ -59,7 +58,6 @@ export const POST = async (request: NextRequest) => {
       pages: [page],
       time
     })
-    console.log('newSession', newSession)
 
     await User.findByIdAndUpdate(userId, {
       $push: { sessions: newSession._id }

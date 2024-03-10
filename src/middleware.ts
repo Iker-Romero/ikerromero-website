@@ -1,20 +1,12 @@
 import createMiddleware from 'next-intl/middleware'
-import { NextRequest } from 'next/server'
 
 import { defaultLocale, localePrefix, locales } from './consts'
 
-const nextIntlMiddleware = createMiddleware({
+export default createMiddleware({
   locales,
   defaultLocale,
   localePrefix
 })
-
-export default function middleware(req: NextRequest) {
-  console.log('req.url', req.url)
-  const res = nextIntlMiddleware(req)
-  console.log('res', res)
-  return res
-}
 
 export const config = {
   matcher: [
