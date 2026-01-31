@@ -10,8 +10,8 @@ import 'react-toastify/dist/ReactToastify.css'
 import ClientLogic from 'utils/ClientLogic'
 import { getAlternates } from 'utils/metadata'
 
-import PostHogPageView from '../PostHogPageView'
-import { PHProvider } from '../providers'
+import PostHogPageView from 'utils/PostHogPageView'
+import { PHProvider } from 'utils/PostHogProvider'
 
 import { Locale } from '../../../globals'
 import './globals.scss'
