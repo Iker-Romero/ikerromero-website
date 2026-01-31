@@ -8,7 +8,7 @@ Ad blockers (Brave Shield, uBlock Origin, etc.) block requests to PostHog's doma
 
 ### How It Works
 
-1. PostHog SDK sends requests to `/ingest/*` (same domain)
+1. PostHog SDK sends requests to `/i/*` (same domain)
 2. Next.js rewrites proxy these to PostHog's servers
 3. Ad blockers don't block first-party requests
 
@@ -17,7 +17,7 @@ Ad blockers (Brave Shield, uBlock Origin, etc.) block requests to PostHog's doma
 **`src/utils/PostHogProvider.tsx`**
 ```tsx
 posthog.init(key, {
-  api_host: '/ingest',  // Routes through our domain
+  api_host: '/i',  // Routes through our domain
   ui_host: 'https://eu.posthog.com'
 })
 ```
@@ -26,8 +26,8 @@ posthog.init(key, {
 ```js
 async rewrites() {
   return [
-    { source: '/ingest/static/:path*', destination: 'https://eu-assets.i.posthog.com/static/:path*' },
-    { source: '/ingest/:path*', destination: 'https://eu.i.posthog.com/:path*' }
+    { source: '/i/static/:path*', destination: 'https://eu-assets.i.posthog.com/static/:path*' },
+    { source: '/i/:path*', destination: 'https://eu.i.posthog.com/:path*' }
   ]
 }
 ```

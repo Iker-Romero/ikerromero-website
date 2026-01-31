@@ -7,11 +7,11 @@ export default withNextIntl({
   async rewrites() {
     return [
       {
-        source: '/ingest/static/:path*',
+        source: '/i/static/:path*',
         destination: 'https://eu-assets.i.posthog.com/static/:path*'
       },
       {
-        source: '/ingest/:path*',
+        source: '/i/:path*',
         destination: 'https://eu.i.posthog.com/:path*'
       }
     ]
