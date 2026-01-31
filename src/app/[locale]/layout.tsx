@@ -79,7 +79,9 @@ export default async function RootLayout({
         <ToastContainer />
       </body>
 
-      <GoogleTagManager gtmId={GTM_ID} />
+      {process.env.NEXT_PUBLIC_ENABLE_GTM === 'true' && (
+        <GoogleTagManager gtmId={GTM_ID} />
+      )}
     </html>
   )
 }
