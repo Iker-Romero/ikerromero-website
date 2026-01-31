@@ -16,17 +16,17 @@ export const projects: ProjectType[] = [
   },
   {
     id: 'liftlog',
-    image: '/images/projects/liftlog.webp',
+    image: '/images/projects/session-started.jpg',
     technologies: ['TypeScript', 'React Native', 'Expo', 'NativeWind', 'SQLite']
   },
   {
     id: 'weeklyplanner',
-    image: '/images/projects/weeklyplanner.webp',
+    image: '/images/projects/WeeklyPlanner-square.png',
     technologies: ['TypeScript', 'React', 'NextJS', 'Tailwind CSS']
   },
   {
     id: 'madriddelta',
-    image: '/images/projects/madriddelta.webp',
+    image: '/images/projects/MadridDelta-Instagram-square.PNG',
     technologies: ['JavaScript', 'React', 'NodeJS', 'Express', 'CSS3', 'MongoDB']
   }
 ]
