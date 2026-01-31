@@ -10,13 +10,13 @@ type ProjectType = {
 export const projects: ProjectType[] = [
   {
     id: 'habitsflow',
-    image: '/images/projects/habitsflow.webp',
+    image: '/images/projects/habitsflow.PNG',
     link: 'https://habitsflow.app',
     technologies: ['TypeScript', 'React', 'NextJS', 'Tailwind CSS', 'MongoDB']
   },
   {
     id: 'liftlog',
-    image: '/images/projects/session-started-3x2-zoom-to-logging-layout.jpg',
+    image: '/images/projects/session-started-3x2-zoom-to-logging-layout.JPG',
     technologies: ['TypeScript', 'React Native', 'Expo', 'NativeWind', 'SQLite']
   },
   {
