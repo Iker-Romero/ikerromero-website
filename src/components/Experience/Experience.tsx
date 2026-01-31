@@ -1,8 +1,9 @@
 import { getMessages } from 'i18n'
 import { getLocale, getTranslations } from 'next-intl/server'
 
+import Card from '@/components/Card/Card'
+
 import s from './Experience.module.scss'
-import ExperienceCard from './components/ExperienceCard/ExperienceCard/ExperienceCard'
 import { experience } from './data'
 
 const Experience = async () => {
@@ -17,7 +18,7 @@ const Experience = async () => {
         {t('title')}
       </h2>
       <div className={s['cards-container']}>
-        {experience.map(({ id, technologies, link }) => {
+        {experience.map(({ id, technologies, link, image }) => {
           const job = messages.experience.jobs.find(job => job.id === id)
 
           if (!job) {
@@ -28,16 +29,14 @@ const Experience = async () => {
           const { role, company, description, datesRange } = job
 
           return (
-            <ExperienceCard
+            <Card
               key={id}
-              {...{
-                technologies,
-                link,
-                role,
-                company,
-                description,
-                datesRange
-              }}
+              image={image}
+              title={`${role} | ${company}`}
+              subtitle={datesRange}
+              description={description}
+              technologies={technologies}
+              link={link}
             />
           )
         })}

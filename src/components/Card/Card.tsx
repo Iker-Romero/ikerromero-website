@@ -1,41 +1,44 @@
 import { TechnologiesType } from '@/components/Experience/data'
-import Technologies from '@/components/Experience/components/ExperienceCard/ExperienceCard/components/Technologies/Technologies'
 import Link from '@/components/Link/Link'
 import Image from 'next/image'
 
-import s from './ProjectCard.module.scss'
+import s from './Card.module.scss'
+import Technologies from './components/Technologies/Technologies'
 
 type Props = {
-  image: string
+  image?: string
+  title: string
+  subtitle?: string
+  badge?: string
+  description: string
   technologies: TechnologiesType
   link?: string
-  // Localized
-  name: string
-  description: string
-  badge?: string
 }
 
-const ProjectCard = ({
+const Card = ({
   image,
-  technologies,
-  link,
-  // Localized
-  name,
+  title,
+  subtitle,
+  badge,
   description,
-  badge
+  technologies,
+  link
 }: Props) => {
   return (
-    <div className={s['project-card'] + ' hidden fadeInRight'}>
-      <div className={s['image-wrapper']}>
-        <Image
-          src={image}
-          alt={name}
-          width={600}
-          height={400}
-          className={s.image}
-        />
-      </div>
+    <div className={s.card + ' hidden fadeInRight'}>
+      {image && (
+        <div className={s['image-wrapper']}>
+          <Image
+            src={image}
+            alt={title}
+            width={600}
+            height={400}
+            className={s.image}
+          />
+        </div>
+      )}
       <div className={s.content}>
+        {subtitle && <span className={s.subtitle}>{subtitle}</span>}
         <h3 className={s.title}>
           {link ? (
             <Link
@@ -44,10 +47,10 @@ const ProjectCard = ({
               variant="heading"
               className={s['external-link-icon']}
             >
-              {name}
+              {title}
             </Link>
           ) : (
-            name
+            title
           )}
           {badge && <span className={s.badge}>{badge}</span>}
         </h3>
@@ -58,4 +61,4 @@ const ProjectCard = ({
   )
 }
 
-export default ProjectCard
+export default Card

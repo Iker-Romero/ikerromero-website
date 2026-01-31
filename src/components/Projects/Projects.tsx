@@ -1,8 +1,9 @@
 import { getMessages } from 'i18n'
 import { getLocale, getTranslations } from 'next-intl/server'
 
+import Card from '@/components/Card/Card'
+
 import s from './Projects.module.scss'
-import ProjectCard from './components/ProjectCard/ProjectCard'
 import { projects } from './data'
 
 const Projects = async () => {
@@ -30,16 +31,14 @@ const Projects = async () => {
           const { name, description, badge } = project
 
           return (
-            <ProjectCard
+            <Card
               key={id}
-              {...{
-                image,
-                technologies,
-                link,
-                name,
-                description,
-                badge
-              }}
+              image={image}
+              title={name}
+              description={description}
+              technologies={technologies}
+              link={link}
+              badge={badge}
             />
           )
         })}
