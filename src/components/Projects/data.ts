@@ -16,7 +16,7 @@ export const projects: ProjectType[] = [
   },
   {
     id: 'liftlog',
-    image: '/images/projects/session-started.jpg',
+    image: '/images/projects/session-started-3x2-zoom-to-logging-layout.jpg',
     technologies: ['TypeScript', 'React Native', 'Expo', 'NativeWind', 'SQLite']
   },
   {
@@ -27,6 +27,13 @@ export const projects: ProjectType[] = [
   {
     id: 'madriddelta',
     image: '/images/projects/MadridDelta-Instagram-square.PNG',
-    technologies: ['JavaScript', 'React', 'NodeJS', 'Express', 'CSS3', 'MongoDB']
+    technologies: [
+      'JavaScript',
+      'React',
+      'NodeJS',
+      'Express',
+      'CSS3',
+      'MongoDB'
+    ]
   }
 ]
