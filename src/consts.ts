@@ -9,7 +9,7 @@ export const localePrefix = undefined // Use the default: `always`
 export const NAME = 'Iker'
 export const SURNAME = 'Romero'
 export const FULL_NAME = `${NAME} ${SURNAME}`
-export const LONG_FULL_NAME = `${FULL_NAME} Carames`
+export const LONG_FULL_NAME = `${FULL_NAME} Caramés`
 export const NATIONAL_ID = process.env.NEXT_PUBLIC_NATIONAL_ID || ''
 export const EMAIL = 'ikerromeroweb@gmail.com'
 
