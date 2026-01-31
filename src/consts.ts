@@ -18,26 +18,6 @@ export const EMAIL = 'ikerromeroweb@gmail.com'
 export const BASE_URL =
   process.env.NEXT_PUBLIC_BASE_URL || 'https://www.ikerromero.com'
 
-// Analitycs
+// Analytics
 
 export const GTM_ID = 'GTM-5HPFGSZR'
-
-export const OWN_ANALYTICS_INTERVAL_MS = 5000
-
-export const SECTIONS_IDS = [
-  'heroContent',
-  'benefitsSection',
-  'experienceSection',
-  'contactSection'
-]
-
-export const CLICK_ELEMENTS_IDS = [
-  'navbarLogo',
-  'navbarCTA',
-  'heroCTA',
-  'emailLink',
-  'contactFormSubmitButton',
-  'footerLogo'
-]
-
-export const DEFAULT_PAGE_DATA = { sections: {}, clicks: [], _id: '' }

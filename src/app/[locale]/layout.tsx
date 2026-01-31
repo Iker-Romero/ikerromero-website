@@ -4,11 +4,14 @@ import { GoogleTagManager } from '@next/third-parties/google'
 import { BASE_URL, FULL_NAME, GTM_ID, locales } from 'consts'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { Exo_2 } from 'next/font/google'
-import { ReactNode } from 'react'
+import { ReactNode, Suspense } from 'react'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import ClientLogic from 'utils/ClientLogic'
 import { getAlternates } from 'utils/metadata'
+
+import PostHogPageView from '../PostHogPageView'
+import { PHProvider } from '../providers'
 
 import { Locale } from '../../../globals'
 import './globals.scss'
@@ -68,16 +71,22 @@ export default async function RootLayout({
         <meta name="msapplication-TileColor" content="#0e2a3a" />
       </head>
 
-      <body className={exo.className}>
-        <header>
-          <Navbar />
-        </header>
-        <main>{children}</main>
-        <Footer />
+      <PHProvider>
+        <body className={exo.className}>
+          <Suspense fallback={null}>
+            <PostHogPageView />
+          </Suspense>
 
-        <ClientLogic />
-        <ToastContainer />
-      </body>
+          <header>
+            <Navbar />
+          </header>
+          <main>{children}</main>
+          <Footer />
+
+          <ClientLogic />
+          <ToastContainer />
+        </body>
+      </PHProvider>
 
       {process.env.NEXT_PUBLIC_ENABLE_GTM === 'true' && (
         <GoogleTagManager gtmId={GTM_ID} />

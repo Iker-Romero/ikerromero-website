@@ -14,7 +14,6 @@ import { useState } from 'react'
 import { useForm } from 'react-hook-form'
 import { toast } from 'react-toastify'
 import { axiosClient } from 'services/axiosClient'
-import { page } from 'utils/ClientLogic'
 
 import s from './ContactForm.module.scss'
 
@@ -71,12 +70,7 @@ const ContactForm = ({
     setSubmitDisabled(true)
 
     const { email, message } = formValues
-    const data = {
-      ...formValues,
-      pageId: page._id,
-      sessionId: localStorage.getItem('sessionId'),
-      userId: localStorage.getItem('userId')
-    }
+    const data = { ...formValues }
     const emailHTMLString = render(<LeadEmail {...{ email, message }} />)
 
     toast

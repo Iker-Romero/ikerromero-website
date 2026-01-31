@@ -1,5 +1,3 @@
-import Session from '@/api/models/Session'
-import User from '@/api/models/User'
 import { NextRequest, NextResponse } from 'next/server'
 
 import { sendMail } from '../../../../services/mail'
@@ -11,23 +9,13 @@ export const POST = async (request: NextRequest) => {
     const [body] = await Promise.all([request.json(), connectMongoDB()])
 
     const { data, emailHTMLString } = body
-    const { pageId, sessionId, userId } = data
 
     const newContact = await Contact.create({
-      ...data,
-      page: pageId,
-      session: sessionId,
-      user: userId
+      email: data.email,
+      message: data.message,
+      privacyPolicyAccepted: data.privacyPolicyAccepted
     })
     console.log('New contact: ', newContact)
-
-    User.findByIdAndUpdate(userId, {
-      $push: { contactSubmissions: newContact._id }
-    })
-
-    Session.findByIdAndUpdate(sessionId, {
-      $push: { contactSubmissions: newContact._id }
-    })
 
     const info = await sendMail(emailHTMLString)
     console.log('Email sent: ', info.response)
