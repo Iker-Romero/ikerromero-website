@@ -2,13 +2,18 @@ export type TechnologiesType = (
   | 'HTML5'
   | 'CSS3'
   | 'Sass'
+  | 'Tailwind CSS'
+  | 'NativeWind'
   | 'JavaScript'
   | 'TypeScript'
   | 'React'
+  | 'React Native'
   | 'NextJS'
   | 'NodeJS'
   | 'Express'
   | 'MongoDB'
+  | 'SQLite'
+  | 'Expo'
 )[]
 
 type ExperienceType = {
@@ -21,21 +26,6 @@ export const experience: ExperienceType[] = [
   {
     id: 1,
     link: 'https://www.triskellsoftware.com/',
-    technologies: ['HTML5', 'CSS3', 'Sass', 'JavaScript', 'React']
-  },
-  {
-    id: 2,
-    technologies: [
-      'HTML5',
-      'CSS3',
-      'Sass',
-      'JavaScript',
-      'TypeScript',
-      'React',
-      'NextJS',
-      'NodeJS',
-      'Express',
-      'MongoDB'
-    ]
+    technologies: ['JavaScript', 'React', 'Sass']
   }
 ]

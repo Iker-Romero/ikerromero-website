@@ -52,7 +52,7 @@
     }
   ],
   "experience": {
-    "title": "Professional Experience",
+    "title": "Work Experience",
     "jobs": [
       {
         "id": 1,
@@ -60,13 +60,33 @@
         "role": "Front-end Web Developer",
         "company": "Triskell Software",
         "description": "I have collaborated with a talented team on the development of a new, modern, and efficient web interface. This improves the user experience and optimizes the performance of Triskell's project portfolio management software."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projects",
+    "items": [
+      {
+        "id": "habitsflow",
+        "name": "HabitsFlow",
+        "description": "Habit tracking app with 1000+ user signups. Web app in production, mobile app launching on Google Play.",
+        "badge": "1000+ users"
       },
       {
-        "id": 2,
-        "datesRange": "June 2023 - Present",
-        "role": "Full Stack Web Developer",
-        "company": "Freelance",
-        "description": "Offering tailor-made web solutions that align with the unique needs and objectives of my clients. From captivating landing pages to robust web applications, I use the latest technologies to ensure functionality, responsiveness, and visual appeal."
+        "id": "liftlog",
+        "name": "Lift Log",
+        "description": "Gym tracking app with offline-first local database. Log workouts, track progress, and plan routines."
+      },
+      {
+        "id": "weeklyscheduler",
+        "name": "Weekly Scheduler",
+        "description": "Planning tool for organizing weekly routines and schedules."
+      },
+      {
+        "id": "madriddelta",
+        "name": "Madrid Delta",
+        "description": "Internal booking and ranking system for Spanish security forces training academy. Contract work, team of 2.",
+        "badge": "Contract"
       }
     ]
   },

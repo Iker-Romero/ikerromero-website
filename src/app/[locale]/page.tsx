@@ -2,6 +2,7 @@ import Benefits from '@/components/Benefits/Benefits'
 import Contact from '@/components/Contact/Contact'
 import Experience from '@/components/Experience/Experience'
 import Hero from '@/components/Hero/Hero'
+import Projects from '@/components/Projects/Projects'
 import { unstable_setRequestLocale } from 'next-intl/server'
 
 import { Locale } from '../../../globals'
@@ -18,6 +19,7 @@ const Home = async ({ params: { locale } }: Props) => {
       <Hero />
       <Benefits />
       <Experience />
+      <Projects />
       <Contact />
     </>
   )

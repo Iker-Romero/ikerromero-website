@@ -52,7 +52,7 @@
     }
   ],
   "experience": {
-    "title": "Experiencia profesional",
+    "title": "Experiencia laboral",
     "jobs": [
       {
         "id": 1,
@@ -60,13 +60,33 @@
         "role": "Desarrollador Web Front-end",
         "company": "Triskell Software",
         "description": "He colaborado con un talentoso equipo en el desarrollo de una nueva interfaz web moderna y eficiente. Mejorando así la experiencia de usuario y optimizando el rendimiento del software de gestión de cartera de proyectos de Triskell."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Proyectos",
+    "items": [
+      {
+        "id": "habitsflow",
+        "name": "HabitsFlow",
+        "description": "App de seguimiento de hábitos con más de 1000 usuarios registrados. App web en producción, app móvil próximamente en Google Play.",
+        "badge": "1000+ usuarios"
       },
       {
-        "id": 2,
-        "datesRange": "Junio 2023 - Actualidad",
-        "role": "Desarrollador Web Full Stack",
-        "company": "Freelance",
-        "description": "Ofreciendo soluciones web a medida que se alinean con las necesidades y objetivos únicos de mis clientes. Desde atractivas páginas de inicio hasta robustas aplicaciones web, utilizo las últimas tecnologías para garantizar funcionalidad, adaptabilidad y atractivo visual."
+        "id": "liftlog",
+        "name": "Lift Log",
+        "description": "App de gimnasio con base de datos local offline-first. Registra entrenamientos, sigue tu progreso y planifica rutinas."
+      },
+      {
+        "id": "weeklyscheduler",
+        "name": "Weekly Scheduler",
+        "description": "Herramienta de planificación para organizar rutinas y horarios semanales."
+      },
+      {
+        "id": "madriddelta",
+        "name": "Madrid Delta",
+        "description": "Sistema interno de reservas y rankings para academia de formación de las Fuerzas de Seguridad del Estado. Trabajo por contrato, equipo de 2.",
+        "badge": "Contrato"
       }
     ]
   },

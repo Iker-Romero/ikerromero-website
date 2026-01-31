@@ -68,6 +68,19 @@ type Experience = {
   jobs: Job[]
 }
 
+// Projects
+type Project = {
+  id: string
+  name: string
+  description: string
+  badge?: string
+}
+
+type Projects = {
+  title: string
+  items: Project[]
+}
+
 // Footer
 type Footer = {
   aboutMe: { title: string }
@@ -141,6 +154,7 @@ type Messages = {
   contact: Contact
   benefits: Benefits
   experience: Experience
+  projects: Projects
   footer: Footer
   terms: Terms
   privacyPolicy: PrivacyPolicy
