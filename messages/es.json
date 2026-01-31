@@ -89,7 +89,7 @@
       "bulletPoints": {
         "owner": { "key": "Propietario" },
         "nationalID": { "key": "ID Nacional" },
-        "address": { "key": "Dirección", "value": "Madrid, España" }
+        "address": { "key": "Dirección", "value": "España" }
       }
     },
     "purposeOfTheWebsite": {
@@ -124,7 +124,7 @@
       "title": "Identificación del Responsable del Tratamiento",
       "bulletPoints": {
         "name": { "key": "Nombre" },
-        "address": { "key": "Dirección", "value": "Madrid, España" }
+        "address": { "key": "Dirección", "value": "España" }
       }
     },
     "dataCollection": {

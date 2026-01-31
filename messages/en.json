@@ -89,7 +89,7 @@
       "bulletPoints": {
         "owner": { "key": "Owner" },
         "nationalID": { "key": "National ID" },
-        "address": { "key": "Address", "value": "Madrid, Spain" }
+        "address": { "key": "Address", "value": "Spain" }
       }
     },
     "purposeOfTheWebsite": {
@@ -124,7 +124,7 @@
       "title": "Identification of the Data Controller",
       "bulletPoints": {
         "name": { "key": "Name" },
-        "address": { "key": "Address", "value": "Madrid, Spain" }
+        "address": { "key": "Address", "value": "Spain" }
       }
     },
     "dataCollection": {
