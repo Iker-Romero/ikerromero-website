@@ -15,24 +15,48 @@ Using a Cloudflare subdomain proxy:
 - Doesn't consume Vercel Edge Requests
 - Bypasses ad blockers (requests go to your domain)
 
-## Setup
+## Cloudflare DNS Setup
 
-### 1. Create Cloudflare Subdomain
+### If Transferring Domain to Cloudflare
 
-1. Go to Cloudflare DNS for your domain
-2. Add a **CNAME** record:
-   - **Name:** `i` (creates `i.yourdomain.com`)
-   - **Target:** `eu.i.posthog.com` (or `us.i.posthog.com` for US region)
-   - **Proxy status:** Proxied (orange cloud)
+1. **Add your domain** in Cloudflare dashboard
+2. **Clean up old records:**
+   - Delete registrar-specific records (e.g., `_domainconnect` from Squarespace)
+   - Keep your Vercel records (`A` record and `www` CNAME)
+3. **Update nameservers** at your registrar to Cloudflare's (e.g., `nelly.ns.cloudflare.com`, `toby.ns.cloudflare.com`)
+4. **Wait for propagation** — typically 1-2 hours, can take up to 24 hours
+5. **Skip "Only allow Cloudflare IPs"** — Not applicable for Vercel (managed platform)
 
-### 2. Configure Environment Variables
+### Add PostHog CNAME Record
+
+In Cloudflare DNS, add a new record:
+
+| Field | Value |
+|-------|-------|
+| Type | `CNAME` |
+| Name | `i` |
+| Target | `eu.i.posthog.com` (or `us.i.posthog.com` for US) |
+| Proxy status | **Proxied** (orange cloud) |
+| TTL | Auto |
+
+This creates `i.yourdomain.com` which proxies to PostHog through Cloudflare.
+
+**Important:** The proxy status must be **Proxied** (orange cloud), not DNS only. This is what hides the PostHog origin from ad blockers.
+
+## Environment Variables
 
 ```
 NEXT_PUBLIC_POSTHOG_KEY=your_project_api_key
 NEXT_PUBLIC_POSTHOG_HOST=https://i.yourdomain.com
 ```
 
-### 3. Code Configuration
+Add these to:
+- `.env.local` for local development
+- Vercel project settings for production
+
+Get your API key from: PostHog Dashboard → Project Settings → Project API Key
+
+## Code Configuration
 
 **`src/utils/PostHogProvider.tsx`**
 ```tsx
@@ -54,8 +78,8 @@ The provider returns children directly without PostHog wrapper in development mo
 
 ## Verification
 
-1. Deploy to production
-2. Open browser DevTools → Network tab
-3. Trigger a page view
-4. Look for requests to `i.yourdomain.com`
-5. Check PostHog dashboard for events
+1. **Test DNS:** After propagation, visit `https://i.yourdomain.com` — should return a PostHog response (not 404)
+2. **Deploy** to Vercel with the env vars set
+3. **Check Network tab:** Requests should go to `i.yourdomain.com`, not `posthog.com`
+4. **Enable ad blocker:** Events should still flow through
+5. **PostHog dashboard:** Verify events appear
