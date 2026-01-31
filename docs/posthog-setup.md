@@ -1,40 +1,66 @@
 # PostHog Analytics Setup
 
-This project uses [PostHog](https://posthog.com/) for analytics.
+This project uses [PostHog](https://posthog.com/) for analytics with a self-hosted reverse proxy.
 
-## Ad Blocker Bypass
+> **Note:** This is a self-hosted proxy setup. PostHog cannot help troubleshoot configuration issues. See the official docs for reference:
+> - [Deploy a reverse proxy](https://posthog.com/docs/advanced/proxy) — Main guide
+> - [Next.js rewrites](https://posthog.com/docs/advanced/proxy/nextjs) — Recommended for Vercel + Next.js (via their platform quiz)
 
-Ad blockers (Brave Shield, uBlock Origin, etc.) block requests to PostHog's domains (`eu.i.posthog.com`). To ensure analytics work for all users, we use a reverse proxy.
+## Why a Reverse Proxy?
 
-### How It Works
+Ad blockers (Brave Shield, uBlock Origin, etc.) block requests to known analytics domains like `eu.i.posthog.com`. A reverse proxy routes requests through your own domain, which ad blockers haven't cataloged. This typically increases event capture by 10-30%.
 
-1. PostHog SDK sends requests to `/i/*` (same domain)
-2. Next.js rewrites proxy these to PostHog's servers
-3. Ad blockers don't block first-party requests
+## How It Works
 
-### Configuration
+1. PostHog SDK sends requests to `/i/*` (your domain)
+2. Next.js rewrites proxy these to PostHog's servers (server-side)
+3. Browser only sees requests to your domain — ad blockers don't block
 
-**`src/utils/PostHogProvider.tsx`**
-```tsx
-posthog.init(key, {
-  api_host: '/i',  // Routes through our domain
-  ui_host: 'https://eu.posthog.com'
+## Configuration
+
+### `next.config.js`
+
+```js
+export default withNextIntl({
+  reactStrictMode: false,
+  skipTrailingSlashRedirect: true,  // Required: PostHog API uses trailing slashes
+  async rewrites() {
+    return [
+      {
+        source: '/i/static/:path*',
+        destination: 'https://eu-assets.i.posthog.com/static/:path*'
+      },
+      {
+        source: '/i/:path*',
+        destination: 'https://eu.i.posthog.com/:path*'
+      }
+    ]
+  }
 })
 ```
 
-**`next.config.js`**
-```js
-async rewrites() {
-  return [
-    { source: '/i/static/:path*', destination: 'https://eu-assets.i.posthog.com/static/:path*' },
-    { source: '/i/:path*', destination: 'https://eu.i.posthog.com/:path*' }
-  ]
-}
+**Key points:**
+- Static assets rewrite must come first (Next.js evaluates in order)
+- `skipTrailingSlashRedirect` prevents Next.js from redirecting URLs with trailing slashes, which would break PostHog's API endpoints like `/e/`
+- Replace `eu` with `us` for US region
+
+### `src/utils/PostHogProvider.tsx`
+
+```tsx
+posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
+  api_host: '/i',
+  ui_host: 'https://eu.posthog.com',
+  person_profiles: 'identified_only'
+})
 ```
+
+**Key points:**
+- `api_host: '/i'` — Routes through your domain (the proxy path)
+- `ui_host` — Must point to PostHog's actual domain for toolbar features
 
 ## Local Development
 
-For local development, ad blockers still block requests because the rewrite happens server-side but the browser sees the initial request.
+For local development, ad blockers still block the initial request before the server-side rewrite happens.
 
 **Solution:** Disable your ad blocker for `http://localhost:3333/`
 
@@ -42,7 +68,20 @@ For local development, ad blockers still block requests because the rewrite happ
 
 ```
 NEXT_PUBLIC_POSTHOG_KEY=your_project_api_key
-NEXT_PUBLIC_POSTHOG_HOST=https://eu.i.posthog.com
 ```
 
 Get your key from: PostHog Dashboard → Project Settings → Project API Key
+
+## Troubleshooting
+
+### 503 or 400 errors
+Some hosting platforms modify headers during rewrites. This setup works on Vercel. If issues occur, try [Next.js proxy middleware](https://posthog.com/docs/advanced/proxy/nextjs-middleware).
+
+### Trailing slash conflicts with SEO
+The `skipTrailingSlashRedirect` setting can cause pages to be accessible at both `/page` and `/page/`. Solutions:
+- Handle redirects in Next.js middleware for non-PostHog routes
+- Use `<link rel="canonical">` to specify preferred URLs
+- Ensure sitemap only includes one URL format
+
+### 401 errors
+Usually indicates a region mismatch. Ensure rewrites use `eu` or `us` matching your PostHog project region.

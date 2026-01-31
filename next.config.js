@@ -4,6 +4,7 @@ const withNextIntl = intlPlugin()
 
 export default withNextIntl({
   reactStrictMode: false,
+  skipTrailingSlashRedirect: true,
   async rewrites() {
     return [
       {
