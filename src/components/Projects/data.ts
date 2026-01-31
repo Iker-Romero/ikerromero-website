@@ -20,8 +20,8 @@ export const projects: ProjectType[] = [
     technologies: ['TypeScript', 'React Native', 'Expo', 'NativeWind', 'SQLite']
   },
   {
-    id: 'weeklyscheduler',
-    image: '/images/projects/weeklyscheduler.webp',
+    id: 'weeklyplanner',
+    image: '/images/projects/weeklyplanner.webp',
     technologies: ['TypeScript', 'React', 'NextJS', 'Tailwind CSS']
   },
   {

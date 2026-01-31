@@ -78,8 +78,8 @@
         "description": "App de gimnasio con base de datos local offline-first. Registra entrenamientos, sigue tu progreso y planifica rutinas."
       },
       {
-        "id": "weeklyscheduler",
-        "name": "Weekly Scheduler",
+        "id": "weeklyplanner",
+        "name": "Weekly Planner",
         "description": "Herramienta de planificación para organizar rutinas y horarios semanales."
       },
       {

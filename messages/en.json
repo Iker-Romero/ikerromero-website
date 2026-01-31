@@ -78,8 +78,8 @@
         "description": "Gym tracking app with offline-first local database. Log workouts, track progress, and plan routines."
       },
       {
-        "id": "weeklyscheduler",
-        "name": "Weekly Scheduler",
+        "id": "weeklyplanner",
+        "name": "Weekly Planner",
         "description": "Planning tool for organizing weekly routines and schedules."
       },
       {
