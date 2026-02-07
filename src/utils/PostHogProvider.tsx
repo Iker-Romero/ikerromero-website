@@ -1,23 +1,36 @@
 'use client'
 
-import posthog from 'posthog-js'
-import { PostHogProvider } from 'posthog-js/react'
-import { ReactNode } from 'react'
+import { ReactNode, useEffect, useState } from 'react'
 
 const isEnabled = process.env.NEXT_PUBLIC_ENABLE_POSTHOG === 'true'
 
-if (isEnabled && process.env.NEXT_PUBLIC_POSTHOG_KEY) {
-  posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY, {
-    api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
-    ui_host: 'https://eu.posthog.com',
-    person_profiles: 'identified_only'
-  })
-}
-
 export function PHProvider({ children }: { children: ReactNode }) {
-  if (!isEnabled) {
-    return children
-  }
+  const [PostHogContext, setPostHogContext] = useState<{
+    Provider: React.ComponentType<{ client: any; children: ReactNode }>
+    client: any
+  } | null>(null)
 
-  return <PostHogProvider client={posthog}>{children}</PostHogProvider>
+  useEffect(() => {
+    if (!isEnabled || !process.env.NEXT_PUBLIC_POSTHOG_KEY) return
+
+    Promise.all([import('posthog-js'), import('posthog-js/react')]).then(
+      ([posthogModule, reactModule]) => {
+        const posthog = posthogModule.default
+        posthog.init(process.env.NEXT_PUBLIC_POSTHOG_KEY!, {
+          api_host: process.env.NEXT_PUBLIC_POSTHOG_HOST,
+          ui_host: 'https://eu.posthog.com',
+          person_profiles: 'identified_only'
+        })
+        setPostHogContext({
+          Provider: reactModule.PostHogProvider,
+          client: posthog
+        })
+      }
+    )
+  }, [])
+
+  if (!PostHogContext) return <>{children}</>
+
+  const { Provider, client } = PostHogContext
+  return <Provider client={client}>{children}</Provider>
 }

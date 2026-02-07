@@ -5,8 +5,6 @@ import { BASE_URL, FULL_NAME, GTM_ID, locales } from 'consts'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { Exo_2 } from 'next/font/google'
 import { ReactNode } from 'react'
-import { ToastContainer } from 'react-toastify'
-import 'react-toastify/dist/ReactToastify.css'
 import ClientLogic from 'utils/ClientLogic'
 import { getAlternates } from 'utils/metadata'
 
@@ -79,7 +77,6 @@ export default async function RootLayout({
           <Footer />
 
           <ClientLogic />
-          <ToastContainer />
         </body>
       </PHProvider>
 

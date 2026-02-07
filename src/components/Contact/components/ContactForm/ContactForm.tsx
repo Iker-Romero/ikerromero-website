@@ -12,7 +12,8 @@ import { render } from '@react-email/components'
 import LeadEmail from 'emails/LeadEmail'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { toast } from 'react-toastify'
+import { toast, ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 import { axiosClient } from 'services/axiosClient'
 
 import s from './ContactForm.module.scss'
@@ -115,42 +116,45 @@ const ContactForm = ({
   )
 
   return (
-    <Form<FormValues>
-      {...{ methods }}
-      onSubmit={handleSubmit}
-      className={s['contact-form']}
-    >
-      <Input
-        type="email"
-        name="email"
-        placeholder={placeholders.email}
-        required
-      />
-      <Textarea
-        name="message"
-        placeholder={placeholders.message}
-        validation="message"
-        required
-      />
-      <Checkbox
-        label={
-          <span>
-            {privacyPolicy.label} {privacyPolicyLink}.
-          </span>
-        }
-        name="privacyPolicyAccepted"
-        validation="privacyPolicy"
-        required
-      />
-      <Button
-        id="contactFormSubmitButton"
-        variant="callToAction"
-        disabled={submitDisabled}
-        className={s['send-button']}
+    <>
+      <Form<FormValues>
+        {...{ methods }}
+        onSubmit={handleSubmit}
+        className={s['contact-form']}
       >
-        {submit}
-      </Button>
-    </Form>
+        <Input
+          type="email"
+          name="email"
+          placeholder={placeholders.email}
+          required
+        />
+        <Textarea
+          name="message"
+          placeholder={placeholders.message}
+          validation="message"
+          required
+        />
+        <Checkbox
+          label={
+            <span>
+              {privacyPolicy.label} {privacyPolicyLink}.
+            </span>
+          }
+          name="privacyPolicyAccepted"
+          validation="privacyPolicy"
+          required
+        />
+        <Button
+          id="contactFormSubmitButton"
+          variant="callToAction"
+          disabled={submitDisabled}
+          className={s['send-button']}
+        >
+          {submit}
+        </Button>
+      </Form>
+      <ToastContainer />
+    </>
   )
 }
 
