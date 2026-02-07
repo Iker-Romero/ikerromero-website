@@ -1,13 +1,14 @@
 'use client'
 
+import type { PostHog } from 'posthog-js'
 import { ReactNode, useEffect, useState } from 'react'
 
 const isEnabled = process.env.NEXT_PUBLIC_ENABLE_POSTHOG === 'true'
 
 export function PHProvider({ children }: { children: ReactNode }) {
   const [PostHogContext, setPostHogContext] = useState<{
-    Provider: React.ComponentType<{ client: any; children: ReactNode }>
-    client: any
+    Provider: React.ComponentType<{ client: PostHog; children: ReactNode }>
+    client: PostHog
   } | null>(null)
 
   useEffect(() => {
