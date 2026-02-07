@@ -23,11 +23,11 @@ const Benefits = async () => {
 
           return (
             <li
-              className="min-w-[12.5rem] max-w-[18.75rem] basis-[12.5rem] grow list-none transition-transform duration-[250ms] ease-out hover:-translate-y-4"
+              className="min-w-[12.5rem] max-w-[18.75rem] basis-[12.5rem] grow flex list-none transition-transform duration-[250ms] ease-out hover:-translate-y-4"
               key={i}
             >
               <div
-                className={`p-4 shadow-[rgb(18,33,43)_0px_5px_15px_0px] rounded-2xl flex flex-col items-center animate-hidden fadeInBottom ${
+                className={`p-4 w-full shadow-lg rounded-2xl flex flex-col items-center animate-hidden fadeInBottom ${
                   i > 0 ? `delay-333 i-${i - 1}` : ''
                 }`}
               >
