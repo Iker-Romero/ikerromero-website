@@ -23,16 +23,20 @@ const Benefits = async () => {
 
           return (
             <li
-              className={`p-4 shadow-[rgb(18,33,43)_0px_5px_15px_0px] rounded-2xl relative top-0 transition-[transform,top,box-shadow] duration-[250ms] ease-in-out min-w-[12.5rem] max-w-[18.75rem] basis-[12.5rem] grow flex flex-col items-center hover:-top-4 animate-hidden fadeInBottom ${
-                i > 0 ? `delay-333 i-${i - 1}` : ''
-              }`}
+              className="min-w-[12.5rem] max-w-[18.75rem] basis-[12.5rem] grow list-none transition-transform duration-[250ms] ease-out hover:-translate-y-4"
               key={i}
             >
-              <div className="flex justify-center items-center w-16 aspect-square text-accent-gold [&_svg]:w-full [&_svg]:h-full">
-                <Icon />
+              <div
+                className={`p-4 shadow-[rgb(18,33,43)_0px_5px_15px_0px] rounded-2xl flex flex-col items-center animate-hidden fadeInBottom ${
+                  i > 0 ? `delay-333 i-${i - 1}` : ''
+                }`}
+              >
+                <div className="flex justify-center items-center w-16 aspect-square text-accent-gold [&_svg]:w-full [&_svg]:h-full">
+                  <Icon />
+                </div>
+                <h3>{title}</h3>
+                <p>{description}</p>
               </div>
-              <h3>{title}</h3>
-              <p>{description}</p>
             </li>
           )
         })}
