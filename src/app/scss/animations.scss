@@ -6,13 +6,12 @@ $durations: 100, 333;
 @mixin shimmerAnimation {
   position: relative;
   overflow: hidden;
-  container-type: inline-size;
 
   &::before {
     content: '';
     position: absolute;
     top: 0;
-    left: 0;
+    left: -6rem;
     width: 6rem;
     height: 4rem;
     background: rgba($text-color-light, 0.4);
@@ -21,13 +20,13 @@ $durations: 100, 333;
 
     @keyframes goldShimmerWithPause {
       0% {
-        transform: skewX(-25deg) translateX(calc(-100% - 1rem));
+        transform: skewX(-25deg) translateX(0);
       }
       20% {
-        transform: skewX(-25deg) translateX(calc(100cqi + 1rem));
+        transform: skewX(-25deg) translateX(400%);
       }
       100% {
-        transform: skewX(-25deg) translateX(calc(100cqi + 1rem));
+        transform: skewX(-25deg) translateX(400%);
       }
     }
   }
