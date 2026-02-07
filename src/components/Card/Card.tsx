@@ -45,7 +45,7 @@ const Card = ({
           {link ? (
             <Link href={link} target="_blank" variant="heading">
               {title}
-              <ExternalLink className="inline-block ml-2 h-5 w-5 align-middle" />
+              <ExternalLink className="inline ml-2 h-5 w-5 align-[-0.1em]" />
             </Link>
           ) : (
             title
