@@ -28,7 +28,7 @@ const Benefits = async () => {
               }`}
               key={i}
             >
-              <div className="flex justify-center items-center w-16 aspect-square [&_svg]:w-full [&_svg]:h-full [&_svg]:fill-opacity-0 [&_path]:stroke-accent-gold">
+              <div className="flex justify-center items-center w-16 aspect-square text-accent-gold [&_svg]:w-full [&_svg]:h-full">
                 <Icon />
               </div>
               <h3>{title}</h3>

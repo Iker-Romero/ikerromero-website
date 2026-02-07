@@ -5,7 +5,7 @@ type Props = {
   stroke?: string
 }
 
-const Telescope = ({ width = '24', height = '24', fill, stroke }: Props) => {
+const Telescope = ({ width = '24', height = '24', fill = 'none', stroke = 'currentColor' }: Props) => {
   return (
     <svg
       {...{ width, height, fill }}

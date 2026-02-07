@@ -5,7 +5,7 @@ type Props = {
   stroke?: string
 }
 
-const ShieldZap = ({ width = '24', height = '24', fill, stroke }: Props) => {
+const ShieldZap = ({ width = '24', height = '24', fill = 'none', stroke = 'currentColor' }: Props) => {
   return (
     <svg
       {...{ width, height, fill }}
