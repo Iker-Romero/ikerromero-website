@@ -27,7 +27,7 @@ const addScrollAnimationsListener = () => {
     })
   })
 
-  const hiddenElements = document.querySelectorAll('.hidden')
+  const hiddenElements = document.querySelectorAll('.animate-hidden')
 
   hiddenElements.forEach(element => {
     observer.observe(element)

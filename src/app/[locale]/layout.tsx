@@ -11,7 +11,7 @@ import { getAlternates } from 'utils/metadata'
 import { PHProvider } from 'utils/PostHogProvider'
 
 import { Locale } from '../../../globals'
-import './globals.scss'
+import './globals.css'
 
 const exo = Exo_2({ subsets: ['latin'] })
 
