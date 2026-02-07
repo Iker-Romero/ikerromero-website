@@ -400,9 +400,6 @@ body .Toastify__toast-container--top-right .Toastify__toast .Toastify__close-but
 .fadeInBottom.visible.delay-666 {
   animation-delay: 666ms;
 }
-.fadeInBottom.visible.delay-1000 {
-  animation-delay: 1000ms;
-}
 
 .fadeInBottom.visible.i-0 {
   animation-delay: 0ms;
@@ -461,11 +458,8 @@ body .Toastify__toast-container--top-right .Toastify__toast .Toastify__close-but
 .fadeInLeft-333.visible.delay-666 {
   animation-delay: 666ms;
 }
-.fadeInLeft-333.visible.delay-1000 {
-  animation-delay: 1000ms;
-}
-.fadeInLeft-100.visible.delay-1000 {
-  animation-delay: 1000ms;
+.fadeInLeft-100.visible.delay-333 {
+  animation-delay: 333ms;
 }
 
 .fadeInLeft-333.visible.i-0 {
@@ -497,23 +491,23 @@ body .Toastify__toast-container--top-right .Toastify__toast .Toastify__close-but
   animation-delay: 500ms;
 }
 
-.fadeInLeft-100.visible.i-0.delay-1000 {
-  animation-delay: 1000ms;
+.fadeInLeft-100.visible.i-0.delay-333 {
+  animation-delay: 333ms;
 }
-.fadeInLeft-100.visible.i-1.delay-1000 {
-  animation-delay: 1100ms;
+.fadeInLeft-100.visible.i-1.delay-333 {
+  animation-delay: 433ms;
 }
-.fadeInLeft-100.visible.i-2.delay-1000 {
-  animation-delay: 1200ms;
+.fadeInLeft-100.visible.i-2.delay-333 {
+  animation-delay: 533ms;
 }
-.fadeInLeft-100.visible.i-3.delay-1000 {
-  animation-delay: 1300ms;
+.fadeInLeft-100.visible.i-3.delay-333 {
+  animation-delay: 633ms;
 }
-.fadeInLeft-100.visible.i-4.delay-1000 {
-  animation-delay: 1400ms;
+.fadeInLeft-100.visible.i-4.delay-333 {
+  animation-delay: 733ms;
 }
-.fadeInLeft-100.visible.i-5.delay-1000 {
-  animation-delay: 1500ms;
+.fadeInLeft-100.visible.i-5.delay-333 {
+  animation-delay: 833ms;
 }
 
 @keyframes fadeInLeft {

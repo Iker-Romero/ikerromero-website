@@ -10,7 +10,7 @@ const Technologies = ({ technologies }: Props) => {
       {technologies.map((techName, i) => (
         <span
           key={techName}
-          className={`p-2 bg-primary-light animate-hidden fadeInLeft-100 i-${i} delay-1000`}
+          className={`p-2 bg-primary-light animate-hidden fadeInLeft-100 i-${i} delay-333`}
         >
           {techName}
         </span>
