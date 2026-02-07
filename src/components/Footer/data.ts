@@ -1,15 +1,23 @@
-import { faGithub, faLinkedin } from '@fortawesome/free-brands-svg-icons'
+import { ComponentType } from 'react'
+
 import { EMAIL } from 'consts'
 
-export const aboutMeLinks = [
+import GitHub from '../Icons/GitHub'
+import LinkedIn from '../Icons/LinkedIn'
+
+export const aboutMeLinks: {
+  name: string
+  icon?: ComponentType<{ className?: string }>
+  link: string
+}[] = [
   {
     name: 'LinkedIn',
-    icon: faLinkedin,
+    icon: LinkedIn,
     link: 'https://www.linkedin.com/in/iker-romero-645b70251/'
   },
   {
     name: 'GitHub',
-    icon: faGithub,
+    icon: GitHub,
     link: 'https://github.com/Iker-Romero'
   },
   {

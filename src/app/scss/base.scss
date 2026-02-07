@@ -1,9 +1,5 @@
 @use '@/scss/color-palette' as *;
 
-:root {
-  --fa-font-solid: normal 900 1em/1 'Font Awesome 6 Free' !important;
-}
-
 *:focus {
   outline: none;
   box-shadow:
