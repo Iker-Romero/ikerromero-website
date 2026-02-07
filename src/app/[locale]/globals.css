@@ -15,6 +15,15 @@
   --color-text-light: hsl(0, 0%, 90%);
   --color-text-medium: hsl(0, 0%, 75%);
   --color-text-dark: hsl(0, 0%, 60%);
+
+  --color-badge-gray: color-mix(in oklab, var(--color-gray-400) 10%, transparent);
+  --color-badge-gray-text: var(--color-gray-400);
+  --color-badge-gray-ring: color-mix(in oklab, var(--color-gray-400) 20%, transparent);
+  --color-badge-flat-gray: color-mix(in oklab, var(--color-gray-500) 10%, transparent);
+  --color-badge-yellow: color-mix(in oklab, var(--color-yellow-400) 10%, transparent);
+  --color-badge-yellow-text: var(--color-yellow-500);
+  --color-badge-yellow-ring: color-mix(in oklab, var(--color-yellow-400) 20%, transparent);
+  --color-badge-flat-yellow: color-mix(in oklab, var(--color-yellow-500) 10%, transparent);
 }
 
 /* === RESET (from reset.scss) === */

@@ -1,3 +1,4 @@
+import { Badge } from '@/components/Badge'
 import { TechnologiesType } from '@/components/Experience/data'
 import Link from '@/components/Link/Link'
 import { ExternalLink } from 'lucide-react'
@@ -50,9 +51,9 @@ const Card = ({
             title
           )}
           {badge && (
-            <span className="text-xs px-2 py-1 bg-primary-light rounded font-medium">
+            <Badge colorScheme="yellow" appearance="bordered" size="sm">
               {badge}
-            </span>
+            </Badge>
           )}
         </h3>
         <p>{description}</p>
