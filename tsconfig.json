@@ -23,7 +23,6 @@
     "paths": {
       "@/components/*": ["components/*"],
       "@/lib/*": ["lib/*"],
-      "@/scss/*": ["app/scss/*"],
       "@/api/*": ["app/api/*"]
     }
   },
