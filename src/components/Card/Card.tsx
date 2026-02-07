@@ -41,7 +41,7 @@ const Card = ({
       )}
       <div className="flex flex-col gap-3">
         {subtitle && <span className="text-sm opacity-70">{subtitle}</span>}
-        <h3 className="flex items-center gap-3 flex-wrap">
+        <h3 className="inline-flex gap-3 flex-wrap leading-none">
           {link ? (
             <Link href={link} target="_blank" variant="heading">
               {title}
