@@ -5,7 +5,7 @@ import { Link as NextIntlLink } from 'navigation'
 import { LinkProps } from 'next/link'
 import { ReactNode } from 'react'
 
-const linkVariants = cva('text-center', {
+const linkVariants = cva('', {
   variants: {
     variant: {
       callToAction: buttonVariants({ variant: 'callToAction' }),
