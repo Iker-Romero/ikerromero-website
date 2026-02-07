@@ -4,8 +4,6 @@ import ErrorMessage from '@/components/ErrorMessage/ErrorMessage'
 import { useFormContext } from 'react-hook-form'
 import { getValidation } from 'utils/validation'
 
-import s from './Input.module.scss'
-
 type Props = {
   type?: 'email'
   id?: string
@@ -28,14 +26,14 @@ const Input = ({
   const id = idProp || name
 
   return (
-    <div className={s[`input-container`]}>
+    <div className="flex flex-col gap-2">
       {label && <label htmlFor={id}>{label}</label>}
       <input
         {...{ id, type, placeholder }}
         {...(name && type && register
           ? register(name, getValidation({ type, required }))
           : {})}
-        className={s.input}
+        className="w-full"
       />
       <ErrorMessage {...{ name }} />
     </div>

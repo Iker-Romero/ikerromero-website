@@ -1,15 +1,20 @@
+import { cn } from '@/lib/utils'
 import { ReactNode } from 'react'
 
-import s from './H2.module.scss'
+const variantClasses = {
+  footer: 'text-sm font-medium text-text-light my-3',
+  toast: 'text-base font-semibold !m-0',
+  'toast-error': 'text-base font-semibold !m-0 text-error-light'
+} as const
 
 type Props = {
-  variant?: 'footer' | 'toast' | 'toast-error'
+  variant?: keyof typeof variantClasses
   children: ReactNode
 }
 
 const H2 = ({ variant, children }: Props) => {
   return (
-    <h2 className={variant ? s[`h2-${variant}-variant`] : ''}>{children}</h2>
+    <h2 className={cn(variant && variantClasses[variant])}>{children}</h2>
   )
 }
 

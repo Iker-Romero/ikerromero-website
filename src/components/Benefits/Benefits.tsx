@@ -4,7 +4,6 @@ import { getLocale } from 'next-intl/server'
 import Compass from '../Icons/Compass'
 import ShieldZap from '../Icons/ShieldZap'
 import Telescope from '../Icons/Telescope'
-import s from './Benefits.module.scss'
 
 const icons = {
   SEO: Telescope,
@@ -17,19 +16,19 @@ const Benefits = async () => {
   const messages = await getMessages(locale)
 
   return (
-    <section id="benefitsSection" className={s['benefits-section']}>
-      <ul className={s[`benefits-container`]}>
+    <section id="benefitsSection" className="text-text-light my-4 mb-8">
+      <ul className="flex gap-6 flex-wrap justify-center">
         {messages.benefits.map(({ id, title, description }, i) => {
           const Icon = icons[id]
 
           return (
             <li
-              className={`${s.benefit} hidden fadeInBottom ${
+              className={`p-4 shadow-[rgb(18,33,43)_0px_5px_15px_0px] rounded-2xl relative top-0 transition-[transform,top,box-shadow] duration-[250ms] ease-in-out min-w-[12.5rem] max-w-[18.75rem] basis-[12.5rem] grow flex flex-col items-center hover:-top-4 animate-hidden fadeInBottom ${
                 i > 0 ? `delay-333 i-${i - 1}` : ''
               }`}
               key={i}
             >
-              <div className={s['icon-container']}>
+              <div className="flex justify-center items-center w-16 aspect-square [&_svg]:w-full [&_svg]:h-full [&_svg]:fill-opacity-0 [&_path]:stroke-accent-gold">
                 <Icon />
               </div>
               <h3>{title}</h3>

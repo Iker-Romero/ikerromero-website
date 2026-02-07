@@ -1,7 +1,5 @@
 import { ReactNode } from 'react'
 
-import s from './ObjectList.module.scss'
-
 type Identification = {
   key: string
   value: ReactNode
@@ -13,7 +11,7 @@ type Props = {
 
 const ObjectList = ({ objects }: Props) => {
   return (
-    <ul className={s['object-list']}>
+    <ul className="[&_li_span]:font-bold">
       {objects.map(obj => (
         <li key={obj.key}>
           <span>{obj.key}: </span>

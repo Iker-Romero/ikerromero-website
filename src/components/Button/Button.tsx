@@ -1,10 +1,22 @@
+import { cn } from '@/lib/utils'
+import { cva, type VariantProps } from 'class-variance-authority'
 import { MouseEvent, ReactNode } from 'react'
 
-import s from './Button.module.scss'
+const buttonVariants = cva(
+  'px-4 w-fit border-none rounded-md flex items-center justify-center cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed',
+  {
+    variants: {
+      variant: {
+        callToAction:
+          'shimmer bg-accent-gold text-primary-dark font-bold transition-[background,transform] duration-200 hover:bg-accent-orange hover:scale-105'
+      }
+    },
+    defaultVariants: { variant: 'callToAction' }
+  }
+)
 
-type Props = {
+interface Props extends VariantProps<typeof buttonVariants> {
   children: ReactNode
-  variant?: 'callToAction'
   onClick?: (e?: MouseEvent<HTMLButtonElement>) => void
   disabled?: boolean
   className?: string
@@ -21,9 +33,7 @@ const Button = ({
 }: Props) => {
   return (
     <button
-      className={`${s.button} ${variant ? s[`${variant}-variant`] : ''} ${
-        className || ''
-      }`}
+      className={cn(buttonVariants({ variant }), className)}
       {...{ onClick, disabled, id }}
     >
       {children}

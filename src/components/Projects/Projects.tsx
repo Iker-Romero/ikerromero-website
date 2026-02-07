@@ -3,7 +3,6 @@ import { getLocale, getTranslations } from 'next-intl/server'
 
 import Card from '@/components/Card/Card'
 
-import s from './Projects.module.scss'
 import { projects } from './data'
 
 const Projects = async () => {
@@ -13,11 +12,11 @@ const Projects = async () => {
   const messages = await getMessages(locale)
 
   return (
-    <section id="projectsSection" className={s['projects-section']}>
-      <h2 id="projects" className="hidden fadeInTop">
+    <section id="projectsSection" className="mb-9 flex flex-col gap-6">
+      <h2 id="projects" className="animate-hidden fadeInTop">
         {t('title')}
       </h2>
-      <div className={s['cards-container']}>
+      <div className="grid grid-cols-[repeat(auto-fit,minmax(280px,1fr))] gap-8">
         {projects.map(({ id, image, technologies, link }) => {
           const project = messages.projects.items.find(
             (item: { id: string }) => item.id === id

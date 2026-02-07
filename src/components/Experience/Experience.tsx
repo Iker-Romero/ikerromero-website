@@ -3,7 +3,6 @@ import { getLocale, getTranslations } from 'next-intl/server'
 
 import Card from '@/components/Card/Card'
 
-import s from './Experience.module.scss'
 import { experience } from './data'
 
 const Experience = async () => {
@@ -13,11 +12,11 @@ const Experience = async () => {
   const messages = await getMessages(locale)
 
   return (
-    <section id="experienceSection" className={s['experience-section']}>
-      <h2 id="experience" className="hidden fadeInTop">
+    <section id="experienceSection" className="mb-9 flex flex-col gap-6">
+      <h2 id="experience" className="animate-hidden fadeInTop">
         {t('title')}
       </h2>
-      <div className={s['cards-container']}>
+      <div className="flex flex-col gap-12">
         {experience.map(({ id, technologies, link, image }) => {
           const job = messages.experience.jobs.find(job => job.id === id)
 

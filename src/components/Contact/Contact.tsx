@@ -1,8 +1,8 @@
+import { cn } from '@/lib/utils'
 import { getMessages } from 'i18n'
 import { getLocale, getTranslations } from 'next-intl/server'
 
 import Email from '../Email/Email'
-import s from './Contact.module.scss'
 import ContactForm from './components/ContactForm/ContactForm'
 
 type Props = {
@@ -19,9 +19,9 @@ const Contact = async ({ variant = 'component' }: Props) => {
   const Heading = variant === 'page' ? 'h1' : 'h2'
 
   return (
-    <section id="contactSection" className={s['contact']}>
+    <section id="contactSection" className="max-w-[20rem] mx-auto flex flex-col">
       <Heading>{t('title')}</Heading>
-      <p className={s[`description-${variant}-variant`]}>
+      <p className={cn(variant === 'component' ? 'mb-4' : 'mb-8')}>
         {t('description')} <Email />.
       </p>
       <ContactForm {...{ toast, privacyPolicy, placeholders, submit }} />

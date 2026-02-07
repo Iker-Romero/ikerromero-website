@@ -1,6 +1,5 @@
+import { cn } from '@/lib/utils'
 import { ReactNode } from 'react'
-
-import s from './H1.module.scss'
 
 type Props = {
   variant?: 'hero'
@@ -10,11 +9,7 @@ type Props = {
 
 const H1 = ({ variant, className, children }: Props) => {
   return (
-    <h1
-      className={
-        (variant ? s[`h1-${variant}-variant`] : '') + ' ' + (className || '')
-      }
-    >
+    <h1 className={cn(variant === 'hero' && '!m-0', className)}>
       {children}
     </h1>
   )

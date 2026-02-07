@@ -16,8 +16,6 @@ import { toast, ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { axiosClient } from 'services/axiosClient'
 
-import s from './ContactForm.module.scss'
-
 type FormValues = {
   email: string
   message: string
@@ -120,7 +118,7 @@ const ContactForm = ({
       <Form<FormValues>
         {...{ methods }}
         onSubmit={handleSubmit}
-        className={s['contact-form']}
+        className="flex flex-col gap-4 w-full"
       >
         <Input
           type="email"
@@ -148,7 +146,7 @@ const ContactForm = ({
           id="contactFormSubmitButton"
           variant="callToAction"
           disabled={submitDisabled}
-          className={s['send-button']}
+          className="self-center min-w-[50%]"
         >
           {submit}
         </Button>

@@ -2,8 +2,6 @@ import H2 from '@/components/H2/H2'
 import Link from '@/components/Link/Link'
 import { ComponentType } from 'react'
 
-import s from './LinksContainer.module.scss'
-
 type Props = {
   title: string
   links: {
@@ -15,7 +13,7 @@ type Props = {
 
 const LinksContainer = ({ title, links }: Props) => {
   return (
-    <div className={s.container}>
+    <div className="flex flex-col">
       <H2 variant="footer">{title}</H2>
       {links.map(({ name, icon: Icon, link }) => {
         const isExternal = ['http', 'mailto'].some(prefix =>
@@ -30,7 +28,7 @@ const LinksContainer = ({ title, links }: Props) => {
             variant="small"
           >
             {name}
-            {Icon && <Icon className={s.icon} />}
+            {Icon && <Icon className="h-[1.3125rem] align-middle" />}
           </Link>
         )
       })}

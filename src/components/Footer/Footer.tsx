@@ -2,7 +2,6 @@ import Link from '@/components/Link/Link'
 import { getMessages } from 'i18n'
 import { getLocale, getTranslations } from 'next-intl/server'
 
-import s from './Footer.module.scss'
 import LinksContainer from './components/LinksContainer/LinksContainer'
 import { aboutMeLinks, legalPaths } from './data'
 
@@ -20,15 +19,15 @@ const Footer = async () => {
 
   return (
     <footer>
-      <div className={s['footer-content']}>
-        <div className={s.links}>
+      <div className="flex flex-col gap-8 p-4 max-w-[900px] mx-auto items-center w-fit">
+        <div className="flex gap-8 w-full justify-between flex-wrap">
           <Link id="footerLogo" href="/" variant="logoSmall">
             {'< Iker />'}
           </Link>
           <LinksContainer title={t('aboutMe.title')} links={aboutMeLinks} />
           <LinksContainer title={t('legal.title')} links={legalLinks} />
         </div>
-        <p className={s.copyright}>{t('copyright')}</p>
+        <p className="text-sm text-text-dark text-center">{t('copyright')}</p>
       </div>
     </footer>
   )

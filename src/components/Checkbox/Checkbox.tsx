@@ -5,7 +5,6 @@ import { useFormContext } from 'react-hook-form'
 import { getValidation } from 'utils/validation'
 
 import ErrorMessage from '../ErrorMessage/ErrorMessage'
-import s from './Checkbox.module.scss'
 
 type Props = {
   name: string
@@ -21,10 +20,10 @@ const Checkbox = ({ name, required, id: idProp, label, validation }: Props) => {
   const id = idProp || name
 
   return (
-    <div className={s['error-container']}>
-      <div className={s['label-container']}>
+    <div className="flex flex-col gap-2">
+      <div className="flex gap-4 items-center">
         <input
-          className={s.checkbox}
+          className="custom-checkbox"
           type="checkbox"
           {...{ id }}
           {...(name && register
@@ -35,7 +34,7 @@ const Checkbox = ({ name, required, id: idProp, label, validation }: Props) => {
             : {})}
         />
         {label && (
-          <label className={s.label} htmlFor={id}>
+          <label htmlFor={id}>
             {label}
           </label>
         )}
