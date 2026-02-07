@@ -1,3 +1,4 @@
+import { buttonVariants } from '@/components/Button/Button'
 import { cn } from '@/lib/utils'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { Link as NextIntlLink } from 'navigation'
@@ -7,10 +8,8 @@ import { ReactNode } from 'react'
 const linkVariants = cva('text-center', {
   variants: {
     variant: {
-      callToAction:
-        'shimmer px-4 h-12 rounded-3xl flex items-center justify-center font-bold bg-accent-gold text-primary-dark hover:bg-accent-orange hover:border-accent-orange hover:scale-105 transition-[border-color,transform] duration-300',
-      callToActionSecondary:
-        'px-4 h-12 rounded-3xl flex items-center justify-center font-bold border-[3px] border-accent-gold hover:border-accent-orange hover:scale-105 transition-[border-color,transform] duration-300',
+      callToAction: buttonVariants({ variant: 'callToAction' }),
+      callToActionSecondary: buttonVariants({ variant: 'callToActionSecondary' }),
       heading: 'text-accent-gold',
       logo: 'text-accent-gold font-bold whitespace-nowrap text-[2rem]',
       logoSmall:

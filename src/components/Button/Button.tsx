@@ -2,13 +2,15 @@ import { cn } from '@/lib/utils'
 import { cva, type VariantProps } from 'class-variance-authority'
 import { MouseEvent, ReactNode } from 'react'
 
-const buttonVariants = cva(
-  'px-4 w-fit border-none rounded-md flex items-center justify-center cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed',
+export const buttonVariants = cva(
+  'px-4 h-12 rounded-3xl flex items-center justify-center font-bold',
   {
     variants: {
       variant: {
         callToAction:
-          'shimmer bg-accent-gold text-primary-dark font-bold transition-[background,transform] duration-200 hover:bg-accent-orange hover:scale-105'
+          'shimmer bg-accent-gold text-primary-dark hover:bg-accent-orange hover:scale-105 transition-[background,transform] duration-300',
+        callToActionSecondary:
+          'border-[3px] border-accent-gold hover:border-accent-orange hover:scale-105 transition-[border-color,transform] duration-300'
       }
     },
     defaultVariants: { variant: 'callToAction' }
@@ -33,7 +35,12 @@ const Button = ({
 }: Props) => {
   return (
     <button
-      className={cn(buttonVariants({ variant }), className)}
+      className={cn(
+        'w-fit cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed',
+        variant !== 'callToActionSecondary' && 'border-none',
+        buttonVariants({ variant }),
+        className
+      )}
       {...{ onClick, disabled, id }}
     >
       {children}
