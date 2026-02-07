@@ -8,7 +8,7 @@ const addScrollAnimationsListener = () => {
 
         entry.target.classList.remove('animating')
 
-        // Check if the element leaved the viewport while animating because the IntersectionObserver is not allowed to hide while animating
+        // Check if the element left the viewport while animating because the IntersectionObserver is not allowed to hide while animating
         if (target && !isInViewport(target)) {
           entry.target.classList.remove('visible')
         }
@@ -33,16 +33,9 @@ const addScrollAnimationsListener = () => {
     observer.observe(element)
   })
 
-  window.addEventListener('scroll', () => {
-    hiddenElements.forEach(element => {
-      if (
-        element.classList.contains('animating') &&
-        isInViewport(element as HTMLElement)
-      ) {
-        element.classList.remove('animating')
-      }
-    })
-  })
+  return () => {
+    observer.disconnect()
+  }
 }
 
 export default addScrollAnimationsListener

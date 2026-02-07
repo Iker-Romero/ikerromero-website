@@ -9,7 +9,8 @@ const ClientLogic = () => {
   const pathname = usePathname()
 
   useEffect(() => {
-    addScrollAnimationsListener()
+    const cleanup = addScrollAnimationsListener()
+    return cleanup
   }, [pathname])
 
   return null

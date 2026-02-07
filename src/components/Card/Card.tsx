@@ -33,6 +33,7 @@ const Card = ({
             alt={title}
             width={600}
             height={400}
+            sizes="(max-width: 900px) 100vw, 900px"
             className={s.image}
           />
         </div>
