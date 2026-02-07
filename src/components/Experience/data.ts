@@ -27,7 +27,7 @@ export const experience: ExperienceType[] = [
   {
     id: 1,
     link: 'https://www.triskellsoftware.com/',
-    image: '/images/experience/Triskell-landing.png',
+    image: '/images/experience/Triskell-landing.webp',
     technologies: ['JavaScript', 'React', 'Sass']
   }
 ]
