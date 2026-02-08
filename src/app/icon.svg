@@ -1,6 +1,24 @@
-<svg width="100mm" height="100mm" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-  <g>
-    <rect style="fill:#0e2a3a;" width="100" height="100" x="0" y="0" rx="50" ry="50" />
-    <text xml:space="preserve" style="font-weight:bold;font-size:56.669px;font-family:Exo;fill:#daa658;" x="2.398062" y="69.777469">&lt;/&gt;</text>
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #063044;
+      }
+
+      .cls-2 {
+        fill: #dba658;
+      }
+    </style>
+  </defs>
+  <g id="background">
+    <rect class="cls-1" width="100" height="100" rx="10" ry="10"/>
+  </g>
+  <g id="text">
+    <g>
+      <path class="cls-2" d="M33.12,37.69v8.18l-12.99,3.76,12.99,3.76v8.18l-21.82-7.92v-8.08l21.82-7.87Z"/>
+      <path class="cls-2" d="M64.07,30.21l-19.71,38.57h-8.28l19.71-38.57h8.28Z"/>
+      <path class="cls-2" d="M67.03,37.69l21.67,7.87v8.08l-21.67,7.92v-8.18l12.84-3.76-12.84-3.76v-8.18Z"/>
+    </g>
   </g>
 </svg>
