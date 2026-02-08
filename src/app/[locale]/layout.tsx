@@ -13,7 +13,7 @@ import { PHProvider } from 'utils/PostHogProvider'
 import { Locale } from '../../../globals'
 import './globals.css'
 
-const exo = Exo_2({ subsets: ['latin'], display: 'swap' })
+const exo = Exo_2({ subsets: ['latin'] })
 
 type Props = {
   children: ReactNode
