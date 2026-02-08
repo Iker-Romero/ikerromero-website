@@ -33,7 +33,7 @@ const Projects = async () => {
             <Card
               key={id}
               image={image}
-              imageSizes="(max-width: 640px) calc(100vw - 2rem), (max-width: 900px) calc(50vw - 2rem), 430px"
+              variant="project"
               title={name}
               description={description}
               technologies={technologies}

@@ -31,7 +31,7 @@ const Experience = async () => {
             <Card
               key={id}
               image={image}
-              imageSizes="(max-width: 900px) calc(100vw - 2rem), 868px"
+              variant="experience"
               title={`${role} | ${company}`}
               subtitle={datesRange}
               description={description}
