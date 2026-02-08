@@ -30,6 +30,7 @@ const Hero = () => {
           className="object-contain w-full h-full animate-hidden scaleInFromLeftBottom"
           width={500}
           height={375}
+          sizes="(max-width: 768px) calc(100vw - 2rem), 400px"
           src="/images/rocket.webp"
           alt="Minimalist cartoon illustration of a rocket taking off"
         />

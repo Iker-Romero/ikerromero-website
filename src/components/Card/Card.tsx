@@ -8,6 +8,7 @@ import Technologies from './components/Technologies/Technologies'
 
 type Props = {
   image?: string
+  imageSizes?: string
   title: string
   subtitle?: string
   badge?: string
@@ -18,6 +19,7 @@ type Props = {
 
 const Card = ({
   image,
+  imageSizes,
   title,
   subtitle,
   badge,
@@ -34,7 +36,7 @@ const Card = ({
             alt={title}
             width={600}
             height={400}
-            sizes="(max-width: 900px) 100vw, 900px"
+            sizes={imageSizes}
             className="w-full h-auto object-cover object-top"
           />
         </div>
