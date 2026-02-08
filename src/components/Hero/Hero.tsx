@@ -15,14 +15,11 @@ const Hero = () => {
           </H1>
           <p className="animate-hidden fadeInRight">{t('hero.description')}</p>
         </div>
-        <Link
-          id="heroCTA"
-          href="/contact"
-          variant="callToAction"
-          className="animate-hidden fadeInLeft-333 delay-666"
-        >
-          {t('contact.CTA')}
-        </Link>
+        <div className="animate-hidden fadeInLeft-333 delay-666">
+          <Link id="heroCTA" href="/contact" variant="callToAction">
+            {t('contact.CTA')}
+          </Link>
+        </div>
       </div>
       <div className="flex-[2_1_40%] min-w-[20rem] max-w-[25rem] aspect-[4/3]">
         <Image
