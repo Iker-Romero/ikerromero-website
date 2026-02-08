@@ -68,21 +68,21 @@ export default async function RootLayout({
         <meta name="msapplication-TileColor" content="#0e2a3a" />
       </head>
 
-      <body className={exo.className}>
-        <header className="bg-primary-light supports-[backdrop-filter:blur(5px)]:bg-primary-light/25 supports-[backdrop-filter:blur(5px)]:backdrop-blur-[5px] supports-[backdrop-filter:blur(5px)]:[backface-visibility:hidden] supports-[backdrop-filter:blur(5px)]:border-b supports-[backdrop-filter:blur(5px)]:border-white/5">
-          <Navbar />
-        </header>
-        <main>
-          <PHProvider>{children}</PHProvider>
-        </main>
-        <Footer />
+      <PHProvider>
+        <body className={exo.className}>
+          <header className="bg-primary-light supports-[backdrop-filter:blur(5px)]:bg-primary-light/25 supports-[backdrop-filter:blur(5px)]:backdrop-blur-[5px] supports-[backdrop-filter:blur(5px)]:[backface-visibility:hidden] supports-[backdrop-filter:blur(5px)]:border-b supports-[backdrop-filter:blur(5px)]:border-white/5">
+            <Navbar />
+          </header>
+          <main>{children}</main>
+          <Footer />
 
-        <ClientLogic />
+          <ClientLogic />
 
-        {process.env.NEXT_PUBLIC_ENABLE_GTM === 'true' && (
-          <GoogleTagManager gtmId={GTM_ID} />
-        )}
-      </body>
+          {process.env.NEXT_PUBLIC_ENABLE_GTM === 'true' && (
+            <GoogleTagManager gtmId={GTM_ID} />
+          )}
+        </body>
+      </PHProvider>
     </html>
   )
 }
