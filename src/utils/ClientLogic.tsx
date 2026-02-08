@@ -9,8 +9,23 @@ const ClientLogic = () => {
   const pathname = usePathname()
 
   useEffect(() => {
-    const cleanup = addScrollAnimationsListener()
-    return cleanup
+    let cleanup: (() => void) | undefined
+
+    const init = () => {
+      cleanup = addScrollAnimationsListener()
+    }
+
+    const id =
+      'requestIdleCallback' in window
+        ? window.requestIdleCallback(init)
+        : setTimeout(init, 100)
+
+    return () => {
+      if ('requestIdleCallback' in window)
+        window.cancelIdleCallback(id as number)
+      else clearTimeout(id as ReturnType<typeof setTimeout>)
+      cleanup?.()
+    }
   }, [pathname])
 
   return null
