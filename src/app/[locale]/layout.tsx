@@ -70,7 +70,7 @@ export default async function RootLayout({
 
       <PHProvider>
         <body className={exo.className}>
-          <header>
+          <header className="bg-primary-light supports-[backdrop-filter:blur(5px)]:bg-primary-light/25 supports-[backdrop-filter:blur(5px)]:backdrop-blur-[5px] supports-[backdrop-filter:blur(5px)]:[backface-visibility:hidden] supports-[backdrop-filter:blur(5px)]:border-b supports-[backdrop-filter:blur(5px)]:border-white/5">
             <Navbar />
           </header>
           <main>{children}</main>
