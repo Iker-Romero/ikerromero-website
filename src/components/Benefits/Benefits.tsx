@@ -34,7 +34,7 @@ const Benefits = async () => {
                 <div className="flex justify-center items-center w-16 aspect-square text-accent-gold [&_svg]:w-full [&_svg]:h-full">
                   <Icon />
                 </div>
-                <h3>{title}</h3>
+                <h2 className="my-4">{title}</h2>
                 <p>{description}</p>
               </div>
             </li>
