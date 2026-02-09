@@ -10,6 +10,8 @@ import {
   Text
 } from '@react-email/components'
 
+import { BASE_URL } from 'consts'
+
 type Props = {
   email: string
   message: string
@@ -47,13 +49,13 @@ const LeadEmail = ({ email, message }: Props) => {
         <Text style={{ color: textColorLight }}>
           Potential client has contacted you through{' '}
           <Button
-            href="https://www.ikerromero.com"
+            href={BASE_URL}
             style={{
               textUnderlineOffset: '0.25rem',
               textDecoration: `underline ${textColorLight} solid 0.125rem`
             }}
           >
-            www.ikerromero.com
+            {BASE_URL.replace(/^https?:\/\//, '')}
           </Button>
           .
         </Text>

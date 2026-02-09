@@ -15,8 +15,9 @@ export const EMAIL = 'ikerromeroweb@gmail.com'
 
 // Metadata
 
+export const PRODUCTION_HOSTNAME = 'ikerromero.com'
 export const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL || 'https://www.ikerromero.com'
+  process.env.NEXT_PUBLIC_BASE_URL || `https://www.${PRODUCTION_HOSTNAME}`
 
 // Analytics
 
