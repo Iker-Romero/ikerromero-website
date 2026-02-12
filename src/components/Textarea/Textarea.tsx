@@ -36,7 +36,7 @@ const Textarea = ({
               getValidation({ validation, type: 'textarea', required })
             )
           : {})}
-        className="w-full h-40"
+        className="w-full h-40 py-2 px-4 bg-primary-dark text-text-light border-none rounded-md placeholder:text-text-dark"
       />
       <ErrorMessage {...{ name }} />
     </div>

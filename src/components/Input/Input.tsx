@@ -33,7 +33,7 @@ const Input = ({
         {...(name && type && register
           ? register(name, getValidation({ type, required }))
           : {})}
-        className="w-full"
+        className="w-full py-2 px-4 bg-primary-dark text-text-light border-none rounded-md placeholder:text-text-dark"
       />
       <ErrorMessage {...{ name }} />
     </div>

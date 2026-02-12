@@ -5,7 +5,7 @@ import { Link as NextIntlLink } from 'navigation'
 import { LinkProps } from 'next/link'
 import { ReactNode } from 'react'
 
-const linkVariants = cva('', {
+const linkVariants = cva('no-underline w-fit', {
   variants: {
     variant: {
       callToAction: buttonVariants({ variant: 'callToAction' }),
