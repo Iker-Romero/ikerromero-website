@@ -7,6 +7,7 @@
     "dev": "next dev -p 3333",
     "build": "next build",
     "start": "next start -p 5555",
+    "format": "prettier --write .",
     "lint": "next lint",
     "prepare": "husky"
   },
