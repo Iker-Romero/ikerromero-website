@@ -1,3 +1,4 @@
+import { cn } from '@/lib/utils'
 import Footer from '@/components/Footer/Footer'
 import Navbar from '@/components/Navbar/Navbar'
 import { GoogleTagManager } from '@next/third-parties/google'
@@ -64,11 +65,11 @@ export default async function RootLayout({
       </head>
 
       <PHProvider>
-        <body className={exo.className}>
-          <header className="bg-primary-light supports-[backdrop-filter:blur(5px)]:bg-primary-light/25 supports-[backdrop-filter:blur(5px)]:backdrop-blur-[5px] supports-[backdrop-filter:blur(5px)]:[backface-visibility:hidden] supports-[backdrop-filter:blur(5px)]:border-b supports-[backdrop-filter:blur(5px)]:border-white/5">
+        <body className={cn(exo.className, 'flex flex-col min-h-screen bg-primary-medium')}>
+          <header className="sticky top-0 z-10 bg-primary-light supports-[backdrop-filter:blur(5px)]:bg-primary-light/25 supports-[backdrop-filter:blur(5px)]:backdrop-blur-[5px] supports-[backdrop-filter:blur(5px)]:[backface-visibility:hidden] supports-[backdrop-filter:blur(5px)]:border-b supports-[backdrop-filter:blur(5px)]:border-white/5">
             <Navbar />
           </header>
-          <main>{children}</main>
+          <main className="grow shrink-0 max-w-[900px] w-full px-4 pt-4 pb-12 self-center">{children}</main>
           <Footer />
 
           <ClientLogic />

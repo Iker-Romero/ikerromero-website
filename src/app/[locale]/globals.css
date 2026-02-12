@@ -220,32 +220,6 @@
     height: 1.25rem;
   }
 
-  /* === LAYOUT (from layout.scss) === */
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background: rgb(14, 42, 58);
-  }
-
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
-
-  main {
-    flex: 1 0 auto;
-    max-width: 900px;
-    width: 100%;
-    padding: 1rem 1rem 3rem;
-    align-self: center;
-  }
-
-  footer {
-    background: rgb(18, 33, 43);
-    padding: 2rem 1rem;
-  }
 }
 
 /* === PROSE (text-heavy pages: terms, privacy, 404) === */
