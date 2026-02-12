@@ -6,10 +6,9 @@ const NotFound404 = () => {
   const t = useTranslations('404NotFound')
 
   return (
-    <div>
+    <div className="prose">
       <H1>{t('title')}</H1>
       <p>{t('description')}</p>
-      <br />
       <p>
         {t('redirect.indication')}
         <Link href="/#" variant="underlined">

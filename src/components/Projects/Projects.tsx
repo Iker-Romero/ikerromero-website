@@ -12,7 +12,7 @@ const Projects = async () => {
   const messages = await getMessages(locale)
 
   return (
-    <section id="projectsSection" className="mb-9 flex flex-col gap-6">
+    <section id="projectsSection" className="flex flex-col gap-6">
       <h2 id="projects" className="animate-hidden fadeInTop">
         {t('title')}
       </h2>

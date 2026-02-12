@@ -127,20 +127,17 @@
 
   h1 {
     font-size: 2.5rem;
-    margin: 2rem 1rem;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   h2 {
     font-size: 2rem;
-    margin: 1.875rem 0 0.9375rem 0;
     font-weight: 600;
   }
 
   h3 {
     font-size: 1.5rem;
-    margin: 0.75rem 0;
     font-weight: 500;
   }
 
@@ -241,7 +238,7 @@
     flex: 1 0 auto;
     max-width: 900px;
     width: 100%;
-    padding: 1rem 1rem 6rem;
+    padding: 1rem 1rem 3rem;
     align-self: center;
   }
 
@@ -250,6 +247,12 @@
     padding: 2rem 1rem;
   }
 }
+
+/* === PROSE (text-heavy pages: terms, privacy, 404) === */
+.prose > h1 { margin: 1.5rem 0; }
+.prose > h2 { margin: 2rem 0 0.75rem; }
+.prose > p { margin-bottom: 0.25rem; }
+.prose > ul { margin-bottom: 0.5rem; }
 
 /* === TOASTIFY (from toast.scss) === */
 :root:root {

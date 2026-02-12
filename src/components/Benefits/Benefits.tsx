@@ -16,7 +16,7 @@ const Benefits = async () => {
   const messages = await getMessages(locale)
 
   return (
-    <section id="benefitsSection" className="text-text-light my-4 mb-8">
+    <section id="benefitsSection" className="text-text-light">
       <ul className="flex gap-6 flex-wrap justify-center">
         {messages.benefits.map(({ id, title, description }, i) => {
           const Icon = icons[id]

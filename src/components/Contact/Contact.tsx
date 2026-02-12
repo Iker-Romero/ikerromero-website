@@ -20,7 +20,7 @@ const Contact = async ({ variant = 'component' }: Props) => {
 
   return (
     <section id="contactSection" className="max-w-[20rem] mx-auto flex flex-col">
-      <Heading>{t('title')}</Heading>
+      <Heading className="mb-2">{t('title')}</Heading>
       <p className={cn(variant === 'component' ? 'mb-4' : 'mb-8')}>
         {t('description')} <Email />.
       </p>

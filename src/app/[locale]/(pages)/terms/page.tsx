@@ -35,7 +35,7 @@ const Terms = async ({ params: { locale } }: Props) => {
   ]
 
   return (
-    <>
+    <div className="prose">
       <h1>{t('title')}</h1>
 
       <h2>{t('ownership.title')}</h2>
@@ -60,7 +60,7 @@ const Terms = async ({ params: { locale } }: Props) => {
 
       <h2>{t('lawAndJurisdiction.title')}</h2>
       <p>{t('lawAndJurisdiction.description')}</p>
-    </>
+    </div>
   )
 }
 

@@ -3,8 +3,8 @@ import { ReactNode } from 'react'
 
 const variantClasses = {
   footer: 'text-sm font-medium text-text-light my-3',
-  toast: 'text-base font-semibold !m-0',
-  'toast-error': 'text-base font-semibold !m-0 text-error-light'
+  toast: 'text-base font-semibold',
+  'toast-error': 'text-base font-semibold text-error-light'
 } as const
 
 type Props = {

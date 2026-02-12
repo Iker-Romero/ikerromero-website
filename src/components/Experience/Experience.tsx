@@ -12,7 +12,7 @@ const Experience = async () => {
   const messages = await getMessages(locale)
 
   return (
-    <section id="experienceSection" className="mb-9 flex flex-col gap-6">
+    <section id="experienceSection" className="flex flex-col gap-6">
       <h2 id="experience" className="animate-hidden fadeInTop">
         {t('title')}
       </h2>

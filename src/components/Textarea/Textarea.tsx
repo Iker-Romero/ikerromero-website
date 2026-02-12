@@ -26,7 +26,7 @@ const Textarea = ({
   const id = idProp || name
 
   return (
-    <div>
+    <div className="flex flex-col gap-2">
       {label && <label htmlFor={id}>{label}</label>}
       <textarea
         {...{ id, placeholder }}

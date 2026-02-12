@@ -13,7 +13,7 @@ type Props = {
 
 const LinksContainer = ({ title, links }: Props) => {
   return (
-    <div className="flex flex-col">
+    <div className="flex flex-col gap-1">
       <H2 variant="footer">{title}</H2>
       {links.map(({ name, icon: Icon, link }) => {
         const isExternal = ['http', 'mailto'].some(prefix =>
