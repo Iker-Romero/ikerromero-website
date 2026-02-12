@@ -28,7 +28,7 @@ const LinksContainer = ({ title, links }: Props) => {
             variant="small"
           >
             {name}
-            {Icon && <Icon className="h-[1.3125rem] align-middle" />}
+            {Icon && <Icon className="h-5.25 align-middle" />}
           </Link>
         )
       })}

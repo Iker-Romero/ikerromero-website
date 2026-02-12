@@ -19,7 +19,7 @@ const Footer = async () => {
 
   return (
     <footer className="bg-primary-dark py-8 px-4">
-      <div className="flex flex-col gap-8 p-4 max-w-[900px] mx-auto items-center w-fit">
+      <div className="flex flex-col gap-8 p-4 max-w-225 mx-auto items-center w-fit">
         <div className="flex gap-8 w-full justify-between flex-wrap">
           <Link id="footerLogo" href="/" variant="logoSmall">
             {'< Iker />'}

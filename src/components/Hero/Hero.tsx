@@ -7,10 +7,10 @@ const Hero = () => {
   const t = useTranslations()
 
   return (
-    <section className="flex flex-wrap w-full justify-center items-center mt-6 landscape:mt-[4.5rem]">
+    <section className="flex flex-wrap w-full justify-center items-center mt-6 landscape:mt-18">
       <div
         id="heroContent"
-        className="flex flex-col max-w-[40rem] flex-[3_1_60%] px-4 pb-4 pt-1 gap-8"
+        className="flex flex-col max-w-160 flex-[3_1_60%] px-4 pb-4 pt-1 gap-8"
       >
         <div className="flex flex-col gap-4">
           <H1 className="animate-hidden fadeInTop">Iker Romero</H1>
@@ -22,7 +22,7 @@ const Hero = () => {
           </Link>
         </div>
       </div>
-      <div className="flex-[2_1_40%] min-w-[20rem] max-w-[25rem] aspect-[4/3]">
+      <div className="flex-[2_1_40%] min-w-[20rem] max-w-100 aspect-4/3">
         <Image
           priority
           className="object-contain w-full h-full animate-hidden scaleInFromLeftBottom"

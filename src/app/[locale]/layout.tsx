@@ -76,10 +76,10 @@ export default async function RootLayout({
             'flex flex-col min-h-screen bg-primary-medium leading-normal antialiased text-text-light'
           )}
         >
-          <header className="sticky top-0 z-10 bg-primary-light supports-[backdrop-filter:blur(5px)]:bg-primary-light/25 supports-[backdrop-filter:blur(5px)]:backdrop-blur-[5px] supports-[backdrop-filter:blur(5px)]:[backface-visibility:hidden] supports-[backdrop-filter:blur(5px)]:border-b supports-[backdrop-filter:blur(5px)]:border-white/5">
+          <header className="sticky top-0 z-10 bg-primary-light supports-[backdrop-filter:blur(5px)]:bg-primary-light/25 supports-[backdrop-filter:blur(5px)]:backdrop-blur-[5px] supports-[backdrop-filter:blur(5px)]:backface-hidden supports-[backdrop-filter:blur(5px)]:border-b supports-[backdrop-filter:blur(5px)]:border-white/5">
             <Navbar />
           </header>
-          <main className="grow shrink-0 max-w-[900px] w-full px-4 pt-4 pb-12 self-center">
+          <main className="grow shrink-0 max-w-225 w-full px-4 pt-4 pb-12 self-center">
             {children}
           </main>
           <Footer />

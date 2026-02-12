@@ -23,7 +23,7 @@ const Benefits = async () => {
 
           return (
             <li
-              className="min-w-[12.5rem] max-w-[18.75rem] basis-[12.5rem] grow flex transition-transform duration-[250ms] ease-out hover:-translate-y-4"
+              className="min-w-50 max-w-75 basis-50 grow flex transition-transform duration-250 ease-out hover:-translate-y-4"
               key={i}
             >
               <div
