@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils'
 import Footer from '@/components/Footer/Footer'
 import Navbar from '@/components/Navbar/Navbar'
 import { GoogleTagManager } from '@next/third-parties/google'
-import { BASE_URL, FULL_NAME, GTM_ID, locales } from 'consts'
+import { BASE_URL, FULL_NAME, GTM_ID, HEX_PRIMARY_MEDIUM, locales } from 'consts'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { Exo_2 } from 'next/font/google'
 import { ReactNode } from 'react'
@@ -61,7 +61,7 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
-<meta name="msapplication-TileColor" content="#0e2a3a" />
+<meta name="msapplication-TileColor" content={HEX_PRIMARY_MEDIUM} />
       </head>
 
       <PHProvider>
