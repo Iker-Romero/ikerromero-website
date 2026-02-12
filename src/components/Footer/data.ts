@@ -1,6 +1,5 @@
-import { ComponentType } from 'react'
-
 import { EMAIL } from 'consts'
+import { ComponentType } from 'react'
 
 import GitHub from '../Icons/GitHub'
 import LinkedIn from '../Icons/LinkedIn'

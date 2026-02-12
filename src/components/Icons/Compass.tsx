@@ -5,7 +5,12 @@ type Props = {
   stroke?: string
 }
 
-const Compass = ({ width = '24', height = '24', fill = 'none', stroke = 'currentColor' }: Props) => {
+const Compass = ({
+  width = '24',
+  height = '24',
+  fill = 'none',
+  stroke = 'currentColor'
+}: Props) => {
   return (
     <svg
       {...{ width, height, fill }}

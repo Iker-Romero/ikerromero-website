@@ -1,15 +1,20 @@
-import { cn } from '@/lib/utils'
 import Footer from '@/components/Footer/Footer'
 import Navbar from '@/components/Navbar/Navbar'
+import { cn } from '@/lib/utils'
 import { GoogleTagManager } from '@next/third-parties/google'
-import { BASE_URL, FULL_NAME, GTM_ID, HEX_PRIMARY_MEDIUM, locales } from 'consts'
+import {
+  BASE_URL,
+  FULL_NAME,
+  GTM_ID,
+  HEX_PRIMARY_MEDIUM,
+  locales
+} from 'consts'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { Exo_2 } from 'next/font/google'
 import { ReactNode } from 'react'
 import ClientLogic from 'utils/ClientLogic'
-import { getAlternates } from 'utils/metadata'
-
 import { PHProvider } from 'utils/PostHogProvider'
+import { getAlternates } from 'utils/metadata'
 
 import { Locale } from '../../../globals'
 import './globals.css'
@@ -61,15 +66,22 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
-<meta name="msapplication-TileColor" content={HEX_PRIMARY_MEDIUM} />
+        <meta name="msapplication-TileColor" content={HEX_PRIMARY_MEDIUM} />
       </head>
 
       <PHProvider>
-        <body className={cn(exo.className, 'flex flex-col min-h-screen bg-primary-medium leading-normal antialiased text-text-light')}>
+        <body
+          className={cn(
+            exo.className,
+            'flex flex-col min-h-screen bg-primary-medium leading-normal antialiased text-text-light'
+          )}
+        >
           <header className="sticky top-0 z-10 bg-primary-light supports-[backdrop-filter:blur(5px)]:bg-primary-light/25 supports-[backdrop-filter:blur(5px)]:backdrop-blur-[5px] supports-[backdrop-filter:blur(5px)]:[backface-visibility:hidden] supports-[backdrop-filter:blur(5px)]:border-b supports-[backdrop-filter:blur(5px)]:border-white/5">
             <Navbar />
           </header>
-          <main className="grow shrink-0 max-w-[900px] w-full px-4 pt-4 pb-12 self-center">{children}</main>
+          <main className="grow shrink-0 max-w-[900px] w-full px-4 pt-4 pb-12 self-center">
+            {children}
+          </main>
           <Footer />
 
           <ClientLogic />

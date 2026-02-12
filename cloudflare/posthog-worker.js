@@ -9,18 +9,18 @@
  * "Access-Control-Allow-Origin header is not present"
  */
 
-const API_HOST = "eu.i.posthog.com"
-const ASSET_HOST = "eu-assets.i.posthog.com"
+const API_HOST = 'eu.i.posthog.com'
+const ASSET_HOST = 'eu-assets.i.posthog.com'
 
 async function handleRequest(request, ctx) {
   // Handle CORS preflight requests
-  if (request.method === "OPTIONS") {
+  if (request.method === 'OPTIONS') {
     return new Response(null, {
       status: 204,
       headers: {
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
-        "Access-Control-Allow-Headers": "*"
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+        'Access-Control-Allow-Headers': '*'
       }
     })
   }
@@ -31,7 +31,7 @@ async function handleRequest(request, ctx) {
   const pathWithParams = pathname + search
 
   let response
-  if (pathname.startsWith("/static/")) {
+  if (pathname.startsWith('/static/')) {
     response = await retrieveStatic(request, pathWithParams, ctx)
   } else {
     response = await forwardRequest(request, pathWithParams)
@@ -50,15 +50,18 @@ async function retrieveStatic(request, pathname, ctx) {
 }
 
 async function forwardRequest(request, pathWithSearch) {
-  const ip = request.headers.get("CF-Connecting-IP") || ""
+  const ip = request.headers.get('CF-Connecting-IP') || ''
   const originHeaders = new Headers(request.headers)
-  originHeaders.delete("cookie")
-  originHeaders.set("X-Forwarded-For", ip)
+  originHeaders.delete('cookie')
+  originHeaders.set('X-Forwarded-For', ip)
 
   const originRequest = new Request(`https://${API_HOST}${pathWithSearch}`, {
     method: request.method,
     headers: originHeaders,
-    body: request.method !== "GET" && request.method !== "HEAD" ? await request.arrayBuffer() : null,
+    body:
+      request.method !== 'GET' && request.method !== 'HEAD'
+        ? await request.arrayBuffer()
+        : null,
     redirect: request.redirect
   })
 
@@ -72,9 +75,9 @@ async function forwardRequest(request, pathWithSearch) {
  */
 function addCorsHeaders(response) {
   const newHeaders = new Headers(response.headers)
-  newHeaders.set("Access-Control-Allow-Origin", "*")
-  newHeaders.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
-  newHeaders.set("Access-Control-Allow-Headers", "*")
+  newHeaders.set('Access-Control-Allow-Origin', '*')
+  newHeaders.set('Access-Control-Allow-Methods', 'GET, POST, OPTIONS')
+  newHeaders.set('Access-Control-Allow-Headers', '*')
   return new Response(response.body, {
     status: response.status,
     statusText: response.statusText,

@@ -1,7 +1,6 @@
+import Card from '@/components/Card/Card'
 import { getMessages } from 'i18n'
 import { getLocale, getTranslations } from 'next-intl/server'
-
-import Card from '@/components/Card/Card'
 
 import { projects } from './data'
 

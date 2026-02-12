@@ -1,9 +1,8 @@
 'use client'
 
+import { PRODUCTION_HOSTNAME } from 'consts'
 import type { PostHog } from 'posthog-js'
 import { ReactNode, useEffect, useState } from 'react'
-
-import { PRODUCTION_HOSTNAME } from 'consts'
 
 const isEnabled =
   process.env.NEXT_PUBLIC_ENABLE_POSTHOG === 'true' &&

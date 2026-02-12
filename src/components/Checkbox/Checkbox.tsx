@@ -33,11 +33,7 @@ const Checkbox = ({ name, required, id: idProp, label, validation }: Props) => {
               )
             : {})}
         />
-        {label && (
-          <label htmlFor={id}>
-            {label}
-          </label>
-        )}
+        {label && <label htmlFor={id}>{label}</label>}
       </div>
       <ErrorMessage {...{ name }} />
     </div>

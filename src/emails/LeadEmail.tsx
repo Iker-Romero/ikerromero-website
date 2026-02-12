@@ -9,8 +9,12 @@ import {
   Html,
   Text
 } from '@react-email/components'
-
-import { BASE_URL, HEX_ACCENT_GOLD, HEX_PRIMARY_MEDIUM, HEX_TEXT_LIGHT } from 'consts'
+import {
+  BASE_URL,
+  HEX_ACCENT_GOLD,
+  HEX_PRIMARY_MEDIUM,
+  HEX_TEXT_LIGHT
+} from 'consts'
 
 type Props = {
   email: string

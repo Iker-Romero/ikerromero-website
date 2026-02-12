@@ -7,11 +7,7 @@ type Props = {
 }
 
 const H1 = ({ className, children }: Props) => {
-  return (
-    <h1 className={cn(className)}>
-      {children}
-    </h1>
-  )
+  return <h1 className={cn(className)}>{children}</h1>
 }
 
 export default H1

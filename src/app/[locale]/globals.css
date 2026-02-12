@@ -16,14 +16,38 @@
   --color-text-medium: hsl(0, 0%, 75%);
   --color-text-dark: hsl(0, 0%, 60%);
 
-  --color-badge-gray: color-mix(in oklab, var(--color-gray-400) 10%, transparent);
+  --color-badge-gray: color-mix(
+    in oklab,
+    var(--color-gray-400) 10%,
+    transparent
+  );
   --color-badge-gray-text: var(--color-gray-400);
-  --color-badge-gray-ring: color-mix(in oklab, var(--color-gray-400) 20%, transparent);
-  --color-badge-flat-gray: color-mix(in oklab, var(--color-gray-500) 10%, transparent);
-  --color-badge-yellow: color-mix(in oklab, var(--color-yellow-400) 10%, transparent);
+  --color-badge-gray-ring: color-mix(
+    in oklab,
+    var(--color-gray-400) 20%,
+    transparent
+  );
+  --color-badge-flat-gray: color-mix(
+    in oklab,
+    var(--color-gray-500) 10%,
+    transparent
+  );
+  --color-badge-yellow: color-mix(
+    in oklab,
+    var(--color-yellow-400) 10%,
+    transparent
+  );
   --color-badge-yellow-text: var(--color-yellow-500);
-  --color-badge-yellow-ring: color-mix(in oklab, var(--color-yellow-400) 20%, transparent);
-  --color-badge-flat-yellow: color-mix(in oklab, var(--color-yellow-500) 10%, transparent);
+  --color-badge-yellow-ring: color-mix(
+    in oklab,
+    var(--color-yellow-400) 20%,
+    transparent
+  );
+  --color-badge-flat-yellow: color-mix(
+    in oklab,
+    var(--color-yellow-500) 10%,
+    transparent
+  );
 }
 
 @layer base {
@@ -139,14 +163,22 @@
     -webkit-box-shadow: 0 0 0px 1000px var(--color-primary-dark) inset;
     transition: background-color 5000s ease-in-out 0s;
   }
-
 }
 
 /* === PROSE (text-heavy pages: terms, privacy, 404) === */
-.prose > h1 { margin: 1.5rem 0; }
-.prose > h2 { margin: 2rem 0 0.75rem; }
-.prose > p { margin-bottom: 0.25rem; }
-.prose > ul { margin-bottom: 0.5rem; list-style: disc inside; }
+.prose > h1 {
+  margin: 1.5rem 0;
+}
+.prose > h2 {
+  margin: 2rem 0 0.75rem;
+}
+.prose > p {
+  margin-bottom: 0.25rem;
+}
+.prose > ul {
+  margin-bottom: 0.5rem;
+  list-style: disc inside;
+}
 
 /* === TOASTIFY (from toast.scss) === */
 :root:root {
@@ -216,7 +248,10 @@ body .Toastify__toast-container--top-right .Toastify__toast {
   margin: 0;
 }
 
-body .Toastify__toast-container--top-right .Toastify__toast .Toastify__toast-icon {
+body
+  .Toastify__toast-container--top-right
+  .Toastify__toast
+  .Toastify__toast-icon {
   width: 2rem;
   height: 2rem;
   flex-shrink: 0;
@@ -226,31 +261,49 @@ body .Toastify__toast-container--top-right .Toastify__toast .Toastify__toast-ico
   align-items: center;
 }
 
-body .Toastify__toast-container--top-right .Toastify__toast .Toastify__toast-icon .Toastify__spinner {
+body
+  .Toastify__toast-container--top-right
+  .Toastify__toast
+  .Toastify__toast-icon
+  .Toastify__spinner {
   height: 100%;
   width: 100%;
   border-width: 0.1875rem;
 }
 
-body .Toastify__toast-container--top-right .Toastify__toast .Toastify__toast-body {
+body
+  .Toastify__toast-container--top-right
+  .Toastify__toast
+  .Toastify__toast-body {
   gap: 1rem;
   padding: 0;
   display: flex;
   align-items: center;
 }
 
-body .Toastify__toast-container--top-right .Toastify__toast .Toastify__toast-body .toast-content {
+body
+  .Toastify__toast-container--top-right
+  .Toastify__toast
+  .Toastify__toast-body
+  .toast-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-body .Toastify__toast-container--top-right .Toastify__toast .Toastify__close-button {
+body
+  .Toastify__toast-container--top-right
+  .Toastify__toast
+  .Toastify__close-button {
   flex-shrink: 0;
   color: var(--color-text-light);
 }
 
-body .Toastify__toast-container--top-right .Toastify__toast .Toastify__close-button svg {
+body
+  .Toastify__toast-container--top-right
+  .Toastify__toast
+  .Toastify__close-button
+  svg {
   width: 1rem;
   height: 1rem;
   display: flex;

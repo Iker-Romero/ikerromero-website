@@ -19,7 +19,10 @@ const Contact = async ({ variant = 'component' }: Props) => {
   const Heading = variant === 'page' ? 'h1' : 'h2'
 
   return (
-    <section id="contactSection" className="max-w-[20rem] mx-auto flex flex-col">
+    <section
+      id="contactSection"
+      className="max-w-[20rem] mx-auto flex flex-col"
+    >
       <Heading className="mb-2">{t('title')}</Heading>
       <p className={cn(variant === 'component' ? 'mb-4' : 'mb-8')}>
         {t('description')} <Email />.

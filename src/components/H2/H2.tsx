@@ -13,9 +13,7 @@ type Props = {
 }
 
 const H2 = ({ variant, children }: Props) => {
-  return (
-    <h2 className={cn(variant && variantClasses[variant])}>{children}</h2>
-  )
+  return <h2 className={cn(variant && variantClasses[variant])}>{children}</h2>
 }
 
 export default H2
