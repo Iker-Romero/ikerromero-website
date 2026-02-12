@@ -27,7 +27,7 @@ const Benefits = async () => {
               key={i}
             >
               <div
-                className={`p-4 w-full shadow-[0_5px_15px_0_#12212b] rounded-2xl flex flex-col items-center animate-hidden fadeInBottom ${
+                className={`p-4 w-full shadow-[0_5px_15px_0_var(--color-primary-dark)] rounded-2xl flex flex-col items-center animate-hidden fadeInBottom ${
                   i > 0 ? `delay-333 i-${i - 1}` : ''
                 }`}
               >
