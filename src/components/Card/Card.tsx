@@ -1,6 +1,6 @@
 import { Badge } from '@/components/Badge'
-import { TechnologiesType } from '@/components/Experience/data'
 import Link from '@/components/Link/Link'
+import { TechnologiesType } from '@/lib/types'
 import { ExternalLink } from 'lucide-react'
 import Image from 'next/image'
 
