@@ -42,7 +42,7 @@ export const generateMetadata = async ({ params: { locale } }: Props) => {
     title,
     description,
     metadataBase: new URL(BASE_URL),
-    alternates: getAlternates({ locale, pathname: '/' }),
+    alternates: getAlternates({ locale, pathname: '' }),
     openGraph: {
       type: 'website',
       url: BASE_URL,
