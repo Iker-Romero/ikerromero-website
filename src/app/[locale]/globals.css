@@ -48,8 +48,16 @@
     var(--color-yellow-500) 10%,
     transparent
   );
+}
 
+@theme {
   --spacing-page: 6rem;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --spacing-page: 2rem;
+  }
 }
 
 @layer base {
