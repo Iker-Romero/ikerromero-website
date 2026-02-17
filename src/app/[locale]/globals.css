@@ -55,7 +55,8 @@
   --spacing-section: calc(var(--spacing-page) * 0.66);
 }
 
-@media (width < theme(--breakpoint-md)) {
+/* --theme() instead of theme() forces inline resolution inside at-rules */
+@media (width < --theme(--breakpoint-md)) {
   :root {
     --spacing-page: 4rem;
   }
