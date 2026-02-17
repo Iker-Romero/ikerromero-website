@@ -1,4 +1,4 @@
-import { locales } from 'consts'
+import { BASE_URL, defaultLocale, locales } from 'consts'
 
 import { Locale } from '../../globals'
 
@@ -9,12 +9,13 @@ export const getAlternates = ({
   pathname: string
   locale: Locale
 }) => {
-  const localizedPathname = `/${locale}` + pathname
-
   return {
-    canonical: localizedPathname,
-    languages: Object.fromEntries(
-      locales.map(locale => [locale, localizedPathname])
-    )
+    canonical: `${BASE_URL}/${locale}${pathname}`,
+    languages: {
+      ...Object.fromEntries(
+        locales.map(l => [l, `${BASE_URL}/${l}${pathname}`])
+      ),
+      'x-default': `${BASE_URL}/${defaultLocale}${pathname}`
+    }
   }
 }
