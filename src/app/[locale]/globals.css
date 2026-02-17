@@ -55,7 +55,7 @@
   --spacing-section: calc(var(--spacing-page) * 0.66);
 }
 
-@media (max-width: 767px) {
+@media (width < theme(--breakpoint-md)) {
   :root {
     --spacing-page: 4rem;
   }
