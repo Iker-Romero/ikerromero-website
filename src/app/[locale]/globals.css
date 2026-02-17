@@ -48,6 +48,8 @@
     var(--color-yellow-500) 10%,
     transparent
   );
+
+  --spacing-page: 6rem;
 }
 
 @layer base {

@@ -15,11 +15,13 @@ const Home = async ({ params: { locale } }: Props) => {
   unstable_setRequestLocale(locale)
 
   return (
-    <div className="flex flex-col gap-16">
+    <div className="flex flex-col gap-page">
       <Hero />
       <Benefits />
-      <Experience />
-      <Projects />
+      <div className="flex flex-col gap-16">
+        <Experience />
+        <Projects />
+      </div>
       <Contact />
     </div>
   )
