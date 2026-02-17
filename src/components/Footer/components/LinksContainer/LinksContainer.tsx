@@ -13,7 +13,7 @@ type Props = {
 
 const LinksContainer = ({ title, links }: Props) => {
   return (
-    <div className="flex flex-col gap-1">
+    <div className="flex flex-col gap-2">
       <H2 variant="footer">{title}</H2>
       {links.map(({ name, icon: Icon, link }) => {
         const isExternal = ['http', 'mailto'].some(prefix =>
@@ -28,7 +28,7 @@ const LinksContainer = ({ title, links }: Props) => {
             variant="small"
           >
             {name}
-            {Icon && <Icon className="h-5.25 align-middle" />}
+            {Icon && <Icon className="h-5 align-middle" />}
           </Link>
         )
       })}

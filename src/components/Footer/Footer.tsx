@@ -19,13 +19,17 @@ const Footer = async () => {
 
   return (
     <footer className="bg-primary-dark py-8 px-4">
-      <div className="flex flex-col gap-8 p-4 max-w-225 mx-auto items-center w-fit">
-        <div className="flex gap-8 w-full justify-between flex-wrap">
-          <Link id="footerLogo" href="/" variant="logoSmall">
-            {'< Iker />'}
-          </Link>
-          <LinksContainer title={t('aboutMe.title')} links={aboutMeLinks} />
-          <LinksContainer title={t('legal.title')} links={legalLinks} />
+      <div className="flex flex-col gap-8 max-w-225 mx-auto items-center w-fit">
+        <div className="inline-flex gap-8 w-fit justify-between items-center flex-wrap">
+          <div className="self-start">
+            <Link id="footerLogo" href="/" variant="logoSmall">
+              {'< Iker />'}
+            </Link>
+          </div>
+          <div className="inline-flex gap-8 justify-between flex-wrap">
+            <LinksContainer title={t('aboutMe.title')} links={aboutMeLinks} />
+            <LinksContainer title={t('legal.title')} links={legalLinks} />
+          </div>
         </div>
         <p className="text-sm text-text-dark text-center">{t('copyright')}</p>
       </div>

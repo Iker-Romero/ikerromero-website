@@ -2,7 +2,7 @@ import { cn } from '@/lib/utils'
 import { ReactNode } from 'react'
 
 const variantClasses = {
-  footer: 'text-sm font-medium text-text-light my-3',
+  footer: 'text-sm font-medium text-text-light h-6 inline-flex items-center',
   toast: 'text-base font-semibold',
   'toast-error': 'text-base font-semibold text-error-light'
 } as const
