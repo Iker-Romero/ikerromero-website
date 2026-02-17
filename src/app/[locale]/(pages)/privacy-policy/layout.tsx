@@ -24,7 +24,7 @@ export const generateMetadata = async ({
   return {
     title,
     description,
-    alternates: getAlternates({ locale, pathname: '/contact' }),
+    alternates: getAlternates({ locale, pathname: '/privacy-policy' }),
     openGraph: {
       title,
       description
