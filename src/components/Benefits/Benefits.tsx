@@ -1,3 +1,4 @@
+import Card from '@/components/Card/Card'
 import { getMessages } from 'i18n'
 import { getLocale } from 'next-intl/server'
 
@@ -26,8 +27,8 @@ const Benefits = async () => {
               className="min-w-50 max-w-75 basis-50 grow flex transition-transform duration-250 ease-out hover:-translate-y-4"
               key={i}
             >
-              <div
-                className={`p-4 w-full shadow-[0_5px_15px_0_var(--color-primary-dark)] rounded-2xl flex flex-col items-center animate-hidden fadeInBottom ${
+              <Card
+                className={`w-full animate-hidden fadeInBottom ${
                   i > 0 ? `delay-333 i-${i - 1}` : ''
                 }`}
               >
@@ -36,7 +37,7 @@ const Benefits = async () => {
                 </div>
                 <h2 className="my-4">{title}</h2>
                 <p>{description}</p>
-              </div>
+              </Card>
             </li>
           )
         })}
