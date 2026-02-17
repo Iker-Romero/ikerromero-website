@@ -1,4 +1,4 @@
-import Card from '@/components/Card/Card'
+import ContentEntry from '@/components/ContentEntry/ContentEntry'
 import { getMessages } from 'i18n'
 import { getLocale, getTranslations } from 'next-intl/server'
 
@@ -27,7 +27,7 @@ const Experience = async () => {
           const { role, company, description, datesRange } = job
 
           return (
-            <Card
+            <ContentEntry
               key={id}
               image={image}
               variant="experience"

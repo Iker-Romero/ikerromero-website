@@ -1,4 +1,4 @@
-import Card from '@/components/Card/Card'
+import ContentEntry from '@/components/ContentEntry/ContentEntry'
 import { getMessages } from 'i18n'
 import { getLocale, getTranslations } from 'next-intl/server'
 
@@ -29,7 +29,7 @@ const Projects = async () => {
           const { name, description, badge } = project
 
           return (
-            <Card
+            <ContentEntry
               key={id}
               image={image}
               variant="project"

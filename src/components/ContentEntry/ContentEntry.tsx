@@ -34,7 +34,7 @@ type Props = {
   link?: string
 }
 
-const Card = ({
+const ContentEntry = ({
   image,
   variant,
   title,
@@ -84,4 +84,4 @@ const Card = ({
   )
 }
 
-export default Card
+export default ContentEntry
