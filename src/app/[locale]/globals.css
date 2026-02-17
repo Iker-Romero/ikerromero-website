@@ -169,7 +169,7 @@
 
 /* === PROSE (text-heavy pages: terms, privacy, 404) === */
 .prose > h1 {
-  margin: 1.5rem 0;
+  margin: 0 0 1.5rem;
 }
 .prose > h2 {
   margin: 2rem 0 0.75rem;
