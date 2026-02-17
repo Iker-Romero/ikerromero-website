@@ -52,11 +52,13 @@
 
 @theme {
   --spacing-page: 6rem;
+  --spacing-section: 4rem;
 }
 
 @media (max-width: 767px) {
   :root {
     --spacing-page: 2rem;
+    --spacing-section: 1.5rem;
   }
 }
 

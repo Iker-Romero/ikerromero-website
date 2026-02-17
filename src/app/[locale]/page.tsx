@@ -18,7 +18,7 @@ const Home = async ({ params: { locale } }: Props) => {
     <div className="flex flex-col gap-page">
       <Hero />
       <Benefits />
-      <div className="flex flex-col gap-16">
+      <div className="flex flex-col gap-section">
         <Experience />
         <Projects />
       </div>
