@@ -4,7 +4,7 @@ type Props = {
   technologies: TechnologiesType
 }
 
-const Technologies = ({ technologies }: Props) => {
+const TechTags = ({ technologies }: Props) => {
   return (
     <div className="flex flex-wrap gap-2">
       {technologies.map((techName, i) => (
@@ -19,4 +19,4 @@ const Technologies = ({ technologies }: Props) => {
   )
 }
 
-export default Technologies
+export default TechTags

@@ -1,10 +1,9 @@
 import { Badge } from '@/components/Badge'
 import Link from '@/components/Link/Link'
+import TechTags from '@/components/TechTags/TechTags'
 import { TechnologiesType } from '@/lib/types'
 import { ExternalLink } from 'lucide-react'
 import Image from 'next/image'
-
-import Technologies from './components/Technologies/Technologies'
 
 const IMAGE_CONFIG = {
   project: {
@@ -79,7 +78,7 @@ const Card = ({
           )}
         </h3>
         <p>{description}</p>
-        <Technologies technologies={technologies} />
+        <TechTags technologies={technologies} />
       </div>
     </div>
   )
