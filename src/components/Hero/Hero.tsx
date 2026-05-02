@@ -8,8 +8,11 @@ const Hero = () => {
   const t = useTranslations()
 
   return (
-    <section className="flex flex-wrap w-full justify-center items-center mt-6 landscape:mt-[4.5rem] landscape:mb-4">
-      <div id="heroContent" className="flex flex-col max-w-[40rem] flex-[3_1_60%] px-4 pb-4 pt-1 gap-8">
+    <section className="flex flex-wrap w-full justify-center items-center mt-6 gap-y-5 landscape:mt-[4.5rem] landscape:mb-4">
+      <div
+        id="heroContent"
+        className="flex flex-col max-w-[40rem] flex-[3_1_60%] px-4 pb-4 pt-1 gap-8"
+      >
         <div className="flex flex-col gap-4">
           <H1 variant="hero" className="animate-hidden fadeInTop">
             Iker Romero
