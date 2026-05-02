@@ -1,4 +1,3 @@
-import Benefits from '@/components/Benefits/Benefits'
 import Contact from '@/components/Contact/Contact'
 import Experience from '@/components/Experience/Experience'
 import Hero from '@/components/Hero/Hero'
@@ -17,9 +16,8 @@ const Home = async ({ params: { locale } }: Props) => {
   return (
     <>
       <Hero />
-      <Benefits />
-      <Experience />
       <Projects />
+      <Experience />
       <Contact />
     </>
   )

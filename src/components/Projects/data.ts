@@ -20,11 +20,6 @@ export const projects: ProjectType[] = [
     technologies: ['TypeScript', 'React', 'NextJS', 'Tailwind CSS']
   },
   {
-    id: 'liftlog',
-    image: '/images/projects/session-started-3x2-zoom-to-logging-layout.webp',
-    technologies: ['TypeScript', 'React Native', 'Expo', 'NativeWind', 'SQLite']
-  },
-  {
     id: 'madriddelta',
     image: '/images/projects/MadridDelta-Instagram-square.webp',
     technologies: [

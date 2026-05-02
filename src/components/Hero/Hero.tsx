@@ -1,5 +1,6 @@
 import H1 from '@/components/H1/H1'
 import Link from '@/components/Link/Link'
+import { cn } from '@/lib/utils'
 import { useTranslations } from 'next-intl'
 import Image from 'next/image'
 
@@ -21,15 +22,18 @@ const Hero = () => {
           </Link>
         </div>
       </div>
-      <div className="flex-[2_1_40%] min-w-[20rem] max-w-[25rem] aspect-[4/3]">
+      <div className="flex-[2_1_40%] min-w-[20rem] max-w-[25rem] aspect-3/4">
         <Image
           priority
-          className="object-contain w-full h-full animate-hidden scaleInFromLeftBottom"
-          width={500}
-          height={375}
+          className={cn(
+            'object-contain w-full h-full animate-hidden scaleInFromLeftBottom',
+            'rounded-3xl' // To match CTAs
+          )}
+          width={991}
+          height={1321}
           sizes="(max-width: 768px) calc(100vw - 2rem), 400px"
-          src="/images/rocket.webp"
-          alt="Minimalist cartoon illustration of a rocket taking off"
+          src="/images/iker/ratio0.75-mediumShot.webp"
+          alt="Iker Romero, fullstack web developer, by the ocean in Galicia, Spain"
         />
       </div>
     </section>
