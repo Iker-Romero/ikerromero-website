@@ -31,6 +31,7 @@ Open [http://localhost:3333](http://localhost:3333)
 See [`.env.example`](.env.example) for required variables.
 
 Key variables:
+
 - `NEXT_PUBLIC_POSTHOG_KEY` / `NEXT_PUBLIC_POSTHOG_HOST` — Analytics
 - `NEXT_PUBLIC_ENABLE_POSTHOG` — Set `false` locally, `true` in production
 - `MONGODB_URI` — Database connection

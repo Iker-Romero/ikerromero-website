@@ -12,7 +12,7 @@ import { render } from '@react-email/components'
 import LeadEmail from 'emails/LeadEmail'
 import { useState } from 'react'
 import { useForm } from 'react-hook-form'
-import { toast, ToastContainer } from 'react-toastify'
+import { ToastContainer, toast } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
 import { axiosClient } from 'services/axiosClient'
 

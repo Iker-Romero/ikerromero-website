@@ -9,9 +9,7 @@ type Props = {
 
 const H1 = ({ variant, className, children }: Props) => {
   return (
-    <h1 className={cn(variant === 'hero' && '!m-0', className)}>
-      {children}
-    </h1>
+    <h1 className={cn(variant === 'hero' && '!m-0', className)}>{children}</h1>
   )
 }
 

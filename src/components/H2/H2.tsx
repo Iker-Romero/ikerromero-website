@@ -2,9 +2,9 @@ import { cn } from '@/lib/utils'
 import { ReactNode } from 'react'
 
 const variantClasses = {
-  footer: 'text-sm font-medium text-text-light my-3',
-  toast: 'text-base font-semibold !m-0',
-  'toast-error': 'text-base font-semibold !m-0 text-error-light'
+  footer: 'text-sm font-medium text-text-light h-6 inline-flex items-center',
+  toast: 'text-base font-semibold',
+  'toast-error': 'text-base font-semibold text-error-light'
 } as const
 
 type Props = {
@@ -13,9 +13,7 @@ type Props = {
 }
 
 const H2 = ({ variant, children }: Props) => {
-  return (
-    <h2 className={cn(variant && variantClasses[variant])}>{children}</h2>
-  )
+  return <h2 className={cn(variant && variantClasses[variant])}>{children}</h2>
 }
 
 export default H2

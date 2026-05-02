@@ -27,5 +27,5 @@
   "editor.wordWrap": "on",
   "editor.tabSize": 2,
   "editor.insertSpaces": true,
-  "editor.linkedEditing": true,
+  "editor.linkedEditing": true
 }

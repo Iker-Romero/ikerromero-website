@@ -1,14 +1,20 @@
 import Footer from '@/components/Footer/Footer'
 import Navbar from '@/components/Navbar/Navbar'
+import { cn } from '@/lib/utils'
 import { GoogleTagManager } from '@next/third-parties/google'
-import { BASE_URL, FULL_NAME, GTM_ID, locales } from 'consts'
+import {
+  BASE_URL,
+  FULL_NAME,
+  GTM_ID,
+  HEX_PRIMARY_MEDIUM,
+  locales
+} from 'consts'
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server'
 import { Exo_2 } from 'next/font/google'
 import { ReactNode } from 'react'
 import ClientLogic from 'utils/ClientLogic'
-import { getAlternates } from 'utils/metadata'
-
 import { PHProvider } from 'utils/PostHogProvider'
+import { getAlternates } from 'utils/metadata'
 
 import { Locale } from '../../../globals'
 import './globals.css'
@@ -36,7 +42,7 @@ export const generateMetadata = async ({ params: { locale } }: Props) => {
     title,
     description,
     metadataBase: new URL(BASE_URL),
-    alternates: getAlternates({ locale, pathname: '/' }),
+    alternates: getAlternates({ locale, pathname: '' }),
     openGraph: {
       type: 'website',
       url: BASE_URL,
@@ -44,7 +50,11 @@ export const generateMetadata = async ({ params: { locale } }: Props) => {
       title,
       description,
       images: [
-        { url: '/images/iker/ratio2-closeupShot.webp', width: 878, height: 439 },
+        {
+          url: '/images/iker/ratio2-closeupShot.webp',
+          width: 878,
+          height: 439
+        },
         { url: '/images/iker/ratio1-closeupShot.webp', width: 462, height: 462 }
       ]
     }
@@ -60,20 +70,22 @@ export default async function RootLayout({
   return (
     <html lang={locale}>
       <head>
-        <link
-          rel="mask-icon"
-          href="/icons/safari-pinned-tab-dedicated-image.svg"
-          color="#daa658"
-        />
-        <meta name="msapplication-TileColor" content="#0e2a3a" />
+        <meta name="msapplication-TileColor" content={HEX_PRIMARY_MEDIUM} />
       </head>
 
       <PHProvider>
-        <body className={exo.className}>
-          <header className="bg-primary-light supports-[backdrop-filter:blur(5px)]:bg-primary-light/25 supports-[backdrop-filter:blur(5px)]:backdrop-blur-[5px] supports-[backdrop-filter:blur(5px)]:[backface-visibility:hidden] supports-[backdrop-filter:blur(5px)]:border-b supports-[backdrop-filter:blur(5px)]:border-white/5">
+        <body
+          className={cn(
+            exo.className,
+            'flex flex-col min-h-screen bg-primary-medium leading-normal antialiased text-text-light'
+          )}
+        >
+          <header className="sticky top-0 z-10 bg-primary-light supports-[backdrop-filter:blur(5px)]:bg-primary-light/25 supports-[backdrop-filter:blur(5px)]:backdrop-blur-[5px] supports-[backdrop-filter:blur(5px)]:backface-hidden supports-[backdrop-filter:blur(5px)]:border-b supports-[backdrop-filter:blur(5px)]:border-white/5">
             <Navbar />
           </header>
-          <main>{children}</main>
+          <main className="grow shrink-0 max-w-225 w-full px-4 pt-page pb-24 self-center">
+            {children}
+          </main>
           <Footer />
 
           <ClientLogic />

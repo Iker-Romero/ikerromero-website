@@ -1,20 +1,4 @@
-export type TechnologiesType = (
-  | 'HTML5'
-  | 'CSS3'
-  | 'Sass'
-  | 'Tailwind CSS'
-  | 'NativeWind'
-  | 'JavaScript'
-  | 'TypeScript'
-  | 'React'
-  | 'React Native'
-  | 'NextJS'
-  | 'NodeJS'
-  | 'Express'
-  | 'MongoDB'
-  | 'SQLite'
-  | 'Expo'
-)[]
+import { TechnologiesType } from '@/lib/types'
 
 type ExperienceType = {
   id: number

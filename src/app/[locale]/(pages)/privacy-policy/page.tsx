@@ -28,7 +28,7 @@ const PrivacyPolicy = async ({ params: { locale } }: Props) => {
   ]
 
   return (
-    <>
+    <div className="prose">
       <h1>{t('title')}</h1>
 
       <h2>{t('identification.title')}</h2>
@@ -68,7 +68,7 @@ const PrivacyPolicy = async ({ params: { locale } }: Props) => {
 
       <h2>{t('changesToThePrivacyPolicy.title')}</h2>
       <p>{t('changesToThePrivacyPolicy.description')}</p>
-    </>
+    </div>
   )
 }
 

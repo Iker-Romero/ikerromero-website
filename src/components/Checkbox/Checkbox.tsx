@@ -23,7 +23,7 @@ const Checkbox = ({ name, required, id: idProp, label, validation }: Props) => {
     <div className="flex flex-col gap-2">
       <div className="flex gap-4 items-center">
         <input
-          className="custom-checkbox"
+          className="custom-checkbox appearance-none w-5 h-5"
           type="checkbox"
           {...{ id }}
           {...(name && register
@@ -33,11 +33,7 @@ const Checkbox = ({ name, required, id: idProp, label, validation }: Props) => {
               )
             : {})}
         />
-        {label && (
-          <label htmlFor={id}>
-            {label}
-          </label>
-        )}
+        {label && <label htmlFor={id}>{label}</label>}
       </div>
       <ErrorMessage {...{ name }} />
     </div>

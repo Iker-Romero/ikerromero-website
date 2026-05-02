@@ -1,9 +1,13 @@
 'use client'
 
+import { PRODUCTION_HOSTNAME } from 'consts'
 import type { PostHog } from 'posthog-js'
 import { ReactNode, useEffect, useState } from 'react'
 
-const isEnabled = process.env.NEXT_PUBLIC_ENABLE_POSTHOG === 'true'
+const isEnabled =
+  process.env.NEXT_PUBLIC_ENABLE_POSTHOG === 'true' &&
+  typeof window !== 'undefined' &&
+  window.location.hostname === PRODUCTION_HOSTNAME
 
 export function PHProvider({ children }: { children: ReactNode }) {
   const [PostHogContext, setPostHogContext] = useState<{

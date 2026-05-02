@@ -9,7 +9,10 @@ const ErrorMessage = ({ name }: Props) => {
 
   const error = name && errors?.[name]
 
-  if (error) return <span className="text-error-medium">{error.message?.toString()}</span>
+  if (error)
+    return (
+      <span className="text-error-medium">{error.message?.toString()}</span>
+    )
 }
 
 export default ErrorMessage

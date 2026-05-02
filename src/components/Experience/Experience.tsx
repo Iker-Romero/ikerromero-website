@@ -1,7 +1,6 @@
+import ContentEntry from '@/components/ContentEntry/ContentEntry'
 import { getMessages } from 'i18n'
 import { getLocale, getTranslations } from 'next-intl/server'
-
-import Card from '@/components/Card/Card'
 
 import { experience } from './data'
 
@@ -12,7 +11,7 @@ const Experience = async () => {
   const messages = await getMessages(locale)
 
   return (
-    <section id="experienceSection" className="mb-9 flex flex-col gap-6">
+    <section id="experienceSection" className="flex flex-col gap-6">
       <h2 id="experience" className="animate-hidden fadeInTop">
         {t('title')}
       </h2>
@@ -28,7 +27,7 @@ const Experience = async () => {
           const { role, company, description, datesRange } = job
 
           return (
-            <Card
+            <ContentEntry
               key={id}
               image={image}
               variant="experience"

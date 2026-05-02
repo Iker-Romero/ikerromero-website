@@ -1,4 +1,3 @@
-import { cn } from '@/lib/utils'
 import { getMessages } from 'i18n'
 import { getLocale, getTranslations } from 'next-intl/server'
 
@@ -19,9 +18,12 @@ const Contact = async ({ variant = 'component' }: Props) => {
   const Heading = variant === 'page' ? 'h1' : 'h2'
 
   return (
-    <section id="contactSection" className="max-w-[20rem] mx-auto flex flex-col">
-      <Heading>{t('title')}</Heading>
-      <p className={cn(variant === 'component' ? 'mb-4' : 'mb-8')}>
+    <section
+      id="contactSection"
+      className="max-w-[20rem] mx-auto flex flex-col"
+    >
+      <Heading className="mb-3">{t('title')}</Heading>
+      <p className="mb-4">
         {t('description')} <Email />.
       </p>
       <ContactForm {...{ toast, privacyPolicy, placeholders, submit }} />

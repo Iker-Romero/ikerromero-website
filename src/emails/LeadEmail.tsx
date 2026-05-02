@@ -9,6 +9,12 @@ import {
   Html,
   Text
 } from '@react-email/components'
+import {
+  BASE_URL,
+  HEX_ACCENT_GOLD,
+  HEX_PRIMARY_MEDIUM,
+  HEX_TEXT_LIGHT
+} from 'consts'
 
 type Props = {
   email: string
@@ -16,10 +22,6 @@ type Props = {
 }
 
 const LeadEmail = ({ email, message }: Props) => {
-  const primaryMedium = '#0e2a3a'
-  const accentGold = '#daa658'
-  const textColorLight = '#e6e6e6'
-
   return (
     <Html lang="en">
       <Head>
@@ -35,36 +37,36 @@ const LeadEmail = ({ email, message }: Props) => {
       </Head>
       <Body
         style={{
-          backgroundColor: primaryMedium,
+          backgroundColor: HEX_PRIMARY_MEDIUM,
           padding: '1rem',
-          color: textColorLight,
+          color: HEX_TEXT_LIGHT,
           borderRadius: '1rem'
         }}
       >
-        <Heading as="h1" style={{ color: accentGold }}>
+        <Heading as="h1" style={{ color: HEX_ACCENT_GOLD }}>
           New Lead
         </Heading>
-        <Text style={{ color: textColorLight }}>
+        <Text style={{ color: HEX_TEXT_LIGHT }}>
           Potential client has contacted you through{' '}
           <Button
-            href="https://www.ikerromero.com"
+            href={BASE_URL}
             style={{
               textUnderlineOffset: '0.25rem',
-              textDecoration: `underline ${textColorLight} solid 0.125rem`
+              textDecoration: `underline ${HEX_TEXT_LIGHT} solid 0.125rem`
             }}
           >
-            www.ikerromero.com
+            {BASE_URL.replace(/^https?:\/\//, '')}
           </Button>
           .
         </Text>
-        <Heading as="h2" style={{ color: accentGold }}>
+        <Heading as="h2" style={{ color: HEX_ACCENT_GOLD }}>
           Email:
         </Heading>
-        <Text style={{ color: textColorLight }}>{email}</Text>
-        <Heading as="h2" style={{ color: accentGold }}>
+        <Text style={{ color: HEX_TEXT_LIGHT }}>{email}</Text>
+        <Heading as="h2" style={{ color: HEX_ACCENT_GOLD }}>
           Message:
         </Heading>
-        <Text style={{ color: textColorLight }}>{message}</Text>
+        <Text style={{ color: HEX_TEXT_LIGHT }}>{message}</Text>
       </Body>
     </Html>
   )

@@ -1,4 +1,4 @@
-import { TechnologiesType } from '@/components/Experience/data'
+import { TechnologiesType } from '@/lib/types'
 
 type ProjectType = {
   id: string

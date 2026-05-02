@@ -8,10 +8,10 @@ const Hero = () => {
   const t = useTranslations()
 
   return (
-    <section className="flex flex-wrap w-full justify-center items-center mt-6 gap-y-5 landscape:mt-[4.5rem] landscape:mb-4">
+    <section className="flex flex-wrap w-full justify-center items-center mt-6 gap-y-5 landscape:mt-18 landscape:mb-4">
       <div
         id="heroContent"
-        className="flex flex-col max-w-[40rem] flex-[3_1_60%] px-4 pb-4 pt-1 gap-8"
+        className="flex flex-col max-w-160 flex-[3_1_60%] px-4 pb-4 pt-1 gap-8"
       >
         <div className="flex flex-col gap-4">
           <H1 variant="hero" className="animate-hidden fadeInTop">
@@ -25,7 +25,7 @@ const Hero = () => {
           </Link>
         </div>
       </div>
-      <div className="flex-[2_1_40%] min-w-[20rem] max-w-[25rem] aspect-3/4">
+      <div className="flex-[2_1_40%] min-w-[20rem] max-w-100 aspect-3/4">
         <Image
           priority
           className={cn(

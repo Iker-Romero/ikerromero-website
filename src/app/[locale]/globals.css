@@ -16,42 +16,53 @@
   --color-text-medium: hsl(0, 0%, 75%);
   --color-text-dark: hsl(0, 0%, 60%);
 
-  --color-badge-gray: color-mix(in oklab, var(--color-gray-400) 10%, transparent);
+  --color-badge-gray: color-mix(
+    in oklab,
+    var(--color-gray-400) 10%,
+    transparent
+  );
   --color-badge-gray-text: var(--color-gray-400);
-  --color-badge-gray-ring: color-mix(in oklab, var(--color-gray-400) 20%, transparent);
-  --color-badge-flat-gray: color-mix(in oklab, var(--color-gray-500) 10%, transparent);
-  --color-badge-yellow: color-mix(in oklab, var(--color-yellow-400) 10%, transparent);
+  --color-badge-gray-ring: color-mix(
+    in oklab,
+    var(--color-gray-400) 20%,
+    transparent
+  );
+  --color-badge-flat-gray: color-mix(
+    in oklab,
+    var(--color-gray-500) 10%,
+    transparent
+  );
+  --color-badge-yellow: color-mix(
+    in oklab,
+    var(--color-yellow-400) 10%,
+    transparent
+  );
   --color-badge-yellow-text: var(--color-yellow-500);
-  --color-badge-yellow-ring: color-mix(in oklab, var(--color-yellow-400) 20%, transparent);
-  --color-badge-flat-yellow: color-mix(in oklab, var(--color-yellow-500) 10%, transparent);
+  --color-badge-yellow-ring: color-mix(
+    in oklab,
+    var(--color-yellow-400) 20%,
+    transparent
+  );
+  --color-badge-flat-yellow: color-mix(
+    in oklab,
+    var(--color-yellow-500) 10%,
+    transparent
+  );
 }
 
-/* === RESET (from reset.scss) === */
+@theme {
+  --spacing-page: 6rem;
+  --spacing-section: calc(var(--spacing-page) * 0.66);
+}
+
+/* --theme() instead of theme() forces inline resolution inside at-rules */
+@media (width < --theme(--breakpoint-md)) {
+  :root {
+    --spacing-page: 4rem;
+  }
+}
+
 @layer base {
-  *,
-  *::before,
-  *::after {
-    box-sizing: border-box;
-  }
-
-  * {
-    margin: 0;
-  }
-
-  body {
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
-  }
-
-  img,
-  picture,
-  video,
-  canvas,
-  svg {
-    display: block;
-    max-width: 100%;
-  }
-
   input,
   button,
   textarea,
@@ -67,12 +78,6 @@
   h5,
   h6 {
     overflow-wrap: break-word;
-  }
-
-  ul,
-  ol {
-    list-style: none;
-    padding: 0;
   }
 
   #root,
@@ -94,8 +99,8 @@
   *:focus {
     outline: none;
     box-shadow:
-      0 0 0 2px rgb(18, 33, 43),
-      0 0 0 4px rgb(218, 166, 88);
+      0 0 0 2px var(--color-primary-dark),
+      0 0 0 4px var(--color-accent-gold);
   }
 
   /* Scrollbar (Chrome, Edge, Safari) */
@@ -104,43 +109,40 @@
   }
 
   ::-webkit-scrollbar-track {
-    background: rgb(18, 33, 43);
+    background: var(--color-primary-dark);
   }
 
   ::-webkit-scrollbar-thumb {
-    background: rgb(8, 48, 68);
+    background: var(--color-primary-light);
     border-radius: 100vw;
-    border: 3px solid rgb(14, 42, 58);
+    border: 3px solid var(--color-primary-medium);
   }
 
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(14, 42, 58);
-    border-color: rgb(8, 48, 68);
+    background: var(--color-primary-medium);
+    border-color: var(--color-primary-light);
   }
 
   /* Headings */
   h1,
   h2,
   h3 {
-    color: rgb(218, 166, 88);
+    color: var(--color-accent-gold);
   }
 
   h1 {
     font-size: 2.5rem;
-    margin: 2rem 1rem;
     font-weight: 700;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
   }
 
   h2 {
     font-size: 2rem;
-    margin: 1.875rem 0 0.9375rem 0;
     font-weight: 600;
   }
 
   h3 {
     font-size: 1.5rem;
-    margin: 0.75rem 0;
     font-weight: 500;
   }
 
@@ -153,42 +155,10 @@
     line-height: normal;
   }
 
-  /* Text colors */
-  p,
-  a,
-  span,
-  li,
-  blockquote,
-  cite,
-  code,
-  pre,
-  em,
-  strong,
-  small,
-  sub,
-  sup,
-  label,
-  input[type='text'],
-  textarea,
-  button {
-    color: hsl(0, 0%, 90%);
-  }
-
-  /* Form inputs */
-  input:not([type='checkbox']),
-  textarea,
-  select {
-    padding: 0.5rem 1rem;
-    background: rgb(18, 33, 43);
-    color: hsl(0, 0%, 90%);
-    border: none !important;
-    border-radius: 0.375rem;
-  }
-
   input:not([type='checkbox'])::placeholder,
   textarea::placeholder,
   select::placeholder {
-    color: hsl(0, 0%, 60%);
+    color: var(--color-text-dark);
     opacity: 1;
   }
 
@@ -201,54 +171,25 @@
   select:-webkit-autofill,
   select:-webkit-autofill:hover,
   select:-webkit-autofill:focus {
-    -webkit-text-fill-color: hsl(0, 0%, 90%);
-    -webkit-box-shadow: 0 0 0px 1000px rgb(18, 33, 43) inset;
+    -webkit-text-fill-color: var(--color-text-light);
+    -webkit-box-shadow: 0 0 0px 1000px var(--color-primary-dark) inset;
     transition: background-color 5000s ease-in-out 0s;
   }
+}
 
-  li {
-    list-style: disc inside;
-  }
-
-  a {
-    text-decoration: none;
-    width: fit-content;
-  }
-
-  input[type='checkbox'] {
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    width: 1.25rem;
-    height: 1.25rem;
-  }
-
-  /* === LAYOUT (from layout.scss) === */
-  body {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-    background: rgb(14, 42, 58);
-  }
-
-  header {
-    position: sticky;
-    top: 0;
-    z-index: 10;
-  }
-
-  main {
-    flex: 1 0 auto;
-    max-width: 900px;
-    width: 100%;
-    padding: 1rem 1rem 6rem;
-    align-self: center;
-  }
-
-  footer {
-    background: rgb(18, 33, 43);
-    padding: 2rem 1rem;
-  }
+/* === PROSE (text-heavy pages: terms, privacy, 404) === */
+.prose > h1 {
+  margin: 0 0 1.5rem;
+}
+.prose > h2 {
+  margin: 2rem 0 0.75rem;
+}
+.prose > p {
+  margin-bottom: 0.25rem;
+}
+.prose > ul {
+  margin-bottom: 0.5rem;
+  list-style: disc inside;
 }
 
 /* === TOASTIFY (from toast.scss) === */
@@ -256,9 +197,9 @@
   --toastify-color-light: #fff;
   --toastify-color-dark: #121212;
   --toastify-color-info: #3498db;
-  --toastify-color-success: rgb(218, 166, 88);
+  --toastify-color-success: var(--color-accent-gold);
   --toastify-color-warning: #f1c40f;
-  --toastify-color-error: rgb(219, 57, 59);
+  --toastify-color-error: var(--color-error-light);
   --toastify-color-transparent: rgba(255, 255, 255, 0.7);
 
   --toastify-icon-color-info: var(--toastify-color-info);
@@ -267,21 +208,21 @@
   --toastify-icon-color-error: var(--toastify-color-error);
 
   --toastify-toast-width: 320px;
-  --toastify-toast-background: rgb(8, 48, 68);
+  --toastify-toast-background: var(--color-primary-light);
   --toastify-toast-min-height: 64px;
   --toastify-toast-max-height: 800px;
   --toastify-font-family: sans-serif;
   --toastify-z-index: 9999;
 
-  --toastify-text-color-light: hsl(0, 0%, 60%);
-  --toastify-text-color-dark: hsl(0, 0%, 60%);
+  --toastify-text-color-light: var(--color-text-dark);
+  --toastify-text-color-dark: var(--color-text-dark);
 
   --toastify-text-color-info: #fff;
   --toastify-text-color-success: #fff;
   --toastify-text-color-warning: #fff;
   --toastify-text-color-error: #fff;
 
-  --toastify-spinner-color: rgb(218, 166, 88);
+  --toastify-spinner-color: var(--color-accent-gold);
   --toastify-spinner-color-empty-area: #e0e0e0;
 
   --toastify-color-progress-light: linear-gradient(
@@ -313,13 +254,16 @@ body .Toastify__toast-container--top-right {
 }
 
 body .Toastify__toast-container--top-right .Toastify__toast {
-  background: rgb(8, 48, 68);
+  background: var(--color-primary-light);
   border-radius: 0.375rem;
   padding: 1rem;
   margin: 0;
 }
 
-body .Toastify__toast-container--top-right .Toastify__toast .Toastify__toast-icon {
+body
+  .Toastify__toast-container--top-right
+  .Toastify__toast
+  .Toastify__toast-icon {
   width: 2rem;
   height: 2rem;
   flex-shrink: 0;
@@ -329,31 +273,49 @@ body .Toastify__toast-container--top-right .Toastify__toast .Toastify__toast-ico
   align-items: center;
 }
 
-body .Toastify__toast-container--top-right .Toastify__toast .Toastify__toast-icon .Toastify__spinner {
+body
+  .Toastify__toast-container--top-right
+  .Toastify__toast
+  .Toastify__toast-icon
+  .Toastify__spinner {
   height: 100%;
   width: 100%;
   border-width: 0.1875rem;
 }
 
-body .Toastify__toast-container--top-right .Toastify__toast .Toastify__toast-body {
+body
+  .Toastify__toast-container--top-right
+  .Toastify__toast
+  .Toastify__toast-body {
   gap: 1rem;
   padding: 0;
   display: flex;
   align-items: center;
 }
 
-body .Toastify__toast-container--top-right .Toastify__toast .Toastify__toast-body .toast-content {
+body
+  .Toastify__toast-container--top-right
+  .Toastify__toast
+  .Toastify__toast-body
+  .toast-content {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
 }
 
-body .Toastify__toast-container--top-right .Toastify__toast .Toastify__close-button {
+body
+  .Toastify__toast-container--top-right
+  .Toastify__toast
+  .Toastify__close-button {
   flex-shrink: 0;
-  color: hsl(0, 0%, 90%);
+  color: var(--color-text-light);
 }
 
-body .Toastify__toast-container--top-right .Toastify__toast .Toastify__close-button svg {
+body
+  .Toastify__toast-container--top-right
+  .Toastify__toast
+  .Toastify__close-button
+  svg {
   width: 1rem;
   height: 1rem;
   display: flex;
@@ -570,7 +532,7 @@ body .Toastify__toast-container--top-right .Toastify__toast .Toastify__close-but
 /* === CHECKBOX (from Checkbox.module.scss) === */
 .custom-checkbox {
   border-radius: 0.375rem;
-  background: hsl(0, 0%, 90%);
+  background: var(--color-text-light);
   transition: background ease-in-out 200ms;
   cursor: pointer;
   display: flex;
@@ -581,7 +543,7 @@ body .Toastify__toast-container--top-right .Toastify__toast .Toastify__close-but
 .custom-checkbox::before {
   content: '✓';
   display: inline-block;
-  color: rgb(218, 166, 88);
+  color: var(--color-accent-gold);
   transform: scale(0);
   transition: transform ease-in-out 200ms;
   cursor: pointer;
@@ -594,7 +556,7 @@ body .Toastify__toast-container--top-right .Toastify__toast .Toastify__close-but
 }
 
 .custom-checkbox:checked {
-  background: rgb(18, 33, 43);
+  background: var(--color-primary-dark);
 }
 
 .custom-checkbox:checked::before {

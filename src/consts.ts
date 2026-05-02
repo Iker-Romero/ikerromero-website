@@ -15,8 +15,15 @@ export const EMAIL = 'ikerromeroweb@gmail.com'
 
 // Metadata
 
+export const PRODUCTION_HOSTNAME = 'ikerromero.com'
 export const BASE_URL =
-  process.env.NEXT_PUBLIC_BASE_URL || 'https://www.ikerromero.com'
+  process.env.NEXT_PUBLIC_BASE_URL || `https://www.${PRODUCTION_HOSTNAME}`
+
+// Colors (hex values for non-CSS contexts: meta tags, emails)
+
+export const HEX_PRIMARY_MEDIUM = '#0e2a3a'
+export const HEX_ACCENT_GOLD = '#daa658'
+export const HEX_TEXT_LIGHT = '#e6e6e6'
 
 // Analytics
 
