@@ -8,7 +8,7 @@ const Hero = () => {
   const t = useTranslations()
 
   return (
-    <section className="flex flex-wrap w-full justify-center items-center mt-6 gap-y-5 landscape:mt-18 landscape:mb-4">
+    <section className="flex flex-wrap w-full justify-center items-center mt-6 gap-y-5">
       <div
         id="heroContent"
         className="flex flex-col max-w-160 flex-[3_1_60%] px-4 pb-4 pt-1 gap-8"
