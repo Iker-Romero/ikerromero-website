@@ -12,7 +12,7 @@ export const aboutMeLinks: {
   {
     name: 'LinkedIn',
     icon: LinkedIn,
-    link: 'https://www.linkedin.com/in/iker-romero-645b70251/'
+    link: 'https://www.linkedin.com/in/ikerromerodev'
   },
   {
     name: 'GitHub',
