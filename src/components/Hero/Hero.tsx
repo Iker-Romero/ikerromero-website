@@ -29,8 +29,8 @@ const Hero = () => {
             'object-contain w-full h-full animate-hidden scaleInFromLeftBottom',
             'rounded-3xl' // To match CTAs
           )}
-          width={500}
-          height={667}
+          width={991}
+          height={1321}
           sizes="(max-width: 768px) calc(100vw - 2rem), 400px"
           src="/images/iker/ratio0.75-mediumShot.webp"
           alt="Iker Romero, fullstack web developer, by the ocean in Galicia, Spain"

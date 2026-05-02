@@ -44,8 +44,8 @@ export const generateMetadata = async ({ params: { locale } }: Props) => {
       title,
       description,
       images: [
-        { url: '/images/iker/ratio2-closeupShot.webp' },
-        { url: '/images/iker/ratio1-closeupShot.webp' }
+        { url: '/images/iker/ratio2-closeupShot.webp', width: 878, height: 439 },
+        { url: '/images/iker/ratio1-closeupShot.webp', width: 462, height: 462 }
       ]
     }
   }
