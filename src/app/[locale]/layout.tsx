@@ -50,8 +50,12 @@ export const generateMetadata = async ({ params: { locale } }: Props) => {
       title,
       description,
       images: [
-        { url: '/images/iker-romero-1200x630.png' },
-        { url: '/images/iker-romero-300x300.png' }
+        {
+          url: '/images/iker/ratio2-closeupShot.webp',
+          width: 878,
+          height: 439
+        },
+        { url: '/images/iker/ratio1-closeupShot.webp', width: 462, height: 462 }
       ]
     }
   }

@@ -1,4 +1,3 @@
-import Benefits from '@/components/Benefits/Benefits'
 import Contact from '@/components/Contact/Contact'
 import Experience from '@/components/Experience/Experience'
 import Hero from '@/components/Hero/Hero'
@@ -15,15 +14,12 @@ const Home = async ({ params: { locale } }: Props) => {
   unstable_setRequestLocale(locale)
 
   return (
-    <div className="flex flex-col gap-page">
+    <>
       <Hero />
-      <Benefits />
-      <div className="flex flex-col gap-section">
-        <Experience />
-        <Projects />
-      </div>
+      <Projects />
+      <Experience />
       <Contact />
-    </div>
+    </>
   )
 }
 

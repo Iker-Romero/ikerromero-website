@@ -1,9 +1,9 @@
 {
   "home": {
-    "metaDescription": "Expert in web design, development, and SEO. Transform your online presence with tailor-made web solutions."
+    "metaDescription": "Fullstack web developer based in Spain. Designs, builds, and ships production web applications end-to-end. Founder of HabitsFlow (1,000+ users)."
   },
   "hero": {
-    "description": "I create quality websites that set you apart from the competition and drive scalable results to your business. If I take on your project, that's what you get."
+    "description": "Fullstack web developer based in Spain. I design, build, and ship production web applications end-to-end — frontend, backend, deployment, monitoring."
   },
   "contact": {
     "CTA": "Let's Start",
@@ -34,23 +34,6 @@
       }
     }
   },
-  "benefits": [
-    {
-      "id": "SEO",
-      "title": "SEO",
-      "description": "The equivalent of having your store on the main street of a bustling city, but at a much lower cost. So that your customers can find you."
-    },
-    {
-      "id": "design",
-      "title": "Design",
-      "description": "Attractive people sell more, it's not just me saying it, it's science. And your website should be no less."
-    },
-    {
-      "id": "performance",
-      "title": "Performance",
-      "description": "A fast and reliable website ensures an excellent experience, making your customers repeat and recommend you."
-    }
-  ],
   "experience": {
     "title": "Work Experience",
     "jobs": [
@@ -71,11 +54,6 @@
         "name": "HabitsFlow",
         "description": "Habit tracking app with 1000+ user signups. Web app in production, mobile app launching on Google Play.",
         "badge": "1000+ users"
-      },
-      {
-        "id": "liftlog",
-        "name": "Lift Log",
-        "description": "Gym tracking app with offline-first local database. Log workouts, track progress, and plan routines."
       },
       {
         "id": "weeklyplanner",
